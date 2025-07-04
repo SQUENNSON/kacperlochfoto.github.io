@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kacper Loch - sq_photo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --color-primary: #4e9af1;
+            --color-bg: #121212;
+            --color-surface: #1e1e1e;
+            --color-text: #e0e0e0;
+            --color-text-muted: #a0a0a0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+            /* Efekt płynnego przejścia */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        body.fade-in {
+            opacity: 1;
+        }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        header { background: rgba(18, 18, 18, 0.7); padding: 1rem 0; border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo { font-family: var(--font-heading); font-size: 1.4rem; color: #fff; font-weight: 600; margin: 0; }
+        .social-icon svg { color: var(--color-text-muted); transition: color 0.3s ease, transform 0.3s ease; }
+        .social-icon:hover svg { color: #fff; transform: scale(1.1); }
+        header nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        header nav ul li { margin-left: 25px; }
+        header nav a { color: var(--color-text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s ease; font-weight: 500; }
+        header nav a:hover { color: #fff; }
+
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; padding: 20px; }
+        a.gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            background-color: var(--color-surface);
+            display: block;
+            position: relative;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        a.gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        a.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        a.gallery-item:hover img { transform: scale(1.05); }
+        
+        .gallery-item .title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
+            color: #fff;
+            padding: 25px;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        a.gallery-item:hover .title {
+            transform: translateY(0);
+        }
+        
+        section { padding: 100px 20px; text-align: center; }
+        section:not(#realizacje) { border-top: 1px solid #2a2a2a; }
+        section h2 { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 20px; font-weight: 700; }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-item svg {
+            color: var(--color-text-muted);
+            width: 20px;
+            height: 20px;
+        }
+        .contact-item a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-size: 1.15rem;
+            transition: color 0.3s ease;
+        }
+        .contact-item a:hover {
+            color: var(--color-text);
+        }
+        
+        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; border-top: 1px solid #2a2a2a; }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === NOWE STYLE DLA URZĄDZEŃ MOBILNYCH === */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            header nav ul {
+                padding: 0;
+                justify-content: center;
+            }
+            
+            header nav ul li {
+                margin: 0 15px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr; /* Jedna kolumna na najmniejszych ekranach */
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            header nav a {
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <h1 class="logo">Kacper Loch | sq_photo</h1>
+                <a href="https://www.instagram.com/sq_photo__/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#realizacje">Realizacje</a></li>
+                    <li><a href="#o-mnie">O mnie</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="realizacje">
+        <section>
+            <h2 class="animate-on-scroll">Moje Realizacje</h2>
+        </section>
+        <div class="gallery">
+            <a href="realizacja-mecz.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC03639.jpg" alt="Reportaż z meczu piłkarskiego">
+                <span class="title">Reportaż z meczu</span>
+            </a>
+            <a href="#" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/3 POST.jpg" alt="Fotografia eventowa">
+                <span class="title">Fotografia eventowa</span>
+            </a>
+        </div>
+    </main>
+    
+    <section id="o-mnie">
+        <h2 class="animate-on-scroll">O mnie</h2>
+    </section>
+
+    <section id="kontakt">
+        <h2 class="animate-on-scroll">Kontakt</h2>
+        <div class="contact-info animate-on-scroll">
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:+48538392636">538 392 636</a>
+            </div>
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:loch.kacper@gmail.com">loch.kacper@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <!-- ZAKTUALIZOWANY SKRYPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Płynne przejścia
+            window.addEventListener('load', () => {
+                document.body.classList.add('fade-in');
+            });
+
+            document.querySelectorAll('a[href]').forEach(link => {
+                if (link.hostname === window.location.hostname && !link.href.includes('#') && link.target !== '_blank') {
+                    link.addEventListener('click', e => {
+                        e.preventDefault();
+                        const destination = link.href;
+                        document.body.classList.remove('fade-in'); // Rozpoczyna animację "znikania"
+                        setTimeout(() => {
+                            window.location = destination;
+                        }, 500); // Czas musi być zgodny z tranzycją w CSS
+                    });
+                }
+            });
+
+            // Animacje przy przewijaniu
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const targets = document.querySelectorAll('.animate-on-scroll');
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        });
+    </script>
+</body>
+</html>
