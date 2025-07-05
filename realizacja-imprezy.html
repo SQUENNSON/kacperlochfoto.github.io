@@ -108,11 +108,33 @@
         .lightbox .close-button { position: absolute; top: 25px; right: 35px; font-size: 3rem; color: #fff; cursor: pointer; line-height: 1; transition: transform 0.2s ease, color 0.2s ease; z-index: 2001; }
         .lightbox .close-button:hover { transform: scale(1.1); color: var(--color-primary); }
         
-        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; }
+        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; }
         footer a { color: var(--color-primary); }
 
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* NOWE: Style dla linku do następnego projektu */
+        .next-project {
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid #2a2a2a;
+        }
+        .next-project-link {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-text);
+            text-decoration: none;
+            border: 2px solid var(--color-text-muted);
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .next-project-link:hover {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #fff;
+        }
 
         @media (max-width: 768px) {
             .project-header { padding: 60px 20px; }
@@ -121,6 +143,7 @@
             .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; }
             .lightbox-prev { left: 10px; }
             .lightbox-next { right: 10px; }
+            .next-project-link { font-size: 1.2rem; padding: 12px 25px; }
         }
          @media (max-width: 480px) {
             .gallery { grid-template-columns: 1fr; }
@@ -158,70 +181,12 @@
                     <span>Powiększ</span>
                 </div>
             </div>
-             <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00549.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00582.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00647.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00663.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00689.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00781.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00796.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00898.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC01009.jpg" alt="Zdjęcie z imprezy">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
         </div>
+        
+        <!-- NOWA SEKCJA Z LINKIEM -->
+        <section class="next-project animate-on-scroll">
+            <a href="realizacja-piknik.html" class="next-project-link">Następna realizacja: Piknik →</a>
+        </section>
     </main>
     
     <footer>
