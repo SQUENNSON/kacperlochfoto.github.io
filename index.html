@@ -231,18 +231,23 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            window.addEventListener('load', () => {
-                document.body.classList.add('fade-in');
+            document.body.classList.add('fade-in');
+
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.body.classList.remove('fade-in');
+                    setTimeout(() => document.body.classList.add('fade-in'), 10);
+                }
             });
 
             document.querySelectorAll('a[href]').forEach(link => {
-                if (link.hostname === window.location.hostname && !link.href.includes('#') && link.target !== '_blank') {
+                if (link.hostname === window.location.hostname && !link.getAttribute('href').startsWith('#') && link.target !== '_blank') {
                     link.addEventListener('click', e => {
                         e.preventDefault();
-                        const destination = link.href;
+                        const destination = new URL(link.getAttribute('href'), window.location.href).href;
                         document.body.classList.remove('fade-in');
                         setTimeout(() => {
-                            window.location = destination;
+                            window.location.assign(destination);
                         }, 500);
                     });
                 }
