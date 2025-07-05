@@ -93,12 +93,12 @@
             font-weight: 600;
         }
         
-        /* ZMIENIONE: Style dla Lightboxa i nawigacji */
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: flex; justify-content: center; align-items: center; z-index: 2000; visibility: hidden; opacity: 0; transition: opacity 0.4s ease, visibility 0.4s ease; }
         .lightbox.active { visibility: visible; opacity: 1; }
-        .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
-        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 50px rgba(255, 255, 255, 0.15); border-radius: 8px; user-select: none; -webkit-user-drag: none; transition: opacity 0.3s ease-in-out; }
-        .lightbox img.fade { opacity: 0; }
+        .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 50px rgba(255, 255, 255, 0.15); border-radius: 8px; user-select: none; -webkit-user-drag: none; 
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+        }
         
         .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: #fff; border: none; font-size: 2rem; padding: 15px; cursor: pointer; transition: background 0.3s ease; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; }
         .lightbox-nav:hover { background: rgba(0,0,0,0.6); }
@@ -179,7 +179,6 @@
         <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
     </footer>
     
-    <!-- ZMIENIONE: Struktura HTML lightboxa -->
     <div class="lightbox" id="lightbox">
         <span class="close-button" id="close-button">&times;</span>
         <button class="lightbox-nav lightbox-prev" id="prev-button">&lt;</button>
@@ -189,10 +188,8 @@
         <button class="lightbox-nav lightbox-next" id="next-button">&gt;</button>
     </div>
 
-    <!-- ZMIENIONE: Rozbudowany skrypt do obsługi nowej galerii -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Logika dla płynnych przejść
             window.addEventListener('load', () => {
                 document.body.classList.add('fade-in');
             });
@@ -207,7 +204,6 @@
                 }
             });
 
-            // NOWA, ROZBUDOWANA LOGIKA LIGHTBOXA
             const galleryItems = document.querySelectorAll('.gallery-item');
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
@@ -217,18 +213,34 @@
 
             const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
             let currentIndex = 0;
+            let isAnimating = false;
 
-            function showImage(index) {
-                lightboxImage.classList.add('fade');
+            function showImage(index, direction) {
+                if (isAnimating) return;
+                isAnimating = true;
+
+                const outClass = direction === 'next' ? '-100%' : '100%';
+                const inClass = direction === 'next' ? '100%' : '-100%';
+
+                lightboxImage.style.opacity = '0';
+                lightboxImage.style.transform = `translateX(${outClass})`;
+                
                 setTimeout(() => {
-                    lightboxImage.src = images[index];
-                    lightboxImage.classList.remove('fade');
-                }, 300);
+                    currentIndex = index;
+                    lightboxImage.src = images[currentIndex];
+                    lightboxImage.style.transform = `translateX(${inClass})`;
+                    
+                    setTimeout(() => {
+                        lightboxImage.style.opacity = '1';
+                        lightboxImage.style.transform = 'translateX(0)';
+                        isAnimating = false;
+                    }, 50);
+                }, 400);
             }
 
             function openLightbox(index) {
                 currentIndex = index;
-                showImage(currentIndex);
+                lightboxImage.src = images[currentIndex];
                 lightbox.classList.add('active');
             }
 
@@ -237,13 +249,13 @@
             }
 
             function showNext() {
-                currentIndex = (currentIndex + 1) % images.length;
-                showImage(currentIndex);
+                const nextIndex = (currentIndex + 1) % images.length;
+                showImage(nextIndex, 'next');
             }
 
             function showPrev() {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                showImage(currentIndex);
+                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(prevIndex, 'prev');
             }
 
             galleryItems.forEach((item, index) => {
@@ -264,12 +276,12 @@
                 }
             });
 
-            // Obsługa przeciągania myszką / palcem
             let isDragging = false;
             let startX = 0;
             let walk = 0;
 
             const startDrag = (e) => {
+                if (isAnimating) return;
                 isDragging = true;
                 startX = e.pageX || e.touches[0].pageX;
                 lightboxImage.style.transition = 'none';
@@ -286,18 +298,15 @@
             const endDrag = () => {
                 if (!isDragging) return;
                 isDragging = false;
-                lightboxImage.style.transition = 'transform 0.3s ease';
+                lightboxImage.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
 
-                if (walk < -50) { // Przesunięcie w lewo
+                if (walk < -50) {
                     showNext();
-                } else if (walk > 50) { // Przesunięcie w prawo
+                } else if (walk > 50) {
                     showPrev();
-                }
-                
-                // Reset pozycji obrazka
-                setTimeout(() => {
+                } else {
                     lightboxImage.style.transform = 'translateX(0)';
-                }, 10);
+                }
             };
 
             lightboxImage.addEventListener('mousedown', startDrag);
@@ -309,7 +318,6 @@
             document.addEventListener('mouseup', endDrag);
             document.addEventListener('touchend', endDrag);
 
-            // Animacje przy przewijaniu
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
