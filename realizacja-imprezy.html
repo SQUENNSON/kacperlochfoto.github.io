@@ -39,10 +39,24 @@
         header nav a:hover { color: #fff; }
 
         .project-header { text-align: center; padding: 100px 20px 60px; }
-        .project-header h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
+        .project-header h1 { 
+            font-family: var(--font-heading); 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            line-height: 1.2;
+            /* NOWY EFEKT: Poświata dla nagłówka */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(78, 154, 241, 0.2);
+        }
         .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
 
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; padding: 20px; }
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, 380px);
+            justify-content: center;
+            gap: 20px; 
+            padding: 20px; 
+        }
         
         a.gallery-item {
             overflow: hidden;
@@ -91,7 +105,9 @@
             .project-header p { font-size: 1rem; }
         }
          @media (max-width: 480px) {
-            .gallery { grid-template-columns: 1fr; }
+            .gallery { 
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -112,16 +128,10 @@
         </div>
 
         <div class="gallery">
-            <!-- Każdy kafelek to teraz link do osobnej galerii -->
             <a href="projekt-piknik.html" class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC01181.jpg" alt="Piknik rodzinny">
+                <img src="zdjecia/DSC00544.jpg" alt="Piknik rodzinny">
                 <span class="title">Piknik Rodzinny</span>
             </a>
-            <a href="#" class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00898.jpg" alt="Urodziny w plenerze">
-                <span class="title">Urodziny w plenerze</span>
-            </a>
-            <!-- W przyszłości możesz dodawać tu kolejne realizacje -->
         </div>
     </main>
     
