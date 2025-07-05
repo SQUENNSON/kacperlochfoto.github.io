@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piknik - Kacper Loch</title>
+    <title>Piknik Rodzinny - Kacper Loch</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -108,32 +108,11 @@
         .lightbox .close-button { position: absolute; top: 25px; right: 35px; font-size: 3rem; color: #fff; cursor: pointer; line-height: 1; transition: transform 0.2s ease, color 0.2s ease; z-index: 2001; }
         .lightbox .close-button:hover { transform: scale(1.1); color: var(--color-primary); }
         
-        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; }
+        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; }
         footer a { color: var(--color-primary); }
 
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-
-        .next-project {
-            text-align: center;
-            padding: 80px 20px;
-            border-top: 1px solid #2a2a2a;
-        }
-        .next-project-link {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--color-text);
-            text-decoration: none;
-            border: 2px solid var(--color-text-muted);
-            padding: 15px 30px;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        .next-project-link:hover {
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
-            color: #fff;
-        }
 
         @media (max-width: 768px) {
             .project-header { padding: 60px 20px; }
@@ -142,7 +121,6 @@
             .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; }
             .lightbox-prev { left: 10px; }
             .lightbox-next { right: 10px; }
-            .next-project-link { font-size: 1.2rem; padding: 12px 25px; }
         }
          @media (max-width: 480px) {
             .gallery { grid-template-columns: 1fr; }
@@ -154,7 +132,7 @@
         <div class="container">
             <h1 class="logo">Kacper Loch | sq_photo</h1>
             <nav>
-                <a href="index.html">← Powrót do Realizacji</a>
+                <a href="realizacja-imprezy.html">← Powrót do Imprez Okolicznościowych</a>
             </nav>
         </div>
     </header>
@@ -187,11 +165,14 @@
                     <span>Powiększ</span>
                 </div>
             </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC00647.jpg" alt="Zdjęcie z pikniku">
+                <div class="overlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>Powiększ</span>
+                </div>
+            </div>
         </div>
-        
-        <section class="next-project animate-on-scroll">
-            <a href="realizacja-imprezy.html" class="next-project-link">← Poprzednia realizacja: Imprezy Okolicznościowe</a>
-        </section>
     </main>
     
     <footer>
