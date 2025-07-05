@@ -93,10 +93,19 @@
             font-weight: 600;
         }
         
+        /* ZMIENIONE: Style dla Lightboxa i nawigacji */
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: flex; justify-content: center; align-items: center; z-index: 2000; visibility: hidden; opacity: 0; transition: opacity 0.4s ease, visibility 0.4s ease; }
         .lightbox.active { visibility: visible; opacity: 1; }
-        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 50px rgba(255, 255, 255, 0.15); border-radius: 8px; }
-        .lightbox .close-button { position: absolute; top: 25px; right: 35px; font-size: 3rem; color: #fff; cursor: pointer; line-height: 1; transition: transform 0.2s ease, color 0.2s ease; }
+        .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; }
+        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 50px rgba(255, 255, 255, 0.15); border-radius: 8px; user-select: none; -webkit-user-drag: none; transition: opacity 0.3s ease-in-out; }
+        .lightbox img.fade { opacity: 0; }
+        
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: #fff; border: none; font-size: 2rem; padding: 15px; cursor: pointer; transition: background 0.3s ease; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; }
+        .lightbox-nav:hover { background: rgba(0,0,0,0.6); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        
+        .lightbox .close-button { position: absolute; top: 25px; right: 35px; font-size: 3rem; color: #fff; cursor: pointer; line-height: 1; transition: transform 0.2s ease, color 0.2s ease; z-index: 2001; }
         .lightbox .close-button:hover { transform: scale(1.1); color: var(--color-primary); }
         
         footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; }
@@ -109,6 +118,9 @@
             .project-header { padding: 60px 20px; }
             .project-header h1 { font-size: 2.5rem; }
             .project-header p { font-size: 1rem; }
+            .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
         }
          @media (max-width: 480px) {
             .gallery { grid-template-columns: 1fr; }
@@ -167,13 +179,20 @@
         <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
     </footer>
     
+    <!-- ZMIENIONE: Struktura HTML lightboxa -->
     <div class="lightbox" id="lightbox">
-      <span class="close-button" id="close-button">&times;</span>
-      <img src="" alt="Powiększone zdjęcie" id="lightbox-image">
+        <span class="close-button" id="close-button">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="prev-button">&lt;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Powiększone zdjęcie" id="lightbox-image">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="next-button">&gt;</button>
     </div>
 
+    <!-- ZMIENIONE: Rozbudowany skrypt do obsługi nowej galerii -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Logika dla płynnych przejść
             window.addEventListener('load', () => {
                 document.body.classList.add('fade-in');
             });
@@ -188,22 +207,109 @@
                 }
             });
 
+            // NOWA, ROZBUDOWANA LOGIKA LIGHTBOXA
             const galleryItems = document.querySelectorAll('.gallery-item');
             const lightbox = document.getElementById('lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
             const closeButton = document.getElementById('close-button');
-            galleryItems.forEach(item => {
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+
+            const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
+            let currentIndex = 0;
+
+            function showImage(index) {
+                lightboxImage.classList.add('fade');
+                setTimeout(() => {
+                    lightboxImage.src = images[index];
+                    lightboxImage.classList.remove('fade');
+                }, 300);
+            }
+
+            function openLightbox(index) {
+                currentIndex = index;
+                showImage(currentIndex);
+                lightbox.classList.add('active');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+            }
+
+            function showNext() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            function showPrev() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            }
+
+            galleryItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
-                    const imageUrl = item.querySelector('img').src;
-                    lightboxImage.src = imageUrl;
-                    lightbox.classList.add('active');
+                    openLightbox(index);
                 });
             });
-            const closeLightbox = () => { lightbox.classList.remove('active'); };
-            closeButton.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) { closeLightbox(); } });
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeLightbox(); } });
 
+            closeButton.addEventListener('click', closeLightbox);
+            nextButton.addEventListener('click', showNext);
+            prevButton.addEventListener('click', showPrev);
+
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) {
+                    if (e.key === 'ArrowRight') showNext();
+                    if (e.key === 'ArrowLeft') showPrev();
+                    if (e.key === 'Escape') closeLightbox();
+                }
+            });
+
+            // Obsługa przeciągania myszką / palcem
+            let isDragging = false;
+            let startX = 0;
+            let walk = 0;
+
+            const startDrag = (e) => {
+                isDragging = true;
+                startX = e.pageX || e.touches[0].pageX;
+                lightboxImage.style.transition = 'none';
+            };
+
+            const drag = (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX || e.touches[0].pageX;
+                walk = x - startX;
+                lightboxImage.style.transform = `translateX(${walk}px)`;
+            };
+
+            const endDrag = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                lightboxImage.style.transition = 'transform 0.3s ease';
+
+                if (walk < -50) { // Przesunięcie w lewo
+                    showNext();
+                } else if (walk > 50) { // Przesunięcie w prawo
+                    showPrev();
+                }
+                
+                // Reset pozycji obrazka
+                setTimeout(() => {
+                    lightboxImage.style.transform = 'translateX(0)';
+                }, 10);
+            };
+
+            lightboxImage.addEventListener('mousedown', startDrag);
+            lightboxImage.addEventListener('touchstart', startDrag);
+            
+            lightboxImage.addEventListener('mousemove', drag);
+            lightboxImage.addEventListener('touchmove', drag);
+
+            document.addEventListener('mouseup', endDrag);
+            document.addEventListener('touchend', endDrag);
+
+            // Animacje przy przewijaniu
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
