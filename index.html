@@ -20,13 +20,17 @@
             --color-text-muted: #a0a0a0;
         }
 
+        html {
+            /* Zapewnia płynne przewijanie jako fallback i dla nawigacji przeglądarki */
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: var(--font-body);
             margin: 0;
             background-color: var(--color-bg);
             color: var(--color-text);
             line-height: 1.7;
-            scroll-behavior: smooth;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
@@ -224,11 +228,13 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Płynne przejścia MIĘDZY STRONAMI
             window.addEventListener('load', () => {
                 document.body.classList.add('fade-in');
             });
 
             document.querySelectorAll('a[href]').forEach(link => {
+                // Ta logika dotyczy tylko przejść do INNYCH stron, ignoruje linki z '#'
                 if (link.hostname === window.location.hostname && !link.href.includes('#') && link.target !== '_blank') {
                     link.addEventListener('click', e => {
                         e.preventDefault();
@@ -240,7 +246,22 @@
                     });
                 }
             });
+            
+            // NOWA LOGIKA DLA PŁYNNEGO PRZEWIJANIA WEWNĄTRZ STRONY
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
 
+            // Animacje przy przewijaniu (Intersection Observer)
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
