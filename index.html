@@ -27,7 +27,6 @@
             color: var(--color-text);
             line-height: 1.7;
             scroll-behavior: smooth;
-            /* Efekt płynnego przejścia */
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
@@ -126,7 +125,6 @@
             transform: translateY(0);
         }
 
-        /* === NOWE STYLE DLA URZĄDZEŃ MOBILNYCH === */
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
@@ -153,7 +151,7 @@
 
         @media (max-width: 480px) {
             .gallery {
-                grid-template-columns: 1fr; /* Jedna kolumna na najmniejszych ekranach */
+                grid-template-columns: 1fr;
             }
 
             .logo {
@@ -224,10 +222,8 @@
         <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
-    <!-- ZAKTUALIZOWANY SKRYPT -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Płynne przejścia
             window.addEventListener('load', () => {
                 document.body.classList.add('fade-in');
             });
@@ -237,15 +233,14 @@
                     link.addEventListener('click', e => {
                         e.preventDefault();
                         const destination = link.href;
-                        document.body.classList.remove('fade-in'); // Rozpoczyna animację "znikania"
+                        document.body.classList.remove('fade-in');
                         setTimeout(() => {
                             window.location = destination;
-                        }, 500); // Czas musi być zgodny z tranzycją w CSS
+                        }, 500);
                     });
                 }
             });
 
-            // Animacje przy przewijaniu
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
