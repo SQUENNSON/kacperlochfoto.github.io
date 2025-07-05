@@ -49,7 +49,6 @@
         }
         .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
 
-        /* ZMIENIONE: Style galerii, aby pojedynczy element był większy */
         .gallery { 
             display: flex;
             justify-content: center;
@@ -57,7 +56,7 @@
         }
         
         a.gallery-item {
-            max-width: 700px; /* Maksymalna szerokość dla pojedynczego elementu */
+            max-width: 700px;
             width: 100%;
             overflow: hidden;
             border-radius: 12px;
@@ -107,6 +106,11 @@
          @media (max-width: 480px) {
             .gallery { 
                 padding: 10px;
+            }
+            /* ZMIENIONE: Dodatkowe zmniejszenie nagłówka na najmniejszych ekranach */
+            .project-header h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
             }
         }
     </style>
