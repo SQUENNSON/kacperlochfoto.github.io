@@ -49,15 +49,18 @@
         }
         .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
 
+        /* NOWE, POPRAWIONE STYLE GALERII */
         .gallery { 
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 20px; 
             padding: 20px; 
         }
         
         a.gallery-item {
-            max-width: 700px;
-            width: 100%;
+            flex: 0 1 700px; /* Nie rośnij, kurcz się, bazowa szerokość 700px */
+            max-width: 100%; /* Zapobiega wychodzeniu poza ekran na mniejszych widokach */
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
@@ -107,7 +110,6 @@
             .gallery { 
                 padding: 10px;
             }
-            /* ZMIENIONE: Dodatkowe zmniejszenie nagłówka na najmniejszych ekranach */
             .project-header h1 {
                 font-size: 2.2rem;
                 line-height: 1.3;
