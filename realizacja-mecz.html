@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reportaż z meczu - Kacper Loch</title>
+    <title>SPORT - Kacper Loch</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,8 +96,8 @@
         .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: flex; justify-content: center; align-items: center; z-index: 2000; visibility: hidden; opacity: 0; transition: opacity 0.4s ease, visibility 0.4s ease; }
         .lightbox.active { visibility: visible; opacity: 1; }
         .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 50px rgba(255, 255, 255, 0.15); border-radius: 8px; user-select: none; -webkit-user-drag: none; 
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 80px rgba(255, 255, 255, 0.25); border-radius: 8px; user-select: none; -webkit-user-drag: none; 
+            transition: opacity 0.3s ease-in-out;
         }
         
         .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: #fff; border: none; font-size: 2rem; padding: 15px; cursor: pointer; transition: background 0.3s ease; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; }
@@ -139,8 +139,8 @@
 
     <main>
         <div class="project-header animate-on-scroll">
-            <h1>Reportaż z meczu piłkarskiego</h1>
-            <p>Dynamiczny reportaż z dnia meczowego, skupiający się na emocjach zawodników na boisku i kibiców na trybunach. Celem było uchwycenie autentycznej atmosfery sportowego święta, od przygotowań w szatni po ostatni gwizdek sędziego.</p>
+            <h1>SPORT</h1>
+            <p>Dynamiczne reportaże skupiające się na emocjach zawodników na boisku i kibiców na trybunach. Celem jest uchwycenie autentycznej atmosfery sportowego święta, od przygotowań w szatni po ostatni gwizdek sędziego.</p>
         </div>
 
         <div class="gallery">
@@ -193,13 +193,14 @@
             window.addEventListener('load', () => {
                 document.body.classList.add('fade-in');
             });
+            
             document.querySelectorAll('a[href]').forEach(link => {
-                if (link.hostname === window.location.hostname && !link.href.includes('#') && link.target !== '_blank') {
+                if (link.hostname === window.location.hostname && !link.getAttribute('href').startsWith('#') && link.target !== '_blank') {
                     link.addEventListener('click', e => {
                         e.preventDefault();
-                        const destination = link.href;
+                        const destination = new URL(link.getAttribute('href'), window.location.href).href;
                         document.body.classList.remove('fade-in');
-                        setTimeout(() => { window.location = destination; }, 500);
+                        setTimeout(() => { window.location.assign(destination); }, 500);
                     });
                 }
             });
@@ -213,29 +214,14 @@
 
             const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
             let currentIndex = 0;
-            let isAnimating = false;
 
-            function showImage(index, direction) {
-                if (isAnimating) return;
-                isAnimating = true;
-
-                const outClass = direction === 'next' ? '-100%' : '100%';
-                const inClass = direction === 'next' ? '100%' : '-100%';
-
+            function showImage(index) {
                 lightboxImage.style.opacity = '0';
-                lightboxImage.style.transform = `translateX(${outClass})`;
-                
                 setTimeout(() => {
                     currentIndex = index;
                     lightboxImage.src = images[currentIndex];
-                    lightboxImage.style.transform = `translateX(${inClass})`;
-                    
-                    setTimeout(() => {
-                        lightboxImage.style.opacity = '1';
-                        lightboxImage.style.transform = 'translateX(0)';
-                        isAnimating = false;
-                    }, 50);
-                }, 400);
+                    lightboxImage.style.opacity = '1';
+                }, 300);
             }
 
             function openLightbox(index) {
@@ -250,12 +236,12 @@
 
             function showNext() {
                 const nextIndex = (currentIndex + 1) % images.length;
-                showImage(nextIndex, 'next');
+                showImage(nextIndex);
             }
 
             function showPrev() {
                 const prevIndex = (currentIndex - 1 + images.length) % images.length;
-                showImage(prevIndex, 'prev');
+                showImage(prevIndex);
             }
 
             galleryItems.forEach((item, index) => {
@@ -281,10 +267,8 @@
             let walk = 0;
 
             const startDrag = (e) => {
-                if (isAnimating) return;
                 isDragging = true;
                 startX = e.pageX || e.touches[0].pageX;
-                lightboxImage.style.transition = 'none';
             };
 
             const drag = (e) => {
@@ -292,20 +276,16 @@
                 e.preventDefault();
                 const x = e.pageX || e.touches[0].pageX;
                 walk = x - startX;
-                lightboxImage.style.transform = `translateX(${walk}px)`;
             };
 
             const endDrag = () => {
                 if (!isDragging) return;
                 isDragging = false;
-                lightboxImage.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
 
                 if (walk < -50) {
                     showNext();
                 } else if (walk > 50) {
                     showPrev();
-                } else {
-                    lightboxImage.style.transform = 'translateX(0)';
                 }
             };
 
