@@ -20,8 +20,6 @@
             --color-text-muted: #a0a0a0;
         }
 
-        @media (pointer: fine) { * { cursor: none; } }
-
         body {
             font-family: var(--font-body);
             margin: 0;
@@ -32,25 +30,6 @@
             transition: opacity 0.5s ease-in-out;
         }
         body.fade-in { opacity: 1; }
-
-        .custom-cursor {
-            display: none;
-            position: fixed;
-            width: 25px;
-            height: 25px;
-            border: 2px solid var(--color-text);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-            z-index: 9999;
-        }
-        .custom-cursor.grow {
-            width: 50px;
-            height: 50px;
-            background-color: var(--color-primary);
-            border-color: var(--color-primary);
-        }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
         header { background: rgba(18, 18, 18, 0.7); padding: 1rem 0; border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
@@ -79,11 +58,27 @@
 
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* Style responsywności skopiowane ze strony głównej */
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 60px 20px;
+            }
+            .project-header h1 {
+                font-size: 2.5rem;
+            }
+            .project-header p {
+                font-size: 1rem;
+            }
+        }
+         @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="custom-cursor"></div>
-
     <header>
         <div class="container">
             <h1 class="logo">Kacper Loch | sq_photo</h1>
@@ -118,19 +113,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Logika dla kursora i przejść
-            const cursor = document.querySelector('.custom-cursor');
-            const isTouchDevice = 'ontouchstart' in window;
-            if (!isTouchDevice) {
-                cursor.style.display = 'block';
-                document.addEventListener('mousemove', e => {
-                    cursor.setAttribute('style', `display: block; top: ${e.pageY}px; left: ${e.pageX}px;`);
-                });
-                document.querySelectorAll('a, button, .gallery-item').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-                    el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-                });
-            }
+            // Logika dla płynnych przejść
             window.addEventListener('load', () => {
                 document.body.classList.add('fade-in');
             });
