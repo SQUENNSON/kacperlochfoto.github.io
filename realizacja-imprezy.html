@@ -49,18 +49,17 @@
         }
         .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
 
-        /* NOWE, POPRAWIONE STYLE GALERII */
         .gallery { 
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; 
+            gap: 25px; 
             padding: 20px; 
         }
         
         a.gallery-item {
-            flex: 0 1 700px; /* Nie rośnij, kurcz się, bazowa szerokość 700px */
-            max-width: 100%; /* Zapobiega wychodzeniu poza ekran na mniejszych widokach */
+            flex: 0 1 500px;
+            max-width: 100%;
             overflow: hidden;
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
@@ -71,8 +70,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         a.gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.5), 0 0 30px rgba(78, 154, 241, 0.4);
         }
         a.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         a.gallery-item:hover img { transform: scale(1.05); }
@@ -105,10 +104,13 @@
             .project-header { padding: 60px 20px; }
             .project-header h1 { font-size: 2.5rem; }
             .project-header p { font-size: 1rem; }
+            a.gallery-item {
+                flex-basis: 350px;
+            }
         }
          @media (max-width: 480px) {
             .gallery { 
-                padding: 10px;
+                grid-template-columns: 1fr;
             }
             .project-header h1 {
                 font-size: 2.2rem;
@@ -122,7 +124,7 @@
         <div class="container">
             <h1 class="logo">Kacper Loch | sq_photo</h1>
             <nav>
-                <a href="index.html">← Powrót do Realizacji</a>
+                <a href="index.html">← Powrót do Strony Głównej</a>
             </nav>
         </div>
     </header>
@@ -148,34 +150,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('fade-in');
-
-            window.addEventListener('pageshow', function(event) {
-                if (event.persisted) {
-                    document.body.classList.remove('fade-in');
-                    setTimeout(() => document.body.classList.add('fade-in'), 10);
-                }
-            });
-            
-            document.querySelectorAll('a[href]').forEach(link => {
-                if (link.hostname === window.location.hostname && !link.getAttribute('href').startsWith('#') && link.target !== '_blank') {
-                    link.addEventListener('click', e => {
-                        e.preventDefault();
-                        const destination = new URL(link.getAttribute('href'), window.location.href).href;
-                        document.body.classList.remove('fade-in');
-                        setTimeout(() => { window.location.assign(destination); }, 500);
-                    });
-                }
-            });
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            const targets = document.querySelectorAll('.animate-on-scroll');
-            targets.forEach(target => { observer.observe(target); });
+            window.addEventListener('pageshow', function(event) { if (event.persisted) { document.body.classList.remove('fade-in'); setTimeout(() => document.body.classList.add('fade-in'), 10); } });
+            document.querySelectorAll('a[href]').forEach(link => { if (link.hostname === window.location.hostname && !link.getAttribute('href').startsWith('#') && link.target !== '_blank') { link.addEventListener('click', e => { e.preventDefault(); const destination = new URL(link.getAttribute('href'), window.location.href).href; document.body.classList.remove('fade-in'); setTimeout(() => { window.location.assign(destination); }, 500); }); } });
+            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } }); }, { threshold: 0.1 }); const targets = document.querySelectorAll('.animate-on-scroll'); targets.forEach(target => { observer.observe(target); });
         });
     </script>
 </body>
