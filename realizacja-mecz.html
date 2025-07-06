@@ -39,76 +39,59 @@
         header nav a:hover { color: #fff; }
 
         .project-header { text-align: center; padding: 100px 20px 60px; }
-        .project-header h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2; }
+        .project-header h1 { 
+            font-family: var(--font-heading); 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            line-height: 1.2;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(78, 154, 241, 0.2);
+        }
         .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
 
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; padding: 20px; }
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px; 
+            padding: 20px; 
+        }
         
-        .gallery-item {
-            position: relative;
-            overflow: hidden; 
-            cursor: pointer; 
-            border-radius: 12px; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
+        a.gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
             background-color: var(--color-surface);
-        }
-        .gallery-item img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
             display: block;
-            transition: transform 0.4s ease, filter 0.4s ease;
+            position: relative;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .gallery-item:hover img {
-            transform: scale(1.05);
-            filter: brightness(0.6);
+        a.gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-
-        .gallery-item .overlay {
+        a.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        a.gallery-item:hover img { transform: scale(1.05); }
+        
+        .gallery-item .title {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
             color: #fff;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
-        }
-        .gallery-item:hover .overlay {
-            opacity: 1;
-        }
-        .gallery-item .overlay svg {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
-        }
-        .gallery-item .overlay span {
+            padding: 25px;
             font-family: var(--font-heading);
+            font-size: 1.5rem;
             font-weight: 600;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        a.gallery-item:hover .title {
+            transform: translateY(0);
         }
         
-        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: flex; justify-content: center; align-items: center; z-index: 2000; visibility: hidden; opacity: 0; transition: opacity 0.4s ease, visibility 0.4s ease; }
-        .lightbox.active { visibility: visible; opacity: 1; }
-        .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; }
-        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 80px rgba(255, 255, 255, 0.25); border-radius: 8px; user-select: none; -webkit-user-drag: none; 
-            transition: opacity 0.3s ease-in-out;
-        }
-        
-        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: #fff; border: none; font-size: 2rem; padding: 15px; cursor: pointer; transition: background 0.3s ease; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; }
-        .lightbox-nav:hover { background: rgba(0,0,0,0.6); }
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
-        
-        .lightbox .close-button { position: absolute; top: 25px; right: 35px; font-size: 3rem; color: #fff; cursor: pointer; line-height: 1; transition: transform 0.2s ease, color 0.2s ease; z-index: 2001; }
-        .lightbox .close-button:hover { transform: scale(1.1); color: var(--color-primary); }
-        
-        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; }
+        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; border-top: 1px solid #2a2a2a; }
         footer a { color: var(--color-primary); }
 
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -118,12 +101,15 @@
             .project-header { padding: 60px 20px; }
             .project-header h1 { font-size: 2.5rem; }
             .project-header p { font-size: 1rem; }
-            .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; }
-            .lightbox-prev { left: 10px; }
-            .lightbox-next { right: 10px; }
         }
          @media (max-width: 480px) {
-            .gallery { grid-template-columns: 1fr; }
+            .gallery { 
+                grid-template-columns: 1fr;
+            }
+            .project-header h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
         }
     </style>
 </head>
@@ -132,7 +118,7 @@
         <div class="container">
             <h1 class="logo">Kacper Loch | sq_photo</h1>
             <nav>
-                <a href="index.html">← Powrót do Realizacji</a>
+                <a href="index.html">← Powrót do Strony Głównej</a>
             </nav>
         </div>
     </header>
@@ -140,38 +126,18 @@
     <main>
         <div class="project-header animate-on-scroll">
             <h1>SPORT</h1>
-            <p>Dynamiczne reportaże skupiające się na emocjach zawodników na boisku i kibiców na trybunach. Celem jest uchwycenie autentycznej atmosfery sportowego święta, od przygotowań w szatni po ostatni gwizdek sędziego.</p>
+            <p>Reportaże z wydarzeń sportowych. Kliknij w wybraną realizację, aby zobaczyć galerię.</p>
         </div>
 
         <div class="gallery">
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/1 POST FLASH Z BRAMKARZEM.jpg" alt="Piłkarze w akcji podczas meczu">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/4POST.jpg" alt="Czterech piłkarzy stojących tyłem na boisku">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/2 POST.jpg" alt="Drużyna piłkarska świętująca zwycięstwo z pucharem">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/3 POST.jpg" alt="Kibice i piłkarze świętujący razem">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
+            <a href="projekt-limanovia.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC01730.jpg" alt="MKS Limanovia">
+                <span class="title">MKS Limanovia</span>
+            </a>
+            <a href="projekt-turbacz.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC00921.jpg" alt="KS Turbacz">
+                <span class="title">KS Turbacz</span>
+            </a>
         </div>
     </main>
     
@@ -179,15 +145,6 @@
         <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
     </footer>
     
-    <div class="lightbox" id="lightbox">
-        <span class="close-button" id="close-button">&times;</span>
-        <button class="lightbox-nav lightbox-prev" id="prev-button">&lt;</button>
-        <div class="lightbox-content">
-            <img src="" alt="Powiększone zdjęcie" id="lightbox-image">
-        </div>
-        <button class="lightbox-nav lightbox-next" id="next-button">&gt;</button>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('fade-in');
@@ -209,101 +166,6 @@
                     });
                 }
             });
-
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            const closeButton = document.getElementById('close-button');
-            const prevButton = document.getElementById('prev-button');
-            const nextButton = document.getElementById('next-button');
-
-            const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
-            let currentIndex = 0;
-
-            function showImage(index) {
-                lightboxImage.style.opacity = '0';
-                setTimeout(() => {
-                    currentIndex = index;
-                    lightboxImage.src = images[currentIndex];
-                    lightboxImage.style.opacity = '1';
-                }, 300);
-            }
-
-            function openLightbox(index) {
-                currentIndex = index;
-                lightboxImage.src = images[currentIndex];
-                lightbox.classList.add('active');
-            }
-
-            function closeLightbox() {
-                lightbox.classList.remove('active');
-            }
-
-            function showNext() {
-                if (!images || images.length === 0) return;
-                const nextIndex = (currentIndex + 1) % images.length;
-                showImage(nextIndex);
-            }
-
-            function showPrev() {
-                if (!images || images.length === 0) return;
-                const prevIndex = (currentIndex - 1 + images.length) % images.length;
-                showImage(prevIndex);
-            }
-
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    openLightbox(index);
-                });
-            });
-
-            closeButton.addEventListener('click', closeLightbox);
-            nextButton.addEventListener('click', showNext);
-            prevButton.addEventListener('click', showPrev);
-
-            document.addEventListener('keydown', (e) => {
-                if (lightbox.classList.contains('active')) {
-                    if (e.key === 'ArrowRight') showNext();
-                    if (e.key === 'ArrowLeft') showPrev();
-                    if (e.key === 'Escape') closeLightbox();
-                }
-            });
-
-            let isDragging = false;
-            let startX = 0;
-            let walk = 0;
-
-            const startDrag = (e) => {
-                isDragging = true;
-                startX = e.pageX || e.touches[0].pageX;
-            };
-
-            const drag = (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = e.pageX || e.touches[0].pageX;
-                walk = x - startX;
-            };
-
-            const endDrag = () => {
-                if (!isDragging) return;
-                isDragging = false;
-
-                if (walk < -50) {
-                    showNext();
-                } else if (walk > 50) {
-                    showPrev();
-                }
-            };
-
-            lightboxImage.addEventListener('mousedown', startDrag);
-            lightboxImage.addEventListener('touchstart', startDrag);
-            
-            lightboxImage.addEventListener('mousemove', drag);
-            lightboxImage.addEventListener('touchmove', drag);
-
-            document.addEventListener('mouseup', endDrag);
-            document.addEventListener('touchend', endDrag);
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
