@@ -45,8 +45,27 @@
         footer a { color: var(--color-primary); }
         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-        @media (max-width: 768px) { .project-header { padding: 60px 20px; } .project-header h1 { font-size: 2.5rem; } .project-header p { font-size: 1rem; } .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; } .lightbox-prev { left: 10px; } .lightbox-next { right: 10px; } }
-        @media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } }
+        
+        /* --- Style dla mniejszych ekranów --- */
+        @media (max-width: 768px) { 
+            .project-header { padding: 60px 20px; } 
+            .project-header h1 { font-size: 2.5rem; } 
+            .project-header p { font-size: 1rem; } 
+            .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; } 
+            .lightbox-prev { left: 10px; } 
+            .lightbox-next { right: 10px; } 
+        }
+        
+        @media (max-width: 480px) { 
+            .gallery { grid-template-columns: 1fr; } 
+        }
+
+        /* --- NOWY STYL: Powiększone kafelki na komputerach --- */
+        @media (min-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,6 +85,7 @@
         </div>
 
         <div class="gallery">
+            <!-- Tutaj pozostaje bez zmian cała zawartość galerii -->
             <div class="gallery-item animate-on-scroll">
                 <img src="zdjecia/DSC01507.jpg" alt="Mecz charytatywny">
                 <div class="overlay">
