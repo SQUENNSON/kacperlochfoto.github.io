@@ -37,18 +37,17 @@
             opacity: 1;
         }
         
-        /* NOWE: Style dla płótna animacji */
         #bg-canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Umieszcza tło za treścią */
+            z-index: -1;
         }
         
         .content-wrapper {
-            position: relative; /* Upewnia się, że treść jest nad tłem */
+            position: relative;
             z-index: 1;
         }
 
@@ -184,10 +183,8 @@
     </style>
 </head>
 <body>
-    <!-- NOWE: Płótno dla animacji tła -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Cała treść strony owinięta w .content-wrapper -->
     <div class="content-wrapper">
         <header>
             <div class="container">
@@ -200,7 +197,7 @@
                 <nav>
                     <ul>
                         <li><a href="#realizacje">Realizacje</a></li>
-                        <li><a href="#o-mnie">O mnie</a></li>
+                        <li><a href="o-mnie.html">O mnie</a></li>
                         <li><a href="#kontakt">Kontakt</a></li>
                     </ul>
                 </nav>
@@ -227,10 +224,6 @@
             </div>
         </main>
         
-        <section id="o-mnie">
-            <h2 class="animate-on-scroll">O mnie</h2>
-        </section>
-
         <section id="kontakt">
             <h2 class="animate-on-scroll">Kontakt</h2>
             <div class="contact-info animate-on-scroll">
@@ -250,7 +243,6 @@
         </footer>
     </div>
 
-    <!-- NOWE: Biblioteka three.js i skrypt do animacji tła -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         // Skrypt dla animacji tła
@@ -305,7 +297,6 @@
             }
             plane.geometry.attributes.position.needsUpdate = true;
             
-            // Reakcja na myszkę
             camera.position.x += (mouse.x * 0.5 - camera.position.x) * 0.05;
             camera.position.y += (mouse.y * 0.5 - camera.position.y) * 0.05;
             camera.lookAt(scene.position);
