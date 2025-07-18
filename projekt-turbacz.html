@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Tutaj wklejone są te same style co na innych podstronach */
         :root { --font-heading: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif; --color-primary: #4e9af1; --color-bg: #121212; --color-surface: #1e1e1e; --color-text: #e0e0e0; --color-text-muted: #a0a0a0; }
         body { font-family: var(--font-body); margin: 0; background-color: var(--color-bg); color: var(--color-text); line-height: 1.7; opacity: 0; transition: opacity 0.5s ease-in-out; }
         body.fade-in { opacity: 1; }
@@ -66,7 +65,6 @@
         </div>
 
         <div class="gallery">
-            <!-- Kolejność zdjęć pozostaje pomieszana -->
             <div class="gallery-item animate-on-scroll">
                 <img src="zdjecia/DSC09788.jpg" alt="KS Turbacz">
                 <div class="overlay">
@@ -83,13 +81,6 @@
             </div>
             <div class="gallery-item animate-on-scroll">
                 <img src="zdjecia/DSC09810.jpg" alt="KS Turbacz">
-                <div class="overlay">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <span>Powiększ</span>
-                </div>
-            </div>
-            <div class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC00035.jpg" alt="KS Turbacz">
                 <div class="overlay">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <span>Powiększ</span>
@@ -217,7 +208,6 @@
     </div>
 
     <script>
-        // Skrypt jest identyczny jak na innych podstronach
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('fade-in');
             window.addEventListener('pageshow', function(event) { if (event.persisted) { document.body.classList.remove('fade-in'); setTimeout(() => document.body.classList.add('fade-in'), 10); } });
