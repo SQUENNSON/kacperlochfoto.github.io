@@ -8,9 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Dodanie biblioteki Swiper.js (CSS) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         :root {
@@ -31,7 +28,6 @@
             line-height: 1.7;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
         }
         body.fade-in { opacity: 1; }
 
@@ -53,91 +49,50 @@
         }
         .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
 
-        /* --- Style dla karuzeli Swiper.js --- */
-        .swiper-container {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 300px;
-            height: 450px;
-            transition: transform 0.4s ease, filter 0.4s ease;
-            filter: brightness(0.6);
-            border-radius: 12px;
-            overflow: hidden;
+        /* --- ZMIANA: Użycie CSS Grid dla lepszego układu --- */
+        .gallery { 
+            display: grid;
+            /* Tworzy responsywne kolumny: 2 na dużych ekranach, 1 na mniejszych */
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px; 
+            padding: 20px; 
         }
         
-        .swiper-slide a {
+        a.gallery-item {
+            /* Usunięto właściwości flex, ponieważ używamy teraz Grid */
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            background-color: var(--color-surface);
             display: block;
-            width: 100%;
-            height: 100%;
             position: relative;
             text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        a.gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.5), 0 0 30px rgba(78, 154, 241, 0.4);
         }
+        a.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        a.gallery-item:hover img { transform: scale(1.05); }
         
-        .swiper-slide .title {
+        .gallery-item .title {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
             color: #fff;
-            padding: 40px 25px 25px;
+            padding: 25px;
             font-family: var(--font-heading);
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            text-align: center;
-            transition: opacity 0.3s ease;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
         }
-
-        .swiper-slide-active {
-            filter: brightness(1);
-            transform: scale(1.1);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 30px rgba(78, 154, 241, 0.3);
+        a.gallery-item:hover .title {
+            transform: translateY(0);
         }
-        
-        /* Style dla strzałek nawigacji */
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: var(--color-primary);
-            background-color: rgba(30, 30, 30, 0.5);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            transition: background-color 0.3s ease;
-        }
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            background-color: rgba(30, 30, 30, 0.8);
-        }
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        
-        /* Style dla paginacji (kropek) */
-        .swiper-pagination-bullet {
-            background-color: var(--color-text-muted);
-            opacity: 0.7;
-        }
-        .swiper-pagination-bullet-active {
-            background-color: var(--color-primary);
-            opacity: 1;
-        }
-
-        /* --- Koniec styli dla karuzeli --- */
         
         footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; border-top: 1px solid #2a2a2a; }
         footer a { color: var(--color-primary); }
@@ -149,22 +104,15 @@
             .project-header { padding: 60px 20px; }
             .project-header h1 { font-size: 2.5rem; }
             .project-header p { font-size: 1rem; }
-            .swiper-slide {
-                width: 250px;
-                height: 375px;
-            }
         }
          @media (max-width: 480px) {
             .project-header h1 {
                 font-size: 2.2rem;
                 line-height: 1.3;
             }
-            .swiper-slide {
-                width: 220px;
-                height: 330px;
-            }
-            .swiper-button-next, .swiper-button-prev {
-                display: none; /* Ukryj strzałki na małych ekranach */
+            /* Dostosowanie minimalnej szerokości dla siatki na bardzo małych ekranach */
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
     </style>
@@ -182,46 +130,26 @@
     <main>
         <div class="project-header animate-on-scroll">
             <h1>SPORT</h1>
-            <p>Reportaże z wydarzeń sportowych. Przesuwaj, aby zobaczyć realizacje.</p>
+            <p>Reportaże z wydarzeń sportowych. Kliknij w wybraną realizację, aby zobaczyć galerię.</p>
         </div>
 
-        <!-- Karuzela Swiper -->
-        <div class="swiper-container animate-on-scroll">
-            <div class="swiper-wrapper">
-                <!-- Slajd 1 -->
-                <div class="swiper-slide">
-                    <a href="projekt-limanovia.html">
-                        <img src="zdjecia/DSC01730.jpg" alt="MKS Limanovia">
-                        <div class="title">MKS Limanovia</div>
-                    </a>
-                </div>
-                <!-- Slajd 2 -->
-                <div class="swiper-slide">
-                    <a href="projekt-turbacz.html">
-                        <img src="zdjecia/DSC00921.jpg" alt="KS Turbacz">
-                        <div class="title">KS Turbacz</div>
-                    </a>
-                </div>
-                <!-- Slajd 3 -->
-                <div class="swiper-slide">
-                    <a href="projekt-cracovia.html">
-                        <img src="zdjecia/DSC00035.jpg" alt="Cracovia">
-                        <div class="title">Cracovia</div>
-                    </a>
-                </div>
-                <!-- Slajd 4 -->
-                <div class="swiper-slide">
-                    <a href="projekt-podhale.html">
-                        <img src="zdjecia/DSC06040-3.jpg" alt="Podhale Nowy Targ">
-                        <div class="title">Podhale Nowy Targ</div>
-                    </a>
-                </div>
-            </div>
-            <!-- Dodaj paginację -->
-            <div class="swiper-pagination"></div>
-            <!-- Dodaj przyciski nawigacyjne -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+        <div class="gallery">
+            <a href="projekt-limanovia.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC01730.jpg" alt="MKS Limanovia">
+                <span class="title">MKS Limanovia</span>
+            </a>
+            <a href="projekt-turbacz.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC00921.jpg" alt="KS Turbacz">
+                <span class="title">KS Turbacz</span>
+            </a>
+            <a href="projekt-cracovia.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC00035.jpg" alt="Cracovia">
+                <span class="title">Cracovia</span>
+            </a>
+             <a href="projekt-podhale.html" class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC06040-3.jpg" alt="Podhale Nowy Targ">
+                <span class="title">Podhale Nowy Targ</span>
+            </a>
         </div>
     </main>
     
@@ -229,38 +157,10 @@
         <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
     </footer>
     
-    <!-- Dodanie biblioteki Swiper.js (JavaScript) -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('fade-in');
 
-            // Inicjalizacja Swiper.js
-            const swiper = new Swiper('.swiper-container', {
-                effect: 'coverflow',
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: 'auto',
-                loop: true,
-                coverflowEffect: {
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
-
-            // Twoje istniejące skrypty
             window.addEventListener('pageshow', function(event) {
                 if (event.persisted) {
                     document.body.classList.remove('fade-in');
