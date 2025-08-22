@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podhale Nowy Targ - Kacper Loch</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --color-primary: #4e9af1;
+            --color-bg: #121212;
+            --color-surface: #1e1e1e;
+            --color-text: #e0e0e0;
+            --color-text-muted: #a0a0a0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        body.fade-in { opacity: 1; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: rgba(18, 18, 18, 0.7); padding: 1rem 0; border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header .logo { font-family: var(--font-heading); font-size: 1.4rem; color: #fff; font-weight: 600; margin: 0; }
+        header nav a { color: var(--color-text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s ease; font-weight: 500; }
+        header nav a:hover { color: #fff; }
+
+        .project-header { text-align: center; padding: 100px 20px 60px; }
+        .project-header h1 { 
+            font-family: var(--font-heading); 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            line-height: 1.2;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(78, 154, 241, 0.2);
+        }
+        
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 20px; padding: 20px; }
+        
+        .gallery-item { position: relative; overflow: hidden; cursor: pointer; border-radius: 12px; box-shadow: 0 15px 30px rgba(0,0,0,0.3); background-color: var(--color-surface); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease, filter 0.4s ease; }
+        .gallery-item:hover img { transform: scale(1.05); filter: brightness(0.6); }
+        .gallery-item .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; opacity: 0; transition: opacity 0.4s ease; pointer-events: none; }
+        .gallery-item:hover .overlay { opacity: 1; }
+        .gallery-item .overlay svg { width: 40px; height: 40px; margin-bottom: 10px; }
+        .gallery-item .overlay span { font-family: var(--font-heading); font-weight: 600; }
+        .lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); display: flex; justify-content: center; align-items: center; z-index: 2000; visibility: hidden; opacity: 0; transition: opacity 0.4s ease, visibility 0.4s ease; }
+        .lightbox.active { visibility: visible; opacity: 1; }
+        .lightbox-content { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        .lightbox img { max-width: 90%; max-height: 85%; box-shadow: 0 0 80px rgba(255, 255, 255, 0.25); border-radius: 8px; user-select: none; -webkit-user-drag: none; transition: opacity 0.3s ease-in-out; }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.3); color: #fff; border: none; font-size: 2rem; padding: 15px; cursor: pointer; transition: background 0.3s ease; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; }
+        .lightbox-nav:hover { background: rgba(0,0,0,0.6); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        .lightbox .close-button { position: absolute; top: 25px; right: 35px; font-size: 3rem; color: #fff; cursor: pointer; line-height: 1; transition: transform 0.2s ease, color 0.2s ease; z-index: 2001; }
+        .lightbox .close-button:hover { transform: scale(1.1); color: var(--color-primary); }
+        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; }
+        footer a { color: var(--color-primary); }
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 768px) { .project-header { padding: 60px 20px; } .project-header h1 { font-size: 2.5rem; } .project-header p { font-size: 1rem; } .lightbox-nav { padding: 10px; width: 40px; height: 40px; font-size: 1.5rem; } .lightbox-prev { left: 10px; } .lightbox-next { right: 10px; } }
+        @media (max-width: 480px) { .gallery { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Kacper Loch | sq_photo</h1>
+            <nav>
+                <a href="realizacja-mecz.html">← Powrót do Sportu</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="project-header animate-on-scroll">
+            <h1>Podhale Nowy Targ</h1>
+        </div>
+
+        <div class="gallery">
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC06040-3.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC06174-4.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC05850-4.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+             <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC05833-5.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC06184-3.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC05943-8.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC05889-4.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+            <div class="gallery-item animate-on-scroll">
+                <img src="zdjecia/DSC06032-7.jpg" alt="Podhale Nowy Targ">
+                <div class="overlay"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Powiększ</span></div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    
+    <div class="lightbox" id="lightbox">
+        <span class="close-button" id="close-button">&times;</span>
+        <button class="lightbox-nav lightbox-prev" id="prev-button">&lt;</button>
+        <div class="lightbox-content">
+            <img src="" alt="Powiększone zdjęcie" id="lightbox-image">
+        </div>
+        <button class="lightbox-nav lightbox-next" id="next-button">&gt;</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('fade-in');
+            window.addEventListener('pageshow', function(event) { if (event.persisted) { document.body.classList.remove('fade-in'); setTimeout(() => document.body.classList.add('fade-in'), 10); } });
+            document.querySelectorAll('a[href]').forEach(link => { if (link.hostname === window.location.hostname && !link.getAttribute('href').startsWith('#') && link.target !== '_blank') { link.addEventListener('click', e => { e.preventDefault(); const destination = new URL(link.getAttribute('href'), window.location.href).href; document.body.classList.remove('fade-in'); setTimeout(() => { window.location.assign(destination); }, 500); }); } });
+            const galleryItems = document.querySelectorAll('.gallery-item'); const lightbox = document.getElementById('lightbox'); const lightboxImage = document.getElementById('lightbox-image'); const closeButton = document.getElementById('close-button'); const prevButton = document.getElementById('prev-button'); const nextButton = document.getElementById('next-button'); const images = Array.from(galleryItems).map(item => item.querySelector('img').src); let currentIndex = 0;
+            function showImage(index) { lightboxImage.style.opacity = '0'; setTimeout(() => { currentIndex = index; lightboxImage.src = images[currentIndex]; lightboxImage.style.opacity = '1'; }, 300); }
+            function openLightbox(index) { currentIndex = index; lightboxImage.src = images[currentIndex]; lightbox.classList.add('active'); }
+            function closeLightbox() { lightbox.classList.remove('active'); }
+            function showNext() { if (!images || images.length === 0) return; const nextIndex = (currentIndex + 1) % images.length; showImage(nextIndex); }
+            function showPrev() { if (!images || images.length === 0) return; const prevIndex = (currentIndex - 1 + images.length) % images.length; showImage(prevIndex); }
+            galleryItems.forEach((item, index) => { item.addEventListener('click', () => { openLightbox(index); }); });
+            closeButton.addEventListener('click', closeLightbox); nextButton.addEventListener('click', showNext); prevButton.addEventListener('click', showPrev);
+            document.addEventListener('keydown', (e) => { if (lightbox.classList.contains('active')) { if (e.key === 'ArrowRight') showNext(); if (e.key === 'ArrowLeft') showPrev(); if (e.key === 'Escape') closeLightbox(); } });
+            let isDragging = false, startX = 0, walk = 0;
+            const startDrag = (e) => { isDragging = true; startX = e.pageX || e.touches[0].pageX; };
+            const drag = (e) => { if (!isDragging) return; e.preventDefault(); const x = e.pageX || e.touches[0].pageX; walk = x - startX; };
+            const endDrag = () => { if (!isDragging) return; isDragging = false; if (walk < -50) { showNext(); } else if (walk > 50) { showPrev(); } };
+            lightboxImage.addEventListener('mousedown', startDrag); lightboxImage.addEventListener('touchstart', startDrag); lightboxImage.addEventListener('mousemove', drag); lightboxImage.addEventListener('touchmove', drag); document.addEventListener('mouseup', endDrag); document.addEventListener('touchend', endDrag);
+            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } }); }, { threshold: 0.1 }); const targets = document.querySelectorAll('.animate-on-scroll'); targets.forEach(target => { observer.observe(target); });
+        });
+    </script>
+</body>
+</html>
