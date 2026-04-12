@@ -3,150 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVENTY - Kacper Loch</title>
-    
+    <title>Eventy — Kacper Loch sq_photo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --color-primary: #4e9af1;
-            --color-bg: #121212;
-            --color-surface: #1e1e1e;
-            --color-text: #e0e0e0;
-            --color-text-muted: #a0a0a0;
-        }
-
-        body {
-            font-family: var(--font-body);
-            margin: 0;
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.7;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        body.fade-in { opacity: 1; }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: rgba(18, 18, 18, 0.7); padding: 1rem 0; border-bottom: 1px solid #2a2a2a; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(12px); }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        header .logo { font-family: var(--font-heading); font-size: 1.4rem; color: #fff; font-weight: 600; margin: 0; }
-        header nav a { color: var(--color-text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s ease; font-weight: 500; }
-        header nav a:hover { color: #fff; }
-
-        .project-header { text-align: center; padding: 100px 20px 60px; }
-        .project-header h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; line-height: 1.2; text-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 12px rgba(78, 154, 241, 0.2); }
-        .project-header p { max-width: 700px; margin: 0 auto; font-size: 1.15rem; color: var(--color-text-muted); }
-
-        .gallery { 
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px; 
-            padding: 20px; 
-        }
-        
-        a.gallery-item {
-            flex: 0 1 600px;
-            max-width: 100%;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-            background-color: var(--color-surface);
-            display: block;
-            position: relative;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        a.gallery-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 45px rgba(0,0,0,0.5), 0 0 30px rgba(78, 154, 241, 0.4);
-        }
-        a.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        a.gallery-item:hover img { transform: scale(1.05); }
-        
-        .gallery-item .title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, transparent);
-            color: #fff;
-            padding: 25px;
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-        a.gallery-item:hover .title {
-            transform: translateY(0);
-        }
-        
-        footer { text-align: center; padding: 50px 20px; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.9rem; margin-top: 80px; border-top: 1px solid #2a2a2a; }
-        footer a { color: var(--color-primary); }
-
-        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 768px) {
-            .project-header { padding: 60px 20px; }
-            .project-header h1 { font-size: 2.5rem; }
-            .project-header p { font-size: 1rem; }
-            a.gallery-item {
-                flex-basis: 350px;
-            }
-        }
-         @media (max-width: 480px) {
-            .gallery { 
-                grid-template-columns: 1fr;
-            }
-            .project-header h1 {
-                font-size: 2.2rem;
-                line-height: 1.3;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"><span class="cursor-label">VIEW</span></div>
+<canvas id="bg-canvas"></canvas>
+<div class="content-wrapper">
     <header>
         <div class="container">
-            <h1 class="logo">Kacper Loch | sq_photo</h1>
-            <nav>
-                <a href="index.html">← Powrót do Strony Głównej</a>
-            </nav>
+            <h1 class="logo">Kacper Loch <span>/ sq_photo</span></h1>
+            <nav><a href="index.html" class="back-link">Strona główna</a></nav>
         </div>
     </header>
-
     <main>
-        <div class="project-header animate-on-scroll">
-            <h1>EVENTY</h1>
-            <p>Relacje z wydarzeń masowych. Kliknij w wybraną realizację, aby zobaczyć galerię.</p>
+        <div class="page-title animate-on-scroll">
+            <span class="eyebrow">02 — Realizacje</span>
+            <h1>Eventy</h1>
+            <p>Reportaże z eventów i wydarzeń specjalnych. Kliknij w wybraną realizację.</p>
         </div>
-
         <div class="gallery">
             <a href="projekt-charytatywny.html" class="gallery-item animate-on-scroll">
-                <img src="zdjecia/DSC03639.jpg" alt="Mecz charytatywny">
-                <span class="title">MECZ CHARYTATYWNY</span>
+                <img src="zdjecia/DSC03639.jpg" alt="Mecz Charytatywny Ekipa Fantasy" loading="lazy">
+                <div class="title"><div><span class="gold-tag">Event</span>Mecz Charytatywny — Ekipa Fantasy</div></div>
             </a>
         </div>
     </main>
-    
     <footer>
         <p>&copy; 2025 Kacper Loch. Wszelkie prawa zastrzeżone.</p>
+        <span class="footer-brand">sq_photo</span>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('fade-in');
-            window.addEventListener('pageshow', function(event) { if (event.persisted) { document.body.classList.remove('fade-in'); setTimeout(() => document.body.classList.add('fade-in'), 10); } });
-            document.querySelectorAll('a[href]').forEach(link => { if (link.hostname === window.location.hostname && !link.getAttribute('href').startsWith('#') && link.target !== '_blank') { link.addEventListener('click', e => { e.preventDefault(); const destination = new URL(link.getAttribute('href'), window.location.href).href; document.body.classList.remove('fade-in'); setTimeout(() => { window.location.assign(destination); }, 500); }); } });
-            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } }); }, { threshold: 0.1 }); const targets = document.querySelectorAll('.animate-on-scroll'); targets.forEach(target => { observer.observe(target); });
-        });
-    </script>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
