@@ -829,16 +829,17 @@ a.gallery-item:hover .title { opacity:1; transform:none; }
 
 .photo-grid {
     columns: 3;
-    column-gap: 4px;
-    padding: 0 0 100px;
+    column-gap: 10px;
+    padding: 0 48px 100px;
 }
 .photo-item {
     position: relative;
     overflow: hidden;
     cursor: none;
     break-inside: avoid;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     background: var(--surface);
+    border-radius: 2px;
 }
 .photo-item img {
     width: 100%;
@@ -1126,7 +1127,7 @@ footer .footer-brand {
 
 @media (max-width: 900px) {
     .gallery { grid-template-columns: 1fr; }
-    .photo-grid { grid-template-columns: 1fr; }
+    .photo-grid { columns: 2; padding: 0 24px 80px; }
     .about-snap { grid-template-columns: 1fr; gap: 48px; }
     .about-snap-right { height: 380px; }
     .carousel-slide { flex: 0 0 88vw; height: 66vh; }
@@ -1162,7 +1163,7 @@ footer .footer-brand {
     nav a { font-size: 0.7rem; letter-spacing: 0.08em; }
     nav ul { gap: 16px; }
     .carousel-slide { flex: 0 0 94vw; height: 52vh; }
-    .photo-grid { grid-template-columns: 1fr; }
+    .photo-grid { columns: 1; padding: 0 16px 60px; }
     .gallery { grid-template-columns: 1fr; }
 }
 
