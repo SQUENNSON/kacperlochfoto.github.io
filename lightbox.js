@@ -1,4 +1,6 @@
 /* Shared lightbox logic for projekt pages */
+window._lbLoaded = true;
+
 document.addEventListener('DOMContentLoaded', () => {
     const items    = document.querySelectorAll('.photo-item');
     const lightbox = document.getElementById('lightbox');

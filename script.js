@@ -242,21 +242,25 @@ class CustomCursor {
             this.ring.style.opacity = '1';
         });
 
-        const addState = (sel, cls, rr) => {
+        const label = this.ring.querySelector('.cursor-label');
+
+        const addState = (sel, cls, rr, txt) => {
             document.querySelectorAll(sel).forEach(el => {
                 el.addEventListener('mouseenter', () => {
                     this.ring.classList.add(cls);
                     this.trr = rr;
+                    if (txt && label) label.textContent = txt;
                 });
                 el.addEventListener('mouseleave', () => {
                     this.ring.classList.remove(cls);
                     this.trr = 22;
+                    if (txt && label) label.textContent = 'VIEW';
                 });
             });
         };
 
         addState('a:not(.carousel-slide):not(.gallery-item), button, .carousel-btn', 'hover-link', 30);
-        addState('.photo-item, .carousel-slide, a.gallery-item, .showcase-item', 'hover-view', 40);
+        addState('.photo-item, .carousel-slide, a.gallery-item, .showcase-item', 'hover-view', 40, 'VIEW');
     }
 
     tick() {
@@ -372,8 +376,8 @@ function initPageTransitions() {
             if (link._wasDragging) return;
             e.preventDefault();
             const dest = new URL(href, window.location.href).href;
-            document.body.classList.remove('fade-in');
-            setTimeout(() => window.location.assign(dest), 520);
+            document.body.classList.add('page-exit');
+            setTimeout(() => window.location.assign(dest), 320);
         });
     });
 }
@@ -419,6 +423,9 @@ class Carousel {
             const t = n => String(n).padStart(2, '0');
             this.counter.textContent = `${p(this.current)} / ${t(this.total)}`;
         }
+        // Update dots
+        document.querySelectorAll('.carousel-dot')
+            .forEach((d, i) => d.classList.toggle('is-active', i === this.current));
     }
 
     bindEvents() {
@@ -430,10 +437,18 @@ class Carousel {
             if (e.key === 'ArrowRight') this.go(this.current + 1);
         });
 
-        // Mouse drag
-        this.vp.addEventListener('mousedown',  e => this.dragStart(e.clientX));
-        window.addEventListener('mousemove',   e => { if (this.drag.on) this.dragMove(e.clientX); });
-        window.addEventListener('mouseup',     e => { if (this.drag.on) this.dragEnd(e.clientX); });
+        // Mouse drag — tylko lewy przycisk, blokuj natywne drag przeglądarki
+        this.vp.addEventListener('mousedown', e => {
+            if (e.button !== 0) return;
+            e.preventDefault();
+            this.dragStart(e.clientX);
+        });
+        window.addEventListener('mousemove', e => { if (this.drag.on) this.dragMove(e.clientX); });
+        window.addEventListener('mouseup',   e => { if (this.drag.on) this.dragEnd(e.clientX); });
+        // Anuluj drag jeśli mysz opuści okno przeglądarki
+        window.addEventListener('mouseleave', () => {
+            if (this.drag.on) this.dragEnd(this.drag.startX);
+        });
 
         // Touch
         this.vp.addEventListener('touchstart', e => this.dragStart(e.touches[0].clientX), { passive: true });
@@ -474,6 +489,7 @@ class Carousel {
 /* ── LIGHTBOX ─────────────────────────────────────────────── */
 
 function initLightbox() {
+    if (window._lbLoaded) return; // lightbox.js handles this page
     const items   = document.querySelectorAll('.photo-item');
     const lb      = document.getElementById('lightbox');
     const lbImg   = document.getElementById('lightbox-image');
