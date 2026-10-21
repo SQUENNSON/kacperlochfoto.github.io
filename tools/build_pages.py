@@ -35,7 +35,6 @@ NAV_OUT = {page.key: page.out for page in PAGES}
 
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
-PAIR_WINDOW = 8  # jak daleko pionowe zdjecie szuka pionowej pary
 
 
 def _vertical(photo: dict) -> bool:
@@ -45,7 +44,7 @@ def _vertical(photo: dict) -> bool:
 def pair_rows(photos: list[dict]) -> list[list[dict]]:
     """Wiersze po 2 zdjecia; pionowe laczy w pary z pionowymi, ostatnie nieparzyste zostaje samo.
 
-    Wiersz od pionowego, a dalej poziomy: wciaga najblizszy pionowy z okna PAIR_WINDOW (jesli jest).
+    Wiersz od pionowego, a dalej poziomy: wciaga najblizszy pozniejszy pionowy (gdziekolwiek jest).
     Wiersz od poziomego, a dalej pionowy: bierze najblizszy poziomy, pionowy otwiera nastepny wiersz.
     """
     rest = list(photos)
@@ -57,7 +56,7 @@ def pair_rows(photos: list[dict]) -> list[list[dict]]:
             break
         pick = 0
         if _vertical(first) and not _vertical(rest[0]):
-            pick = next((i for i, ph in enumerate(rest[:PAIR_WINDOW]) if _vertical(ph)), 0)
+            pick = next((i for i, ph in enumerate(rest) if _vertical(ph)), 0)
         elif not _vertical(first) and _vertical(rest[0]):
             pick = next((i for i, ph in enumerate(rest) if not _vertical(ph)), 0)
         rows.append([first, rest.pop(pick)])

@@ -280,15 +280,22 @@ def test_pair_rows_pairs_verticals():
     assert _slugs(rows) == [["H1", "H2"], ["V1", "V2"], ["H3", "H4"]]
     _check_invariants(photos, rows)
 
-    # pionowy wciąga najbliższy kolejny pionowy z okna 8 elementów...
+    # pionowy wciąga najbliższy kolejny pionowy
     photos = [_ph(s) for s in ("V1", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "V2", "H8")]
     rows = pair_rows(photos)
     assert _slugs(rows)[0] == ["V1", "V2"]
     _check_invariants(photos, rows)
-    # ...ale nie spoza okna: wtedy bierze następny element
-    photos = [_ph(s) for s in ("V1", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "V2")]
+
+
+def test_pair_rows_pairs_far_apart_verticals():
+    """Pionowe łączą się z pionowymi bez względu na odległość (jak sport-dsc00109 i sport-dsc06738)."""
+    from build_pages import pair_rows
+
+    hs = [f"H{i}" for i in range(1, 41)]
+    photos = [_ph(s) for s in ["V1", *hs[:30], "V2", *hs[30:], "V3", "H41", "V4"]]
     rows = pair_rows(photos)
-    assert _slugs(rows)[0] == ["V1", "H1"]
+    assert ["V1", "V2"] in _slugs(rows) and ["V3", "V4"] in _slugs(rows)
+    assert all(not (r[0].startswith("V") ^ r[-1].startswith("V")) for r in _slugs(rows))
     _check_invariants(photos, rows)
 
 
