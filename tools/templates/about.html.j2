@@ -1,0 +1,11 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<article class="page about">
+  <h1 class="eyebrow">{{ page.heading }}</h1>
+  <p class="lead">{{ page.lead|nbsp }}</p>
+{% for paragraph in page.paragraphs %}
+  <p>{{ paragraph|nbsp }}</p>
+{% endfor %}
+</article>
+{% block photos %}{% endblock %}
+{% endblock %}

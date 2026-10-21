@@ -1,0 +1,13 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<section class="page contact">
+  <p class="eyebrow">Kontakt</p>
+  <h1 class="display">{{ page.heading }}</h1>
+  <ul class="channels" role="list">
+    <li><span class="eyebrow">Telefon</span><a class="big-link tel" href="{{ site.phone_href }}">{{ site.phone }}</a></li>
+    <li><span class="eyebrow">E-mail</span><a class="big-link" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+    <li><span class="eyebrow">Instagram</span><a class="big-link" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ site.instagram_handle }}</a></li>
+  </ul>
+  <p class="where">{{ site.location }}</p>
+</section>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html.j2" %}
+{% block head_first %}
+<script>document.write('<base href="'+(location.pathname.indexOf('/kacperlochfoto.github.io/')===0?'/kacperlochfoto.github.io/':'/')+'">')</script>
+{% endblock %}
+{% block main %}
+<section class="page notfound">
+  <p class="eyebrow">Błąd 404</p>
+  <h1 class="display">{{ page.heading }}</h1>
+  <a class="big-link" href="{{ p or './' }}">Wróć na stronę główną</a>
+</section>
+{% endblock %}
