@@ -188,12 +188,12 @@ function onUp(e) {
   if (pointers.size > 0) {
     // po pinchu jeden palec zostaje: dalej przesuwa od bieżącego stanu
     const [p] = [...pointers.values()];
-    gesture = { x: p.x, y: p.y, t: e.timeStamp, start: state, moved: true, pinch: false, onImg: false };
+    gesture = { x: p.x, y: p.y, t: e.timeStamp, start: state, moved: true, pinch: false, onImg: false, afterPinch: true };
     return;
   }
   gesture = null;
   setGesture(false);
-  if (e.type === "pointercancel" || g.pinch) return;
+  if (e.type === "pointercancel" || g.pinch || g.afterPinch) return;
   const dx = e.clientX - g.x;
   const dy = e.clientY - g.y;
   const dir = isSwipe(dx, dy, e.timeStamp - g.t, g.start.s);
