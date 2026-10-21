@@ -1,0 +1,5019 @@
+{
+ "generated": "2026-10-21T13:45:43",
+ "photos": [
+  {
+   "slug": "sport-2b9ae30e",
+   "category": "sport",
+   "source": "2B9AE30E-EB7B-4CBC-9673-F3754CC0FA64.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#6d3d3d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-2b9ae30e-800.avif",
+     "bytes": 50321
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-2b9ae30e-1440.jpg",
+     "bytes": 203948
+    }
+   ]
+  },
+  {
+   "slug": "sport-342537b1",
+   "category": "sport",
+   "source": "342537B1-3856-4DBA-8FE9-91FACF56C708.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#5c6554",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-342537b1-800.avif",
+     "bytes": 70149
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-342537b1-1440.jpg",
+     "bytes": 256277
+    }
+   ]
+  },
+  {
+   "slug": "sport-3f80d493",
+   "category": "sport",
+   "source": "3F80D493-5045-489F-9B1A-D0A6D37F8461.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#6d464f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-3f80d493-800.avif",
+     "bytes": 48942
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-3f80d493-1440.jpg",
+     "bytes": 192413
+    }
+   ]
+  },
+  {
+   "slug": "sport-4ecfee0e",
+   "category": "sport",
+   "source": "4ECFEE0E-1564-4620-950C-FAAD46BC2965.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#5a624d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-4ecfee0e-800.avif",
+     "bytes": 88984
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-4ecfee0e-1440.jpg",
+     "bytes": 306479
+    }
+   ]
+  },
+  {
+   "slug": "sport-847c5e40",
+   "category": "sport",
+   "source": "847C5E40-9D21-4FAE-8826-93AED0788E8B.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#6d7153",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-847c5e40-800.avif",
+     "bytes": 96533
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-847c5e40-1440.jpg",
+     "bytes": 330637
+    }
+   ]
+  },
+  {
+   "slug": "sport-bbcaa356",
+   "category": "sport",
+   "source": "BBCAA356-6488-48C4-9A7D-B977B8901B6F.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#656356",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-bbcaa356-800.avif",
+     "bytes": 88591
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-bbcaa356-1440.jpg",
+     "bytes": 318438
+    }
+   ]
+  },
+  {
+   "slug": "sport-cdac0097",
+   "category": "sport",
+   "source": "CDAC0097-DBD7-48A1-898D-CDC4F0F5CD21.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#574b44",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-cdac0097-800.avif",
+     "bytes": 64363
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-cdac0097-1440.jpg",
+     "bytes": 239358
+    }
+   ]
+  },
+  {
+   "slug": "sport-d32e597e",
+   "category": "sport",
+   "source": "D32E597E-B74C-473C-AEEC-0ECA8BE55A33.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#646a5b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-d32e597e-800.avif",
+     "bytes": 85176
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-d32e597e-1440.jpg",
+     "bytes": 318072
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00035",
+   "category": "sport",
+   "source": "DSC00035.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7f7266",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00035-800.avif",
+     "bytes": 80140
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00035-1600.avif",
+     "bytes": 243606
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00035-3072.jpg",
+     "bytes": 1110017
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00109-2",
+   "category": "sport",
+   "source": "DSC00109-2.jpg",
+   "w": 3072,
+   "h": 2165,
+   "color": "#856673",
+   "variants": [
+    {
+     "w": 800,
+     "h": 564,
+     "file": "assets/photos/sport-dsc00109-2-800.avif",
+     "bytes": 38369
+    },
+    {
+     "w": 1600,
+     "h": 1128,
+     "file": "assets/photos/sport-dsc00109-2-1600.avif",
+     "bytes": 134989
+    },
+    {
+     "w": 3072,
+     "h": 2165,
+     "file": "assets/photos/sport-dsc00109-2-3072.jpg",
+     "bytes": 763828
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00109",
+   "category": "sport",
+   "source": "DSC00109.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#83606c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/sport-dsc00109-800.avif",
+     "bytes": 81146
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/sport-dsc00109-1600.avif",
+     "bytes": 342525
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/sport-dsc00109-2458.jpg",
+     "bytes": 1041146
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00115",
+   "category": "sport",
+   "source": "DSC00115.jpg",
+   "w": 3072,
+   "h": 2304,
+   "color": "#838896",
+   "variants": [
+    {
+     "w": 800,
+     "h": 600,
+     "file": "assets/photos/sport-dsc00115-800.avif",
+     "bytes": 36019
+    },
+    {
+     "w": 1600,
+     "h": 1200,
+     "file": "assets/photos/sport-dsc00115-1600.avif",
+     "bytes": 143111
+    },
+    {
+     "w": 3072,
+     "h": 2304,
+     "file": "assets/photos/sport-dsc00115-3072.jpg",
+     "bytes": 820114
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00169",
+   "category": "sport",
+   "source": "DSC00169.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#a1bdb4",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00169-800.avif",
+     "bytes": 87523
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00169-1600.avif",
+     "bytes": 277620
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00169-3072.jpg",
+     "bytes": 1163692
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00259",
+   "category": "sport",
+   "source": "DSC00259.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#678961",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00259-800.avif",
+     "bytes": 66264
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00259-1600.avif",
+     "bytes": 198033
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00259-3072.jpg",
+     "bytes": 903819
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00269",
+   "category": "sport",
+   "source": "DSC00269.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#949aa3",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00269-800.avif",
+     "bytes": 34661
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00269-1600.avif",
+     "bytes": 121319
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00269-3072.jpg",
+     "bytes": 569722
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00303",
+   "category": "sport",
+   "source": "DSC00303.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6a8253",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00303-800.avif",
+     "bytes": 53057
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00303-1600.avif",
+     "bytes": 193340
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00303-3072.jpg",
+     "bytes": 918732
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00420",
+   "category": "sport",
+   "source": "DSC00420.jpg",
+   "w": 2918,
+   "h": 2335,
+   "color": "#8e6a71",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00420-800.avif",
+     "bytes": 63837
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00420-1600.avif",
+     "bytes": 407331
+    },
+    {
+     "w": 2918,
+     "h": 2335,
+     "file": "assets/photos/sport-dsc00420-2918.jpg",
+     "bytes": 1189477
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00440",
+   "category": "sport",
+   "source": "DSC00440.jpg",
+   "w": 3072,
+   "h": 2033,
+   "color": "#805c5f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 529,
+     "file": "assets/photos/sport-dsc00440-800.avif",
+     "bytes": 60187
+    },
+    {
+     "w": 1600,
+     "h": 1059,
+     "file": "assets/photos/sport-dsc00440-1600.avif",
+     "bytes": 268340
+    },
+    {
+     "w": 3072,
+     "h": 2033,
+     "file": "assets/photos/sport-dsc00440-3072.jpg",
+     "bytes": 1175343
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00488",
+   "category": "sport",
+   "source": "DSC00488.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#3e5976",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00488-800.avif",
+     "bytes": 56580
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00488-1600.avif",
+     "bytes": 232717
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00488-3072.jpg",
+     "bytes": 1163445
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00547",
+   "category": "sport",
+   "source": "DSC00547.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#9aa089",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00547-800.avif",
+     "bytes": 42641
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00547-1600.avif",
+     "bytes": 154033
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00547-3072.jpg",
+     "bytes": 881559
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00790",
+   "category": "sport",
+   "source": "DSC00790.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#9fa096",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00790-800.avif",
+     "bytes": 59035
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00790-1600.avif",
+     "bytes": 220480
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00790-3072.jpg",
+     "bytes": 1090605
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc00921",
+   "category": "sport",
+   "source": "DSC00921.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#bbb9b9",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc00921-800.avif",
+     "bytes": 52748
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc00921-1600.avif",
+     "bytes": 167704
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc00921-3072.jpg",
+     "bytes": 730210
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01228",
+   "category": "sport",
+   "source": "DSC01228.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#656944",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01228-800.avif",
+     "bytes": 38256
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01228-1600.avif",
+     "bytes": 209781
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01228-3072.jpg",
+     "bytes": 1042449
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01343",
+   "category": "sport",
+   "source": "DSC01343.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#79815a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01343-800.avif",
+     "bytes": 76375
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01343-1600.avif",
+     "bytes": 257415
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01343-3072.jpg",
+     "bytes": 1186925
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01350",
+   "category": "sport",
+   "source": "DSC01350.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#748352",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01350-800.avif",
+     "bytes": 73156
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01350-1600.avif",
+     "bytes": 271502
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01350-3072.jpg",
+     "bytes": 1233962
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01355-2",
+   "category": "sport",
+   "source": "DSC01355-2.jpg",
+   "w": 3072,
+   "h": 1993,
+   "color": "#7d8484",
+   "variants": [
+    {
+     "w": 800,
+     "h": 519,
+     "file": "assets/photos/sport-dsc01355-2-800.avif",
+     "bytes": 55365
+    },
+    {
+     "w": 1600,
+     "h": 1038,
+     "file": "assets/photos/sport-dsc01355-2-1600.avif",
+     "bytes": 168187
+    },
+    {
+     "w": 3072,
+     "h": 1993,
+     "file": "assets/photos/sport-dsc01355-2-3072.jpg",
+     "bytes": 690402
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01551",
+   "category": "sport",
+   "source": "DSC01551.jpg",
+   "w": 2918,
+   "h": 2335,
+   "color": "#556a5d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01551-800.avif",
+     "bytes": 59492
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01551-1600.avif",
+     "bytes": 331236
+    },
+    {
+     "w": 2918,
+     "h": 2335,
+     "file": "assets/photos/sport-dsc01551-2918.jpg",
+     "bytes": 1045461
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01681",
+   "category": "sport",
+   "source": "DSC01681.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6c8177",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01681-800.avif",
+     "bytes": 36965
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01681-1600.avif",
+     "bytes": 233426
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01681-3072.jpg",
+     "bytes": 970347
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01751-2",
+   "category": "sport",
+   "source": "DSC01751-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6e5864",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01751-2-800.avif",
+     "bytes": 53735
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01751-2-1600.avif",
+     "bytes": 191404
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01751-2-3072.jpg",
+     "bytes": 1062918
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01864",
+   "category": "sport",
+   "source": "DSC01864.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8d8275",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01864-800.avif",
+     "bytes": 51658
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01864-1600.avif",
+     "bytes": 180396
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01864-3072.jpg",
+     "bytes": 935068
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01903",
+   "category": "sport",
+   "source": "DSC01903.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#caac9a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01903-800.avif",
+     "bytes": 41081
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01903-1600.avif",
+     "bytes": 147734
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01903-3072.jpg",
+     "bytes": 762328
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01904",
+   "category": "sport",
+   "source": "DSC01904.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#797d68",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01904-800.avif",
+     "bytes": 63646
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01904-1600.avif",
+     "bytes": 214826
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01904-3072.jpg",
+     "bytes": 1118761
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01936",
+   "category": "sport",
+   "source": "DSC01936.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#828978",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01936-800.avif",
+     "bytes": 63763
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01936-1600.avif",
+     "bytes": 177702
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01936-3072.jpg",
+     "bytes": 795914
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc01937",
+   "category": "sport",
+   "source": "DSC01937.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5c5f48",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc01937-800.avif",
+     "bytes": 59335
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc01937-1600.avif",
+     "bytes": 178413
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc01937-3072.jpg",
+     "bytes": 899160
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc02033",
+   "category": "sport",
+   "source": "DSC02033.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8e9cae",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc02033-800.avif",
+     "bytes": 46462
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc02033-1600.avif",
+     "bytes": 198258
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc02033-3072.jpg",
+     "bytes": 925143
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc02049",
+   "category": "sport",
+   "source": "DSC02049.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6d775e",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc02049-800.avif",
+     "bytes": 94859
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc02049-1600.avif",
+     "bytes": 290475
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc02049-3072.jpg",
+     "bytes": 1117575
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc02071",
+   "category": "sport",
+   "source": "DSC02071.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#888863",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc02071-800.avif",
+     "bytes": 47317
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc02071-1600.avif",
+     "bytes": 145700
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc02071-3072.jpg",
+     "bytes": 756997
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc02096",
+   "category": "sport",
+   "source": "DSC02096.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#aeb899",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc02096-800.avif",
+     "bytes": 32959
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc02096-1600.avif",
+     "bytes": 148242
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc02096-3072.jpg",
+     "bytes": 906209
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc02167",
+   "category": "sport",
+   "source": "DSC02167.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#96917b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc02167-800.avif",
+     "bytes": 48663
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc02167-1600.avif",
+     "bytes": 238518
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc02167-3072.jpg",
+     "bytes": 1154594
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc02798",
+   "category": "sport",
+   "source": "DSC02798.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a835c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc02798-800.avif",
+     "bytes": 81327
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc02798-1600.avif",
+     "bytes": 283686
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc02798-3072.jpg",
+     "bytes": 1213675
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc03020",
+   "category": "sport",
+   "source": "DSC03020.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#887e82",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc03020-800.avif",
+     "bytes": 72151
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc03020-1600.avif",
+     "bytes": 208344
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc03020-3072.jpg",
+     "bytes": 994104
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc03146",
+   "category": "sport",
+   "source": "DSC03146.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7b874c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc03146-800.avif",
+     "bytes": 83466
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc03146-1600.avif",
+     "bytes": 246258
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc03146-3072.jpg",
+     "bytes": 970353
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc03766",
+   "category": "sport",
+   "source": "DSC03766.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#747d50",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc03766-800.avif",
+     "bytes": 70668
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc03766-1600.avif",
+     "bytes": 230092
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc03766-3072.jpg",
+     "bytes": 978037
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc03880",
+   "category": "sport",
+   "source": "DSC03880.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8e9464",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc03880-800.avif",
+     "bytes": 71328
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc03880-1600.avif",
+     "bytes": 248200
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc03880-3072.jpg",
+     "bytes": 1073743
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc04110-2",
+   "category": "sport",
+   "source": "DSC04110-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#637c4f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc04110-2-800.avif",
+     "bytes": 74490
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc04110-2-1600.avif",
+     "bytes": 250822
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc04110-2-3072.jpg",
+     "bytes": 1275091
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc04151",
+   "category": "sport",
+   "source": "DSC04151.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#687372",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc04151-800.avif",
+     "bytes": 64081
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc04151-1600.avif",
+     "bytes": 167914
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc04151-3072.jpg",
+     "bytes": 809771
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc04312",
+   "category": "sport",
+   "source": "DSC04312.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#908a5f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc04312-800.avif",
+     "bytes": 46096
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc04312-1600.avif",
+     "bytes": 147768
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc04312-3072.jpg",
+     "bytes": 834650
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc04394",
+   "category": "sport",
+   "source": "DSC04394.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#c18267",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc04394-800.avif",
+     "bytes": 72736
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc04394-1600.avif",
+     "bytes": 210391
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc04394-3072.jpg",
+     "bytes": 985641
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc04413",
+   "category": "sport",
+   "source": "DSC04413.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#607868",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc04413-800.avif",
+     "bytes": 72860
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc04413-1600.avif",
+     "bytes": 262480
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc04413-3072.jpg",
+     "bytes": 1268628
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc04819",
+   "category": "sport",
+   "source": "DSC04819.jpg",
+   "w": 3072,
+   "h": 2250,
+   "color": "#77888b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 586,
+     "file": "assets/photos/sport-dsc04819-800.avif",
+     "bytes": 59113
+    },
+    {
+     "w": 1600,
+     "h": 1172,
+     "file": "assets/photos/sport-dsc04819-1600.avif",
+     "bytes": 158931
+    },
+    {
+     "w": 3072,
+     "h": 2250,
+     "file": "assets/photos/sport-dsc04819-3072.jpg",
+     "bytes": 755899
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc05004",
+   "category": "sport",
+   "source": "DSC05004.jpg",
+   "w": 2918,
+   "h": 2335,
+   "color": "#798c7a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc05004-800.avif",
+     "bytes": 105191
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc05004-1600.avif",
+     "bytes": 352211
+    },
+    {
+     "w": 2918,
+     "h": 2335,
+     "file": "assets/photos/sport-dsc05004-2918.jpg",
+     "bytes": 1136737
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc05833",
+   "category": "sport",
+   "source": "DSC05833.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7b5f62",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc05833-800.avif",
+     "bytes": 94695
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc05833-1600.avif",
+     "bytes": 306441
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc05833-3072.jpg",
+     "bytes": 1312829
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc05932",
+   "category": "sport",
+   "source": "DSC05932.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#a5a09c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc05932-800.avif",
+     "bytes": 44949
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc05932-1600.avif",
+     "bytes": 136209
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc05932-3072.jpg",
+     "bytes": 769073
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc05943",
+   "category": "sport",
+   "source": "DSC05943.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8c8472",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc05943-800.avif",
+     "bytes": 74161
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc05943-1600.avif",
+     "bytes": 222341
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc05943-3072.jpg",
+     "bytes": 929086
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06032",
+   "category": "sport",
+   "source": "DSC06032.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#747879",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06032-800.avif",
+     "bytes": 77007
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06032-1600.avif",
+     "bytes": 253783
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06032-3072.jpg",
+     "bytes": 1107090
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06174",
+   "category": "sport",
+   "source": "DSC06174.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8b877a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06174-800.avif",
+     "bytes": 82806
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06174-1600.avif",
+     "bytes": 238080
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06174-3072.jpg",
+     "bytes": 964150
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06196",
+   "category": "sport",
+   "source": "DSC06196.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#af9a7f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06196-800.avif",
+     "bytes": 58643
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06196-1600.avif",
+     "bytes": 178440
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06196-3072.jpg",
+     "bytes": 945479
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06738",
+   "category": "sport",
+   "source": "DSC06738.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#86626d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/sport-dsc06738-800.avif",
+     "bytes": 74241
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/sport-dsc06738-1600.avif",
+     "bytes": 290696
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/sport-dsc06738-2458.jpg",
+     "bytes": 876089
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06892",
+   "category": "sport",
+   "source": "DSC06892.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7c7163",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06892-800.avif",
+     "bytes": 80342
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06892-1600.avif",
+     "bytes": 253837
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06892-3072.jpg",
+     "bytes": 1244047
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06898",
+   "category": "sport",
+   "source": "DSC06898.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a6e5f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06898-800.avif",
+     "bytes": 76218
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06898-1600.avif",
+     "bytes": 232608
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06898-3072.jpg",
+     "bytes": 1110205
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06900",
+   "category": "sport",
+   "source": "DSC06900.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#73746f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06900-800.avif",
+     "bytes": 53179
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06900-1600.avif",
+     "bytes": 190213
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06900-3072.jpg",
+     "bytes": 1063461
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06937",
+   "category": "sport",
+   "source": "DSC06937.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a8979",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06937-800.avif",
+     "bytes": 83968
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06937-1600.avif",
+     "bytes": 273632
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06937-3072.jpg",
+     "bytes": 1259429
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc06993",
+   "category": "sport",
+   "source": "DSC06993.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7d947a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc06993-800.avif",
+     "bytes": 80164
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc06993-1600.avif",
+     "bytes": 299692
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc06993-3072.jpg",
+     "bytes": 1356116
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07009",
+   "category": "sport",
+   "source": "DSC07009.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#83877f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07009-800.avif",
+     "bytes": 104220
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07009-1600.avif",
+     "bytes": 364290
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07009-3072.jpg",
+     "bytes": 1470672
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07109",
+   "category": "sport",
+   "source": "DSC07109.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#828757",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07109-800.avif",
+     "bytes": 82343
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07109-1600.avif",
+     "bytes": 282479
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07109-3072.jpg",
+     "bytes": 1274424
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07121-2",
+   "category": "sport",
+   "source": "DSC07121-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#567f62",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07121-2-800.avif",
+     "bytes": 79850
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07121-2-1600.avif",
+     "bytes": 250901
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07121-2-3072.jpg",
+     "bytes": 1099975
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07328",
+   "category": "sport",
+   "source": "DSC07328.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5a7d57",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07328-800.avif",
+     "bytes": 85193
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07328-1600.avif",
+     "bytes": 296368
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07328-3072.jpg",
+     "bytes": 1362040
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07456",
+   "category": "sport",
+   "source": "DSC07456.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#727d5b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07456-800.avif",
+     "bytes": 81266
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07456-1600.avif",
+     "bytes": 265754
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07456-3072.jpg",
+     "bytes": 1173294
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07468",
+   "category": "sport",
+   "source": "DSC07468.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#394e40",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07468-800.avif",
+     "bytes": 66345
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07468-1600.avif",
+     "bytes": 229940
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07468-3072.jpg",
+     "bytes": 1030831
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07481",
+   "category": "sport",
+   "source": "DSC07481.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5a6d4d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07481-800.avif",
+     "bytes": 92149
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07481-1600.avif",
+     "bytes": 324517
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07481-3072.jpg",
+     "bytes": 1321989
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07550",
+   "category": "sport",
+   "source": "DSC07550.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5b7549",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07550-800.avif",
+     "bytes": 57473
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07550-1600.avif",
+     "bytes": 226883
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07550-3072.jpg",
+     "bytes": 988371
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07591",
+   "category": "sport",
+   "source": "DSC07591.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a7351",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07591-800.avif",
+     "bytes": 79924
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07591-1600.avif",
+     "bytes": 307880
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07591-3072.jpg",
+     "bytes": 1183608
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07627",
+   "category": "sport",
+   "source": "DSC07627.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#64735a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07627-800.avif",
+     "bytes": 73365
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07627-1600.avif",
+     "bytes": 295403
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07627-3072.jpg",
+     "bytes": 1312006
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07659",
+   "category": "sport",
+   "source": "DSC07659.jpg",
+   "w": 2918,
+   "h": 2335,
+   "color": "#737e5c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07659-800.avif",
+     "bytes": 98511
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07659-1600.avif",
+     "bytes": 328308
+    },
+    {
+     "w": 2918,
+     "h": 2335,
+     "file": "assets/photos/sport-dsc07659-2918.jpg",
+     "bytes": 1089667
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07678",
+   "category": "sport",
+   "source": "DSC07678.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#707a5e",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07678-800.avif",
+     "bytes": 104844
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07678-1600.avif",
+     "bytes": 375211
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07678-3072.jpg",
+     "bytes": 1537283
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07708",
+   "category": "sport",
+   "source": "DSC07708.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#4f5b46",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07708-800.avif",
+     "bytes": 58371
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07708-1600.avif",
+     "bytes": 208775
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07708-3072.jpg",
+     "bytes": 942977
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07734",
+   "category": "sport",
+   "source": "DSC07734.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#536047",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07734-800.avif",
+     "bytes": 77905
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07734-1600.avif",
+     "bytes": 284077
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07734-3072.jpg",
+     "bytes": 1076162
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07737",
+   "category": "sport",
+   "source": "DSC07737.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5b6847",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07737-800.avif",
+     "bytes": 78990
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07737-1600.avif",
+     "bytes": 258664
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07737-3072.jpg",
+     "bytes": 1106533
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07751",
+   "category": "sport",
+   "source": "DSC07751.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#666666",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07751-800.avif",
+     "bytes": 58494
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07751-1600.avif",
+     "bytes": 368334
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07751-3072.jpg",
+     "bytes": 1418437
+    }
+   ]
+  },
+  {
+   "slug": "sport-fb6d52b0",
+   "category": "sport",
+   "source": "FB6D52B0-709C-4748-888E-02E128069885.jpg",
+   "w": 1440,
+   "h": 1152,
+   "color": "#555e4d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-fb6d52b0-800.avif",
+     "bytes": 84057
+    },
+    {
+     "w": 1440,
+     "h": 1152,
+     "file": "assets/photos/sport-fb6d52b0-1440.jpg",
+     "bytes": 282660
+    }
+   ]
+  },
+  {
+   "slug": "sport-img-3722",
+   "category": "sport",
+   "source": "IMG_3722.JPG",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5d5b4e",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-img-3722-800.avif",
+     "bytes": 88952
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-img-3722-1600.avif",
+     "bytes": 331075
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-img-3722-3072.jpg",
+     "bytes": 1324439
+    }
+   ]
+  },
+  {
+   "slug": "sport-img-3723",
+   "category": "sport",
+   "source": "IMG_3723.JPG",
+   "w": 3072,
+   "h": 2458,
+   "color": "#76585c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-img-3723-800.avif",
+     "bytes": 70986
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-img-3723-1600.avif",
+     "bytes": 264381
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-img-3723-3072.jpg",
+     "bytes": 1201637
+    }
+   ]
+  },
+  {
+   "slug": "sport-img-3730",
+   "category": "sport",
+   "source": "IMG_3730.JPG",
+   "w": 3072,
+   "h": 2458,
+   "color": "#785c5e",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-img-3730-800.avif",
+     "bytes": 57611
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-img-3730-1600.avif",
+     "bytes": 236620
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-img-3730-3072.jpg",
+     "bytes": 1204120
+    }
+   ]
+  },
+  {
+   "slug": "sport-img-3744",
+   "category": "sport",
+   "source": "IMG_3744.JPG",
+   "w": 3072,
+   "h": 2458,
+   "color": "#534a41",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-img-3744-800.avif",
+     "bytes": 65957
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-img-3744-1600.avif",
+     "bytes": 256199
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-img-3744-3072.jpg",
+     "bytes": 1129487
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc00549",
+   "category": "reportaz",
+   "source": "DSC00549.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#565c4c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc00549-800.avif",
+     "bytes": 54765
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc00549-1600.avif",
+     "bytes": 215844
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc00549-3072.jpg",
+     "bytes": 1225102
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc00663",
+   "category": "reportaz",
+   "source": "DSC00663.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#9e8081",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc00663-800.avif",
+     "bytes": 66353
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc00663-1600.avif",
+     "bytes": 217626
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc00663-3072.jpg",
+     "bytes": 1027870
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc00710",
+   "category": "reportaz",
+   "source": "DSC00710.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#726e5f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc00710-800.avif",
+     "bytes": 46925
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc00710-1600.avif",
+     "bytes": 126969
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc00710-3072.jpg",
+     "bytes": 628746
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc00898",
+   "category": "reportaz",
+   "source": "DSC00898.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#969279",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc00898-800.avif",
+     "bytes": 86660
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc00898-1600.avif",
+     "bytes": 275311
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc00898-3072.jpg",
+     "bytes": 1215960
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc01110",
+   "category": "reportaz",
+   "source": "DSC01110.jpg",
+   "w": 2918,
+   "h": 2090,
+   "color": "#747678",
+   "variants": [
+    {
+     "w": 800,
+     "h": 573,
+     "file": "assets/photos/reportaz-dsc01110-800.avif",
+     "bytes": 93963
+    },
+    {
+     "w": 1600,
+     "h": 1146,
+     "file": "assets/photos/reportaz-dsc01110-1600.avif",
+     "bytes": 339469
+    },
+    {
+     "w": 2918,
+     "h": 2090,
+     "file": "assets/photos/reportaz-dsc01110-2918.jpg",
+     "bytes": 1034848
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc01112",
+   "category": "reportaz",
+   "source": "DSC01112.jpg",
+   "w": 2918,
+   "h": 1791,
+   "color": "#5e666b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 491,
+     "file": "assets/photos/reportaz-dsc01112-800.avif",
+     "bytes": 106337
+    },
+    {
+     "w": 1600,
+     "h": 982,
+     "file": "assets/photos/reportaz-dsc01112-1600.avif",
+     "bytes": 384114
+    },
+    {
+     "w": 2918,
+     "h": 1791,
+     "file": "assets/photos/reportaz-dsc01112-2918.jpg",
+     "bytes": 1074779
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc01115",
+   "category": "reportaz",
+   "source": "DSC01115.jpg",
+   "w": 3072,
+   "h": 2046,
+   "color": "#667076",
+   "variants": [
+    {
+     "w": 800,
+     "h": 533,
+     "file": "assets/photos/reportaz-dsc01115-800.avif",
+     "bytes": 88832
+    },
+    {
+     "w": 1600,
+     "h": 1066,
+     "file": "assets/photos/reportaz-dsc01115-1600.avif",
+     "bytes": 350838
+    },
+    {
+     "w": 3072,
+     "h": 2046,
+     "file": "assets/photos/reportaz-dsc01115-3072.jpg",
+     "bytes": 1547353
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc01122",
+   "category": "reportaz",
+   "source": "DSC01122.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#857b69",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc01122-800.avif",
+     "bytes": 73639
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc01122-1600.avif",
+     "bytes": 301030
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc01122-3072.jpg",
+     "bytes": 1471166
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc01181",
+   "category": "reportaz",
+   "source": "DSC01181.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5e816a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc01181-800.avif",
+     "bytes": 60576
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc01181-1600.avif",
+     "bytes": 202330
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc01181-3072.jpg",
+     "bytes": 904286
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc01846",
+   "category": "reportaz",
+   "source": "DSC01846.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#8e6775",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/reportaz-dsc01846-800.avif",
+     "bytes": 74384
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/reportaz-dsc01846-1600.avif",
+     "bytes": 261642
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/reportaz-dsc01846-2458.jpg",
+     "bytes": 799878
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02264",
+   "category": "reportaz",
+   "source": "DSC02264.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#949076",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02264-800.avif",
+     "bytes": 46771
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02264-1600.avif",
+     "bytes": 137201
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02264-3072.jpg",
+     "bytes": 712234
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02294",
+   "category": "reportaz",
+   "source": "DSC02294.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#76687a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02294-800.avif",
+     "bytes": 58866
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02294-1600.avif",
+     "bytes": 179761
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02294-3072.jpg",
+     "bytes": 786706
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02310",
+   "category": "reportaz",
+   "source": "DSC02310.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#818670",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02310-800.avif",
+     "bytes": 50289
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02310-1600.avif",
+     "bytes": 156004
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02310-3072.jpg",
+     "bytes": 808830
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02523",
+   "category": "reportaz",
+   "source": "DSC02523.jpg",
+   "w": 3072,
+   "h": 2346,
+   "color": "#6c6b5a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 611,
+     "file": "assets/photos/reportaz-dsc02523-800.avif",
+     "bytes": 36743
+    },
+    {
+     "w": 1600,
+     "h": 1222,
+     "file": "assets/photos/reportaz-dsc02523-1600.avif",
+     "bytes": 167696
+    },
+    {
+     "w": 3072,
+     "h": 2346,
+     "file": "assets/photos/reportaz-dsc02523-3072.jpg",
+     "bytes": 928386
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02815-2",
+   "category": "reportaz",
+   "source": "DSC02815-2.jpg",
+   "w": 3072,
+   "h": 2049,
+   "color": "#777363",
+   "variants": [
+    {
+     "w": 800,
+     "h": 534,
+     "file": "assets/photos/reportaz-dsc02815-2-800.avif",
+     "bytes": 43795
+    },
+    {
+     "w": 1600,
+     "h": 1067,
+     "file": "assets/photos/reportaz-dsc02815-2-1600.avif",
+     "bytes": 122662
+    },
+    {
+     "w": 3072,
+     "h": 2049,
+     "file": "assets/photos/reportaz-dsc02815-2-3072.jpg",
+     "bytes": 651905
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02939",
+   "category": "reportaz",
+   "source": "DSC02939.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6e6d71",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02939-800.avif",
+     "bytes": 65765
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02939-1600.avif",
+     "bytes": 233449
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02939-3072.jpg",
+     "bytes": 1166459
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02942",
+   "category": "reportaz",
+   "source": "DSC02942.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5a6278",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02942-800.avif",
+     "bytes": 55808
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02942-1600.avif",
+     "bytes": 199409
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02942-3072.jpg",
+     "bytes": 1058949
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02948",
+   "category": "reportaz",
+   "source": "DSC02948.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#736366",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02948-800.avif",
+     "bytes": 51905
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02948-1600.avif",
+     "bytes": 165087
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02948-3072.jpg",
+     "bytes": 827545
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02953",
+   "category": "reportaz",
+   "source": "DSC02953.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#67636d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02953-800.avif",
+     "bytes": 51057
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02953-1600.avif",
+     "bytes": 158066
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02953-3072.jpg",
+     "bytes": 799905
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02956",
+   "category": "reportaz",
+   "source": "DSC02956.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#84697f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02956-800.avif",
+     "bytes": 41582
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02956-1600.avif",
+     "bytes": 149445
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02956-3072.jpg",
+     "bytes": 900295
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02959",
+   "category": "reportaz",
+   "source": "DSC02959.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6c4a4b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02959-800.avif",
+     "bytes": 57598
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02959-1600.avif",
+     "bytes": 200368
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02959-3072.jpg",
+     "bytes": 1009434
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02961",
+   "category": "reportaz",
+   "source": "DSC02961.jpg",
+   "w": 3072,
+   "h": 2152,
+   "color": "#815c5a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 560,
+     "file": "assets/photos/reportaz-dsc02961-800.avif",
+     "bytes": 65001
+    },
+    {
+     "w": 1600,
+     "h": 1121,
+     "file": "assets/photos/reportaz-dsc02961-1600.avif",
+     "bytes": 205308
+    },
+    {
+     "w": 3072,
+     "h": 2152,
+     "file": "assets/photos/reportaz-dsc02961-3072.jpg",
+     "bytes": 968921
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02971",
+   "category": "reportaz",
+   "source": "DSC02971.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6e646c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02971-800.avif",
+     "bytes": 59080
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02971-1600.avif",
+     "bytes": 183140
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02971-3072.jpg",
+     "bytes": 903558
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02974",
+   "category": "reportaz",
+   "source": "DSC02974.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#76686c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02974-800.avif",
+     "bytes": 58244
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02974-1600.avif",
+     "bytes": 200438
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02974-3072.jpg",
+     "bytes": 971433
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02980",
+   "category": "reportaz",
+   "source": "DSC02980.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a7582",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02980-800.avif",
+     "bytes": 40496
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02980-1600.avif",
+     "bytes": 162812
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02980-3072.jpg",
+     "bytes": 970237
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc02995",
+   "category": "reportaz",
+   "source": "DSC02995.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#725660",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc02995-800.avif",
+     "bytes": 49732
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc02995-1600.avif",
+     "bytes": 158345
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc02995-3072.jpg",
+     "bytes": 797779
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03004",
+   "category": "reportaz",
+   "source": "DSC03004.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#785d5c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03004-800.avif",
+     "bytes": 62760
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03004-1600.avif",
+     "bytes": 183298
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03004-3072.jpg",
+     "bytes": 910501
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03009",
+   "category": "reportaz",
+   "source": "DSC03009.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a5556",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03009-800.avif",
+     "bytes": 44971
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03009-1600.avif",
+     "bytes": 153702
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03009-3072.jpg",
+     "bytes": 823421
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03012",
+   "category": "reportaz",
+   "source": "DSC03012.jpg",
+   "w": 3072,
+   "h": 2304,
+   "color": "#6d5d5c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 600,
+     "file": "assets/photos/reportaz-dsc03012-800.avif",
+     "bytes": 61960
+    },
+    {
+     "w": 1600,
+     "h": 1200,
+     "file": "assets/photos/reportaz-dsc03012-1600.avif",
+     "bytes": 164873
+    },
+    {
+     "w": 3072,
+     "h": 2304,
+     "file": "assets/photos/reportaz-dsc03012-3072.jpg",
+     "bytes": 753314
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03022",
+   "category": "reportaz",
+   "source": "DSC03022.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7c5758",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03022-800.avif",
+     "bytes": 51474
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03022-1600.avif",
+     "bytes": 181876
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03022-3072.jpg",
+     "bytes": 958272
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03091",
+   "category": "reportaz",
+   "source": "DSC03091.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7d393f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03091-800.avif",
+     "bytes": 79761
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03091-1600.avif",
+     "bytes": 244842
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03091-3072.jpg",
+     "bytes": 1088053
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03134",
+   "category": "reportaz",
+   "source": "DSC03134.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#666c70",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03134-800.avif",
+     "bytes": 44891
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03134-1600.avif",
+     "bytes": 136425
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03134-3072.jpg",
+     "bytes": 751269
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03135",
+   "category": "reportaz",
+   "source": "DSC03135.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#4a4a47",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03135-800.avif",
+     "bytes": 114679
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03135-1600.avif",
+     "bytes": 406368
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03135-3072.jpg",
+     "bytes": 1502157
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03143-2",
+   "category": "reportaz",
+   "source": "DSC03143-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#504f4b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03143-2-800.avif",
+     "bytes": 87929
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03143-2-1600.avif",
+     "bytes": 266201
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03143-2-3072.jpg",
+     "bytes": 1020294
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03156",
+   "category": "reportaz",
+   "source": "DSC03156.jpg",
+   "w": 3072,
+   "h": 1948,
+   "color": "#616e78",
+   "variants": [
+    {
+     "w": 800,
+     "h": 507,
+     "file": "assets/photos/reportaz-dsc03156-800.avif",
+     "bytes": 49504
+    },
+    {
+     "w": 1600,
+     "h": 1015,
+     "file": "assets/photos/reportaz-dsc03156-1600.avif",
+     "bytes": 157361
+    },
+    {
+     "w": 3072,
+     "h": 1948,
+     "file": "assets/photos/reportaz-dsc03156-3072.jpg",
+     "bytes": 770774
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03159",
+   "category": "reportaz",
+   "source": "DSC03159.jpg",
+   "w": 3072,
+   "h": 1898,
+   "color": "#766b68",
+   "variants": [
+    {
+     "w": 800,
+     "h": 494,
+     "file": "assets/photos/reportaz-dsc03159-800.avif",
+     "bytes": 65352
+    },
+    {
+     "w": 1600,
+     "h": 989,
+     "file": "assets/photos/reportaz-dsc03159-1600.avif",
+     "bytes": 210383
+    },
+    {
+     "w": 3072,
+     "h": 1898,
+     "file": "assets/photos/reportaz-dsc03159-3072.jpg",
+     "bytes": 952693
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03170-2",
+   "category": "reportaz",
+   "source": "DSC03170-2.jpg",
+   "w": 3072,
+   "h": 2284,
+   "color": "#787053",
+   "variants": [
+    {
+     "w": 800,
+     "h": 595,
+     "file": "assets/photos/reportaz-dsc03170-2-800.avif",
+     "bytes": 49661
+    },
+    {
+     "w": 1600,
+     "h": 1190,
+     "file": "assets/photos/reportaz-dsc03170-2-1600.avif",
+     "bytes": 161044
+    },
+    {
+     "w": 3072,
+     "h": 2284,
+     "file": "assets/photos/reportaz-dsc03170-2-3072.jpg",
+     "bytes": 868007
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03170-3",
+   "category": "reportaz",
+   "source": "DSC03170-3.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#bb8896",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03170-3-800.avif",
+     "bytes": 50544
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03170-3-1600.avif",
+     "bytes": 156891
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03170-3-3072.jpg",
+     "bytes": 697167
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03170",
+   "category": "reportaz",
+   "source": "DSC03170.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#b78592",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03170-800.avif",
+     "bytes": 52901
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03170-1600.avif",
+     "bytes": 168870
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03170-3072.jpg",
+     "bytes": 798729
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03176",
+   "category": "reportaz",
+   "source": "DSC03176.jpg",
+   "w": 3072,
+   "h": 2167,
+   "color": "#918765",
+   "variants": [
+    {
+     "w": 800,
+     "h": 564,
+     "file": "assets/photos/reportaz-dsc03176-800.avif",
+     "bytes": 51540
+    },
+    {
+     "w": 1600,
+     "h": 1129,
+     "file": "assets/photos/reportaz-dsc03176-1600.avif",
+     "bytes": 171394
+    },
+    {
+     "w": 3072,
+     "h": 2167,
+     "file": "assets/photos/reportaz-dsc03176-3072.jpg",
+     "bytes": 907340
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03186",
+   "category": "reportaz",
+   "source": "DSC03186.jpg",
+   "w": 2738,
+   "h": 3072,
+   "color": "#714a51",
+   "variants": [
+    {
+     "w": 800,
+     "h": 898,
+     "file": "assets/photos/reportaz-dsc03186-800.avif",
+     "bytes": 71449
+    },
+    {
+     "w": 1600,
+     "h": 1795,
+     "file": "assets/photos/reportaz-dsc03186-1600.avif",
+     "bytes": 268047
+    },
+    {
+     "w": 2738,
+     "h": 3072,
+     "file": "assets/photos/reportaz-dsc03186-2738.jpg",
+     "bytes": 1068284
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03189",
+   "category": "reportaz",
+   "source": "DSC03189.jpg",
+   "w": 3072,
+   "h": 2270,
+   "color": "#4f4843",
+   "variants": [
+    {
+     "w": 800,
+     "h": 591,
+     "file": "assets/photos/reportaz-dsc03189-800.avif",
+     "bytes": 68391
+    },
+    {
+     "w": 1600,
+     "h": 1182,
+     "file": "assets/photos/reportaz-dsc03189-1600.avif",
+     "bytes": 228599
+    },
+    {
+     "w": 3072,
+     "h": 2270,
+     "file": "assets/photos/reportaz-dsc03189-3072.jpg",
+     "bytes": 1041119
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03193",
+   "category": "reportaz",
+   "source": "DSC03193.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#646f5a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03193-800.avif",
+     "bytes": 57521
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03193-1600.avif",
+     "bytes": 180933
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03193-3072.jpg",
+     "bytes": 828822
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03210",
+   "category": "reportaz",
+   "source": "DSC03210.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6d7073",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03210-800.avif",
+     "bytes": 77379
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03210-1600.avif",
+     "bytes": 219849
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03210-3072.jpg",
+     "bytes": 926637
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03212",
+   "category": "reportaz",
+   "source": "DSC03212.jpg",
+   "w": 2918,
+   "h": 2335,
+   "color": "#877c76",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03212-800.avif",
+     "bytes": 127007
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03212-1600.avif",
+     "bytes": 462182
+    },
+    {
+     "w": 2918,
+     "h": 2335,
+     "file": "assets/photos/reportaz-dsc03212-2918.jpg",
+     "bytes": 1388807
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03223",
+   "category": "reportaz",
+   "source": "DSC03223.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#b17b33",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03223-800.avif",
+     "bytes": 61187
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03223-1600.avif",
+     "bytes": 197554
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03223-3072.jpg",
+     "bytes": 743361
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03245",
+   "category": "reportaz",
+   "source": "DSC03245.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#b26c3d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03245-800.avif",
+     "bytes": 53090
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03245-1600.avif",
+     "bytes": 196132
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03245-3072.jpg",
+     "bytes": 774996
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03280",
+   "category": "reportaz",
+   "source": "DSC03280.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6d423f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03280-800.avif",
+     "bytes": 71044
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03280-1600.avif",
+     "bytes": 264494
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03280-3072.jpg",
+     "bytes": 1237329
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03288",
+   "category": "reportaz",
+   "source": "DSC03288.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8b5a4d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03288-800.avif",
+     "bytes": 60965
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03288-1600.avif",
+     "bytes": 218063
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03288-3072.jpg",
+     "bytes": 1099668
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03290",
+   "category": "reportaz",
+   "source": "DSC03290.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#90605b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03290-800.avif",
+     "bytes": 68321
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03290-1600.avif",
+     "bytes": 232140
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03290-3072.jpg",
+     "bytes": 1101172
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03444",
+   "category": "reportaz",
+   "source": "DSC03444.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#67645d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03444-800.avif",
+     "bytes": 41240
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03444-1600.avif",
+     "bytes": 109950
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03444-3072.jpg",
+     "bytes": 566085
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03504-2",
+   "category": "reportaz",
+   "source": "DSC03504-2.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#4a4e65",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/reportaz-dsc03504-2-800.avif",
+     "bytes": 72251
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/reportaz-dsc03504-2-1600.avif",
+     "bytes": 284646
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/reportaz-dsc03504-2-2458.jpg",
+     "bytes": 868701
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03516",
+   "category": "reportaz",
+   "source": "DSC03516.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#a26b5f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03516-800.avif",
+     "bytes": 46510
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03516-1600.avif",
+     "bytes": 212616
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03516-3072.jpg",
+     "bytes": 1097976
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03554",
+   "category": "reportaz",
+   "source": "DSC03554.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#a48d7d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03554-800.avif",
+     "bytes": 39308
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03554-1600.avif",
+     "bytes": 214711
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03554-3072.jpg",
+     "bytes": 1086454
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03595",
+   "category": "reportaz",
+   "source": "DSC03595.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#957c68",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03595-800.avif",
+     "bytes": 53972
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03595-1600.avif",
+     "bytes": 230119
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03595-3072.jpg",
+     "bytes": 1157291
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03624",
+   "category": "reportaz",
+   "source": "DSC03624.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#9a7d71",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03624-800.avif",
+     "bytes": 44951
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03624-1600.avif",
+     "bytes": 191986
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03624-3072.jpg",
+     "bytes": 980932
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03639-2",
+   "category": "reportaz",
+   "source": "DSC03639-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#63606f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03639-2-800.avif",
+     "bytes": 109120
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03639-2-1600.avif",
+     "bytes": 288994
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03639-2-3072.jpg",
+     "bytes": 1141310
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03667",
+   "category": "reportaz",
+   "source": "DSC03667.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7f6b60",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03667-800.avif",
+     "bytes": 64594
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03667-1600.avif",
+     "bytes": 289625
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03667-3072.jpg",
+     "bytes": 1281024
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03669",
+   "category": "reportaz",
+   "source": "DSC03669.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#906b5a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03669-800.avif",
+     "bytes": 96832
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03669-1600.avif",
+     "bytes": 366364
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03669-3072.jpg",
+     "bytes": 1449486
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03749",
+   "category": "reportaz",
+   "source": "DSC03749.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#85624c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03749-800.avif",
+     "bytes": 72247
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03749-1600.avif",
+     "bytes": 318541
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03749-3072.jpg",
+     "bytes": 1463975
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03763",
+   "category": "reportaz",
+   "source": "DSC03763.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#76553f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03763-800.avif",
+     "bytes": 67536
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03763-1600.avif",
+     "bytes": 328604
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03763-3072.jpg",
+     "bytes": 1527897
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03771",
+   "category": "reportaz",
+   "source": "DSC03771.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#645d6c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03771-800.avif",
+     "bytes": 59484
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03771-1600.avif",
+     "bytes": 171017
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03771-3072.jpg",
+     "bytes": 774704
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03778",
+   "category": "reportaz",
+   "source": "DSC03778.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#746552",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03778-800.avif",
+     "bytes": 50675
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03778-1600.avif",
+     "bytes": 264604
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03778-3072.jpg",
+     "bytes": 1174714
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03780",
+   "category": "reportaz",
+   "source": "DSC03780.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7a5546",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03780-800.avif",
+     "bytes": 48567
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03780-1600.avif",
+     "bytes": 185162
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03780-3072.jpg",
+     "bytes": 995094
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03784-2",
+   "category": "reportaz",
+   "source": "DSC03784-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#606072",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03784-2-800.avif",
+     "bytes": 66774
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03784-2-1600.avif",
+     "bytes": 194023
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03784-2-3072.jpg",
+     "bytes": 879636
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03784",
+   "category": "reportaz",
+   "source": "DSC03784.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5c5866",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03784-800.avif",
+     "bytes": 69344
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03784-1600.avif",
+     "bytes": 213605
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03784-3072.jpg",
+     "bytes": 1054992
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03835-2",
+   "category": "reportaz",
+   "source": "DSC03835-2.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#626077",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03835-2-800.avif",
+     "bytes": 77311
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03835-2-1600.avif",
+     "bytes": 221626
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03835-2-3072.jpg",
+     "bytes": 1092169
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc04052",
+   "category": "reportaz",
+   "source": "DSC04052.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#644e50",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc04052-800.avif",
+     "bytes": 55600
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc04052-1600.avif",
+     "bytes": 173247
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc04052-3072.jpg",
+     "bytes": 772512
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc07269",
+   "category": "reportaz",
+   "source": "DSC07269.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#4e5a58",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc07269-800.avif",
+     "bytes": 63690
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc07269-1600.avif",
+     "bytes": 172992
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc07269-3072.jpg",
+     "bytes": 823117
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc07310",
+   "category": "reportaz",
+   "source": "DSC07310.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#3d4459",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc07310-800.avif",
+     "bytes": 46325
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc07310-1600.avif",
+     "bytes": 172302
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc07310-3072.jpg",
+     "bytes": 877644
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc07368",
+   "category": "reportaz",
+   "source": "DSC07368.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#2e3c56",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc07368-800.avif",
+     "bytes": 47501
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc07368-1600.avif",
+     "bytes": 159126
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc07368-3072.jpg",
+     "bytes": 773486
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc07884",
+   "category": "reportaz",
+   "source": "DSC07884.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#67657f",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc07884-800.avif",
+     "bytes": 59080
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc07884-1600.avif",
+     "bytes": 209606
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc07884-3072.jpg",
+     "bytes": 1047597
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc07888",
+   "category": "reportaz",
+   "source": "DSC07888.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#684760",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc07888-800.avif",
+     "bytes": 57728
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc07888-1600.avif",
+     "bytes": 234556
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc07888-3072.jpg",
+     "bytes": 1123825
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc07900",
+   "category": "reportaz",
+   "source": "DSC07900.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5b4d65",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc07900-800.avif",
+     "bytes": 63170
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc07900-1600.avif",
+     "bytes": 198686
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc07900-3072.jpg",
+     "bytes": 915838
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08227",
+   "category": "reportaz",
+   "source": "DSC08227.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#91809b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08227-800.avif",
+     "bytes": 77539
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08227-1600.avif",
+     "bytes": 233586
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08227-3072.jpg",
+     "bytes": 1062582
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08315",
+   "category": "reportaz",
+   "source": "DSC08315.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6a498d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08315-800.avif",
+     "bytes": 45605
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08315-1600.avif",
+     "bytes": 160215
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08315-3072.jpg",
+     "bytes": 791874
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08330",
+   "category": "reportaz",
+   "source": "DSC08330.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#574a55",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08330-800.avif",
+     "bytes": 57734
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08330-1600.avif",
+     "bytes": 256139
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08330-3072.jpg",
+     "bytes": 1123418
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08347",
+   "category": "reportaz",
+   "source": "DSC08347.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#8d7575",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08347-800.avif",
+     "bytes": 62957
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08347-1600.avif",
+     "bytes": 189026
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08347-3072.jpg",
+     "bytes": 897544
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08431",
+   "category": "reportaz",
+   "source": "DSC08431.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#636b77",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08431-800.avif",
+     "bytes": 95519
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08431-1600.avif",
+     "bytes": 302642
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08431-3072.jpg",
+     "bytes": 1255988
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08438",
+   "category": "reportaz",
+   "source": "DSC08438.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#67728d",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08438-800.avif",
+     "bytes": 78504
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08438-1600.avif",
+     "bytes": 253377
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08438-3072.jpg",
+     "bytes": 1097243
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08448",
+   "category": "reportaz",
+   "source": "DSC08448.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#5a5562",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08448-800.avif",
+     "bytes": 103100
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08448-1600.avif",
+     "bytes": 327406
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08448-3072.jpg",
+     "bytes": 1262203
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08468",
+   "category": "reportaz",
+   "source": "DSC08468.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#756c6c",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08468-800.avif",
+     "bytes": 55089
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08468-1600.avif",
+     "bytes": 213740
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08468-3072.jpg",
+     "bytes": 991579
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08486",
+   "category": "reportaz",
+   "source": "DSC08486.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#786f6b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08486-800.avif",
+     "bytes": 55402
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08486-1600.avif",
+     "bytes": 215091
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08486-3072.jpg",
+     "bytes": 1068688
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08496",
+   "category": "reportaz",
+   "source": "DSC08496.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#765e4e",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08496-800.avif",
+     "bytes": 84224
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08496-1600.avif",
+     "bytes": 256004
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08496-3072.jpg",
+     "bytes": 1184954
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08567",
+   "category": "reportaz",
+   "source": "DSC08567.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#84aee6",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08567-800.avif",
+     "bytes": 24191
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08567-1600.avif",
+     "bytes": 98183
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08567-3072.jpg",
+     "bytes": 650556
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08612",
+   "category": "reportaz",
+   "source": "DSC08612.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#494749",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08612-800.avif",
+     "bytes": 50878
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08612-1600.avif",
+     "bytes": 198078
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08612-3072.jpg",
+     "bytes": 971150
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08634",
+   "category": "reportaz",
+   "source": "DSC08634.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#aebfdd",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08634-800.avif",
+     "bytes": 53145
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08634-1600.avif",
+     "bytes": 190411
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08634-3072.jpg",
+     "bytes": 918805
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08848",
+   "category": "reportaz",
+   "source": "DSC08848.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6f5b58",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08848-800.avif",
+     "bytes": 57538
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08848-1600.avif",
+     "bytes": 202157
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08848-3072.jpg",
+     "bytes": 960069
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08857",
+   "category": "reportaz",
+   "source": "DSC08857.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6d6869",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08857-800.avif",
+     "bytes": 59198
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08857-1600.avif",
+     "bytes": 228056
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08857-3072.jpg",
+     "bytes": 1178188
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc08877",
+   "category": "reportaz",
+   "source": "DSC08877.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#434252",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc08877-800.avif",
+     "bytes": 64103
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc08877-1600.avif",
+     "bytes": 282552
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc08877-3072.jpg",
+     "bytes": 1277884
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09157",
+   "category": "reportaz",
+   "source": "DSC09157.jpg",
+   "w": 3072,
+   "h": 2304,
+   "color": "#d17157",
+   "variants": [
+    {
+     "w": 800,
+     "h": 600,
+     "file": "assets/photos/reportaz-dsc09157-800.avif",
+     "bytes": 63970
+    },
+    {
+     "w": 1600,
+     "h": 1200,
+     "file": "assets/photos/reportaz-dsc09157-1600.avif",
+     "bytes": 185870
+    },
+    {
+     "w": 3072,
+     "h": 2304,
+     "file": "assets/photos/reportaz-dsc09157-3072.jpg",
+     "bytes": 793024
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09608",
+   "category": "reportaz",
+   "source": "DSC09608.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#ad747b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc09608-800.avif",
+     "bytes": 51742
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc09608-1600.avif",
+     "bytes": 231750
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc09608-3072.jpg",
+     "bytes": 1256911
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09721",
+   "category": "reportaz",
+   "source": "DSC09721.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#946562",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/reportaz-dsc09721-800.avif",
+     "bytes": 104946
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/reportaz-dsc09721-1600.avif",
+     "bytes": 509407
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/reportaz-dsc09721-2458.jpg",
+     "bytes": 1451439
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09727",
+   "category": "reportaz",
+   "source": "DSC09727.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7c9565",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc09727-800.avif",
+     "bytes": 53660
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc09727-1600.avif",
+     "bytes": 157607
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc09727-3072.jpg",
+     "bytes": 839225
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09767",
+   "category": "reportaz",
+   "source": "DSC09767.jpg",
+   "w": 3072,
+   "h": 2304,
+   "color": "#849b8a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 600,
+     "file": "assets/photos/reportaz-dsc09767-800.avif",
+     "bytes": 75516
+    },
+    {
+     "w": 1600,
+     "h": 1200,
+     "file": "assets/photos/reportaz-dsc09767-1600.avif",
+     "bytes": 210431
+    },
+    {
+     "w": 3072,
+     "h": 2304,
+     "file": "assets/photos/reportaz-dsc09767-3072.jpg",
+     "bytes": 832120
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09795",
+   "category": "reportaz",
+   "source": "DSC09795.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#6a7a4b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc09795-800.avif",
+     "bytes": 33696
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc09795-1600.avif",
+     "bytes": 109657
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc09795-3072.jpg",
+     "bytes": 675754
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc09815",
+   "category": "reportaz",
+   "source": "DSC09815.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#748868",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc09815-800.avif",
+     "bytes": 66088
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc09815-1600.avif",
+     "bytes": 185633
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc09815-3072.jpg",
+     "bytes": 862277
+    }
+   ]
+  }
+ ]
+}
