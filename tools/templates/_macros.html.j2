@@ -8,7 +8,7 @@
 {% macro photo_link(photo, p, sizes, hero=False, focus="", eager=False) -%}
 <a class="ph{{ ' hero' if hero }}" href="{{ p }}{{ photo.variants[-1].file }}" data-lb data-srcset="{{ srcset(photo, p) }}" data-w="{{ photo.w }}" data-h="{{ photo.h }}" style="--c:{{ photo.color }}{% if not hero %};--r:{{ (photo.w / photo.h)|round(4) }}{% endif %}"><img src="{{ p }}{{ photo.variants[0].file }}" srcset="{{ srcset(photo, p) }}" sizes="{{ sizes }}" width="{{ photo.w }}" height="{{ photo.h }}" alt="{{ photo_alt[photo.category] }}"
 {%- if hero %} loading="eager" fetchpriority="high" style="object-position:{{ focus }}"
-{%- elif eager %} decoding="async"
+{%- elif eager %} decoding="async" fetchpriority="low"
 {%- else %} loading="lazy" decoding="async"
 {%- endif %}></a>
 {%- endmacro %}

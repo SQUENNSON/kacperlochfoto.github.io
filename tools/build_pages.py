@@ -33,6 +33,8 @@ PAGES: list[Page] = [
 NAV = [("sport", "Sport"), ("reportaz", "Reportaż"), ("o-mnie", "O mnie"), ("kontakt", "Kontakt")]
 NAV_OUT = {page.key: page.out for page in PAGES}
 
+OG = "assets/img/og.jpg"
+OG_SIZE = (1200, 630)
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 
@@ -126,6 +128,23 @@ def _logo(repo_root: Path) -> dict:
     return {"viewbox": viewbox, "use_viewbox": f"0 0 {w} {h}", "body": Markup(body), "ratio": float(w) / float(h)}
 
 
+def build_og(repo_root: Path, photo: dict, focus: str) -> Path:
+    """assets/img/og.jpg: 1200x630, JPEG q85, kadr z najwiekszego wariantu jak object-fit: cover + object-position."""
+    from PIL import Image
+
+    px, py = (float(v.rstrip("%")) / 100 for v in focus.split())
+    target = repo_root / OG
+    with Image.open(repo_root / photo["variants"][-1]["file"]) as im:
+        icc = im.info.get("icc_profile")
+        k = max(OG_SIZE[0] / im.width, OG_SIZE[1] / im.height)
+        cw, ch = OG_SIZE[0] / k, OG_SIZE[1] / k
+        left, top = (im.width - cw) * px, (im.height - ch) * py
+        out = im.convert("RGB").resize(OG_SIZE, Image.LANCZOS, box=(left, top, left + cw, top + ch))
+    target.parent.mkdir(parents=True, exist_ok=True)
+    out.save(target, "JPEG", quality=85, optimize=True, progressive=True, **({"icc_profile": icc} if icc else {}))
+    return target
+
+
 def render_all(repo_root: Path) -> list[Path]:
     data = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))
     photos = json.loads((repo_root / "data/photos.json").read_text(encoding="utf-8"))["photos"]
@@ -139,8 +158,12 @@ def render_all(repo_root: Path) -> list[Path]:
         undefined=StrictUndefined,
     )
     env.filters["nbsp"] = nbsp
+    by_slug = {ph["slug"]: ph for ph in photos}
+    build_og(repo_root, by_slug[data["pages"]["home"]["hero"]], data["pages"]["home"]["hero_focus"])
     env.globals.update(
         logo=_logo(repo_root),
+        og_image=site["base_url"] + OG,
+        og_size=OG_SIZE,
         srcset=srcset,
         photo_alt=site["photo_alt"],
         GRID_SIZES=GRID_SIZES,

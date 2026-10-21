@@ -406,6 +406,8 @@ def test_images_have_dimensions_and_lazy(built):
         for img in grid:
             eager = any(img is f for f in first_screen)
             assert img.attrs.get("loading") == (None if eager else "lazy"), out
+            # pierwszy wiersz nie konkuruje z hero o pasmo (Lighthouse LCP)
+            assert img.attrs.get("fetchpriority") == ("low" if eager else None), out
             assert img.attrs.get("decoding") == "async" and img.attrs["sizes"] == GRID_SIZES
 
 
@@ -421,3 +423,16 @@ def test_no_js_shows_content(repo_root):
         for node in parse(repo_root / out).iter():
             style = node.attrs.get("style", "").replace(" ", "")
             assert "opacity:0" not in style and "display:none" not in style, out
+
+
+def test_og_image(built, repo_root):
+    from PIL import Image
+
+    with Image.open(repo_root / "assets/img/og.jpg") as im:
+        assert im.format == "JPEG" and im.size == (1200, 630)
+    for page in pages():
+        if page.key == "404":
+            continue
+        tree = parse(built / page.out)
+        assert meta(tree, "og:image") == BASE_URL + "assets/img/og.jpg", page.key
+        assert meta(tree, "og:image:width") == "1200" and meta(tree, "og:image:height") == "630", page.key
