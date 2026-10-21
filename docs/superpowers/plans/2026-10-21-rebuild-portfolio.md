@@ -21,6 +21,10 @@
 - Źródła zdjęć: `B:\NA STRONE\SPORT` i `B:\NA STRONE\REPORTAŻ` (folder z „Ż”).
   - Pomijane pliki: `SPORT/DSC01355.jpg`, `SPORT/DSC04110.jpg`, `SPORT/DSC07121.jpg`, `REPORTAŻ/DSC01355.jpg`, `REPORTAŻ/DSC03143.jpg`, `REPORTAŻ/DSC03835.jpg`, `REPORTAŻ/DSC03504.jpg`, `REPORTAŻ/DSC03639.jpg`.
   - Wynik: Sport 84, Reportaż 97, razem 181.
+- **Aktualizacja (decyzja użytkownika):**
+  - Źródło zdjęć to eksport użytkownika: `B:\NA STRONE\sport compressed\bic-compressed` (sport) i `B:\NA STRONE\reportaz compressed\bic-compressed` (reportaż). Lista pominiętych plików jest ta sama.
+  - Pełny wariant to **kopia bajt w bajt** pliku JPEG użytkownika (`assets/photos/<slug>-<W>.jpg`).
+  - AVIF tylko dla szerokości mniejszych od W.
 - AVIF: `quality=72`, `speed=6`. Bez EXIF, z zachowanym profilem ICC źródła. Kalibracja zrobiona 2026-10-21: na wycinkach 1:1 brak widocznej różnicy, PSNR min 35.3 dB na 4 zdjęciach testowych.
 - Szerokości wariantów: `[w for w in (800, 1600) if w < W] + [W]`, gdzie W to natywna szerokość. Bez powiększania.
 - Budżet obrazów `assets/photos/` ≤ 300 MB łącznie.
