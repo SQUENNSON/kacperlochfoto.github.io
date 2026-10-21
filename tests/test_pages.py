@@ -243,3 +243,174 @@ def test_old_site_removed(repo_root):
     leftovers = [p.name for p in repo_root.iterdir() if re.match(r"(?i)(projekt|realizacja)-.*\.html$", p.name)]
     assert leftovers == []
     assert (repo_root / ".nojekyll").is_file()
+
+
+# ---------- galerie, hero, strona główna, reveal ----------
+
+GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
+HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
+ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha"}
+PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html",
+               "o-mnie": "o-mnie/index.html"}
+
+
+def _ph(slug):
+    """Sztuczne zdjęcie: nazwa zaczynająca się od 'V' = pionowe."""
+    w, h = (2000, 3000) if slug.startswith("V") else (3000, 2000)
+    return {"slug": slug, "w": w, "h": h}
+
+
+def _slugs(rows):
+    return [[p["slug"] for p in row] for row in rows]
+
+
+def _check_invariants(photos, rows):
+    flat = [p["slug"] for row in rows for p in row]
+    assert sorted(flat) == sorted(p["slug"] for p in photos)  # każdy dokładnie raz
+    assert all(len(row) == 2 for row in rows[:-1]) and 1 <= len(rows[-1]) <= 2  # sam może być tylko ostatni
+    horizontal = [p["slug"] for p in photos if p["w"] >= p["h"]]
+    assert [s for s in flat if s in horizontal] == horizontal  # kolejność poziomych zachowana
+
+
+def test_pair_rows_pairs_verticals():
+    from build_pages import pair_rows
+
+    photos = [_ph(s) for s in ("H1", "V1", "H2", "H3", "V2", "H4")]
+    rows = pair_rows(photos)
+    assert _slugs(rows) == [["H1", "H2"], ["V1", "V2"], ["H3", "H4"]]
+    _check_invariants(photos, rows)
+
+    # pionowy wciąga najbliższy kolejny pionowy z okna 8 elementów...
+    photos = [_ph(s) for s in ("V1", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "V2", "H8")]
+    rows = pair_rows(photos)
+    assert _slugs(rows)[0] == ["V1", "V2"]
+    _check_invariants(photos, rows)
+    # ...ale nie spoza okna: wtedy bierze następny element
+    photos = [_ph(s) for s in ("V1", "H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "V2")]
+    rows = pair_rows(photos)
+    assert _slugs(rows)[0] == ["V1", "H1"]
+    _check_invariants(photos, rows)
+
+
+def test_pair_rows_odd_tail():
+    from build_pages import pair_rows
+
+    photos = [_ph(f"H{i}") for i in range(1, 6)]
+    assert _slugs(pair_rows(photos)) == [["H1", "H2"], ["H3", "H4"], ["H5"]]
+    assert pair_rows([]) == []
+
+
+def _manifest(repo_root):
+    return json.loads((repo_root / "data/photos.json").read_text(encoding="utf-8"))["photos"]
+
+
+def _site_pages(repo_root):
+    return json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]
+
+
+def _lb_slugs(tree, out, manifest):
+    """Slugi kolejnych [data-lb] w DOM (href = największy wariant) + kontrola znaczników dla lightboxa."""
+    from build_pages import prefix_for, srcset
+
+    p = prefix_for(out)
+    by_href = {p + photo["variants"][-1]["file"]: photo for photo in manifest}
+    slugs = []
+    for a in (n for n in tree.iter() if "data-lb" in n.attrs):
+        assert a.tag == "a" and "ph" in a.attrs.get("class", "").split(), out
+        photo = by_href[a.attrs["href"]]
+        assert a.attrs["data-srcset"] == srcset(photo, p)
+        assert (a.attrs["data-w"], a.attrs["data-h"]) == (str(photo["w"]), str(photo["h"]))
+        assert f"--c:{photo['color']}" in a.attrs.get("style", "").replace(" ", "")
+        assert len(a.find_all("img")) == 1
+        slugs.append(photo["slug"])
+    return slugs
+
+
+def test_galleries_complete(built):
+    from build_pages import pair_rows
+
+    manifest, site = _manifest(built), _site_pages(built)
+    by_slug = {p["slug"]: p for p in manifest}
+    for key, count in (("sport", 84), ("reportaz", 97)):
+        out = PHOTO_PAGES[key]
+        tree = parse(built / out)
+        slugs = _lb_slugs(tree, out, manifest)
+        category = [p for p in manifest if p["category"] == key]
+        hero = site[key]["hero"]
+        assert len(slugs) == count == len(category)
+        assert slugs[0] == hero and "hero" in tree.find("a", "ph").attrs["class"].split()
+        grid = [p for p in category if p["slug"] != hero]
+        assert slugs[1:] == [p["slug"] for row in pair_rows(grid) for p in row]  # hero nie powtarza się
+        rows = tree.find("main").find_all("div", "row")
+        assert [len(r.find_all("a", "ph")) for r in rows] == [len(r) for r in pair_rows(grid)]
+        assert all("data-reveal" in r.attrs for r in rows)
+
+    tree = parse(built / "index.html")
+    home = site["home"]
+    assert len(home["picks"]) == 16 and len(set(home["picks"])) == 16
+    assert home["hero"] in by_slug and all(s in by_slug for s in home["picks"])
+    slugs = _lb_slugs(tree, "index.html", manifest)
+    assert slugs[0] == home["hero"] and home["hero"] not in home["picks"]
+    assert slugs[1:] == [p["slug"] for row in pair_rows([by_slug[s] for s in home["picks"]]) for p in row]
+    more = {a.attrs["href"]: norm(a.text()) for a in tree.find("main").find_all("a") if "data-lb" not in a.attrs}
+    assert more["sport/"].startswith("Sport →") and "84" in more["sport/"]
+    assert more["reportaz/"].startswith("Reportaż →") and "97" in more["reportaz/"]
+
+    tree = parse(built / "o-mnie/index.html")
+    assert _lb_slugs(tree, "o-mnie/index.html", manifest) == site["o-mnie"]["photos"]
+    assert len(tree.find("main").find_all("div", "row")) == 1
+
+
+def test_images_have_dimensions_and_lazy(built):
+    from build_pages import prefix_for
+
+    manifest = _manifest(built)
+    for key, out in PHOTO_PAGES.items():
+        p = prefix_for(out)
+        files = {p + v["file"]: (photo, v) for photo in manifest for v in photo["variants"]}
+        tree = parse(built / out)
+        imgs = tree.find("main").find_all("img")
+        assert imgs, out
+        for img in imgs:
+            photo, _ = files[img.attrs["src"]]
+            assert img.attrs["width"] == str(photo["w"]) and img.attrs["height"] == str(photo["h"])
+            assert img.attrs["alt"] == ALT[photo["category"]]
+            candidates = [c.split() for c in img.attrs["srcset"].split(", ")]
+            assert len(candidates) == len(photo["variants"])
+            # srcset: tylko pliki z manifestu tego zdjęcia, z prawdziwymi szerokościami
+            assert [(files[url][0]["slug"], f"{files[url][1]['w']}w") for url, _ in candidates] == [
+                (photo["slug"], w) for _, w in candidates]
+        heroes = tree.find_all("a", "hero")
+        if key == "o-mnie":
+            assert heroes == []
+        else:
+            assert len(heroes) == 1
+            hero = heroes[0].find("img")
+            assert hero.attrs.get("fetchpriority") == "high" and hero.attrs.get("loading") != "lazy"
+            assert hero.attrs["sizes"] == HERO_SIZES
+            preload = [l.attrs for l in tree.find("head").find_all("link") if l.attrs.get("as") == "image"]
+            assert len(preload) == 1 and preload[0]["rel"] == "preload"
+            assert preload[0]["imagesrcset"] == hero.attrs["srcset"] and preload[0]["imagesizes"] == HERO_SIZES
+            assert preload[0].get("fetchpriority") == "high" and preload[0].get("type") == "image/avif"
+        grid = [img for img in imgs if not heroes or img is not heroes[0].find("img")]
+        assert grid, out
+        # spec: loading="lazy" poza pierwszym ekranem; pierwszy wiersz pod hero jest na nim (1440×900 i 390×844)
+        first_screen = tree.find("main").find("div", "row").find_all("img") if heroes else []
+        for img in grid:
+            eager = any(img is f for f in first_screen)
+            assert img.attrs.get("loading") == (None if eager else "lazy"), out
+            assert img.attrs.get("decoding") == "async" and img.attrs["sizes"] == GRID_SIZES
+
+
+def test_no_js_shows_content(repo_root):
+    css = re.sub(r"/\*.*?\*/", "", (repo_root / "assets/css/style.css").read_text(encoding="utf-8"), flags=re.S)
+    reveal = [(sel, body) for sel, body in re.findall(r"([^{}]+){([^{}]*)}", css) if "[data-reveal]" in sel]
+    assert any(re.search(r"opacity:\s*0\s*(;|$)", body.strip()) for _, body in reveal)
+    for sel, _ in reveal:
+        for part in sel.split(","):
+            if "[data-reveal]" in part:
+                assert part.strip().startswith("html.js "), part  # bez klasy js nic nie jest ukryte
+    for out in PHOTO_PAGES.values():
+        for node in parse(repo_root / out).iter():
+            style = node.attrs.get("style", "").replace(" ", "")
+            assert "opacity:0" not in style and "display:none" not in style, out

@@ -1,11 +1,16 @@
 {% extends "base.html.j2" %}
+{% import "_macros.html.j2" as m %}
 {% block main %}
 <article class="page about">
-  <h1 class="eyebrow">{{ page.heading }}</h1>
-  <p class="lead">{{ page.lead|nbsp }}</p>
+  <h1 class="eyebrow" data-reveal>{{ page.heading }}</h1>
+  <p class="lead" data-reveal>{{ page.lead|nbsp }}</p>
 {% for paragraph in page.paragraphs %}
-  <p>{{ paragraph|nbsp }}</p>
+  <p data-reveal>{{ paragraph|nbsp }}</p>
 {% endfor %}
 </article>
-{% block photos %}{% endblock %}
+{% block photos %}
+<div class="about-photos">
+{{ m.row(rows[0], p, GRID_SIZES) }}
+</div>
+{% endblock %}
 {% endblock %}

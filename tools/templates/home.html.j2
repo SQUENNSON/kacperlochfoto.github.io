@@ -1,7 +1,19 @@
 {% extends "base.html.j2" %}
-{# Zaslepka: Task 4 dodaje hero i wybrane kadry. #}
+{% import "_macros.html.j2" as m %}
+{% block head_extra %}
+{{ m.hero_preload(hero, p) }}
+{% endblock %}
 {% block main %}
-<div class="page">
-  <h1 class="eyebrow">{{ page.heading }}</h1>
+<h1 class="vh">{{ page.heading }}</h1>
+{{ m.hero(hero, p, page.hero_focus) }}
+<div class="rows">
+{% for photos in rows %}
+{{ m.row(photos, p, GRID_SIZES, eager=loop.first) }}
+{% endfor %}
+</div>
+<div class="more" data-reveal>
+{% for link in more %}
+  <a href="{{ link.href }}"><span class="more-label">{{ link.label }}&nbsp;<i aria-hidden="true">→</i></span><span class="more-count">{{ link.count }} {{ link.word }}</span></a>
+{% endfor %}
 </div>
 {% endblock %}

@@ -1,7 +1,14 @@
 {% extends "base.html.j2" %}
-{# Zaslepka: Task 4 dodaje hero i pelna galerie kategorii. #}
+{% import "_macros.html.j2" as m %}
+{% block head_extra %}
+{{ m.hero_preload(hero, p) }}
+{% endblock %}
 {% block main %}
-<div class="page">
-  <h1 class="eyebrow">{{ page.heading }}</h1>
+<h1 class="vh">{{ page.heading }}</h1>
+{{ m.hero(hero, p, page.hero_focus) }}
+<div class="rows">
+{% for photos in rows %}
+{{ m.row(photos, p, GRID_SIZES, eager=loop.first) }}
+{% endfor %}
 </div>
 {% endblock %}

@@ -33,6 +33,73 @@ PAGES: list[Page] = [
 NAV = [("sport", "Sport"), ("reportaz", "Reportaż"), ("o-mnie", "O mnie"), ("kontakt", "Kontakt")]
 NAV_OUT = {page.key: page.out for page in PAGES}
 
+GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
+HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
+PAIR_WINDOW = 8  # jak daleko pionowe zdjecie szuka pionowej pary
+
+
+def _vertical(photo: dict) -> bool:
+    return photo["h"] > photo["w"]
+
+
+def pair_rows(photos: list[dict]) -> list[list[dict]]:
+    """Wiersze po 2 zdjecia; pionowe laczy w pary z pionowymi, ostatnie nieparzyste zostaje samo.
+
+    Wiersz od pionowego, a dalej poziomy: wciaga najblizszy pionowy z okna PAIR_WINDOW (jesli jest).
+    Wiersz od poziomego, a dalej pionowy: bierze najblizszy poziomy, pionowy otwiera nastepny wiersz.
+    """
+    rest = list(photos)
+    rows = []
+    while rest:
+        first = rest.pop(0)
+        if not rest:
+            rows.append([first])
+            break
+        pick = 0
+        if _vertical(first) and not _vertical(rest[0]):
+            pick = next((i for i, ph in enumerate(rest[:PAIR_WINDOW]) if _vertical(ph)), 0)
+        elif not _vertical(first) and _vertical(rest[0]):
+            pick = next((i for i, ph in enumerate(rest) if not _vertical(ph)), 0)
+        rows.append([first, rest.pop(pick)])
+    return rows
+
+
+def srcset(photo: dict, p: str) -> str:
+    """Wszystkie warianty zdjecia z manifestu jako srcset (sciezki wzgledne od strony)."""
+    return ", ".join(f"{p}{v['file']} {v['w']}w" for v in photo["variants"])
+
+
+def _photos_word(n: int) -> str:
+    if n == 1:
+        return "zdjęcie"
+    return "zdjęcia" if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14) else "zdjęć"
+
+
+def _gallery_ctx(key: str, cfg: dict, photos: list[dict], p: str) -> dict:
+    """Hero, wiersze i linki do galerii dla stron ze zdjeciami (wybor z data/site.json)."""
+    by_slug = {ph["slug"]: ph for ph in photos}
+
+    def get(slug: str) -> dict:
+        if slug not in by_slug:
+            raise KeyError(f"site.json pages.{key}: nie ma zdjecia {slug!r} w data/photos.json")
+        return by_slug[slug]
+
+    if key == "home":
+        labels = dict(NAV)
+        more = []
+        for k in ("sport", "reportaz"):
+            n = sum(ph["category"] == k for ph in photos)
+            more.append({"href": p + _dir_url(NAV_OUT[k]), "label": labels[k], "count": n, "word": _photos_word(n)})
+        return {"hero": get(cfg["hero"]), "rows": pair_rows([get(s) for s in cfg["picks"]]), "more": more}
+    if key in ("sport", "reportaz"):
+        hero = get(cfg["hero"])
+        if hero["category"] != key:
+            raise ValueError(f"site.json pages.{key}.hero {hero['slug']!r} jest z kategorii {hero['category']!r}")
+        return {"hero": hero, "rows": pair_rows([ph for ph in photos if ph["category"] == key and ph is not hero])}
+    if key == "o-mnie":
+        return {"rows": [[get(s) for s in cfg["photos"]]]}
+    return {}
+
 
 def prefix_for(out: str) -> str:
     """Prefiks wzgledny od pliku `out` do korzenia strony."""
@@ -62,6 +129,7 @@ def _logo(repo_root: Path) -> dict:
 
 def render_all(repo_root: Path) -> list[Path]:
     data = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))
+    photos = json.loads((repo_root / "data/photos.json").read_text(encoding="utf-8"))["photos"]
     site = data["site"]
     env = Environment(
         loader=FileSystemLoader(repo_root / "tools" / "templates"),
@@ -72,7 +140,13 @@ def render_all(repo_root: Path) -> list[Path]:
         undefined=StrictUndefined,
     )
     env.filters["nbsp"] = nbsp
-    env.globals["logo"] = _logo(repo_root)
+    env.globals.update(
+        logo=_logo(repo_root),
+        srcset=srcset,
+        photo_alt=site["photo_alt"],
+        GRID_SIZES=GRID_SIZES,
+        HERO_SIZES=HERO_SIZES,
+    )
 
     written = []
     for page in PAGES:
@@ -88,7 +162,8 @@ def render_all(repo_root: Path) -> list[Path]:
             "url": site["base_url"] + _dir_url(page.out),
             **data["pages"][page.key],
         }
-        html = env.get_template(page.template).render(site=site, page=page_ctx, p=p, nav_items=nav_items)
+        gallery = _gallery_ctx(page.key, data["pages"][page.key], photos, p)
+        html = env.get_template(page.template).render(site=site, page=page_ctx, p=p, nav_items=nav_items, **gallery)
         target = repo_root / page.out
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding="utf-8", newline="\n")

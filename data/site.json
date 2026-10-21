@@ -9,23 +9,51 @@
   "phone_href": "tel:+48538392636",
   "email": "loch.kacper@gmail.com",
   "instagram": "https://www.instagram.com/sq_photo__/",
-  "instagram_handle": "@sq_photo__"
+  "instagram_handle": "@sq_photo__",
+  "photo_alt": {
+   "sport": "Sport — fotografia Kacpra Locha",
+   "reportaz": "Reportaż — fotografia Kacpra Locha"
+  }
  },
  "pages": {
   "home": {
    "title": "SQphoto — Kacper Loch · fotografia sportowa i reportaż",
    "description": "Portfolio Kacpra Locha (SQphoto): fotografia sportowa i reportaż. Mecze, turnieje i wydarzenia z Małopolski.",
-   "heading": "SQphoto — Kacper Loch"
+   "heading": "SQphoto — Kacper Loch",
+   "hero": "sport-img-3723",
+   "hero_focus": "50% 30%",
+   "picks": [
+    "sport-dsc06898",
+    "sport-dsc07659",
+    "reportaz-dsc03639-2",
+    "sport-2b9ae30e",
+    "sport-dsc00109",
+    "reportaz-dsc01846",
+    "reportaz-dsc08315",
+    "sport-dsc00420",
+    "sport-dsc07751",
+    "reportaz-dsc02953",
+    "sport-dsc00488",
+    "reportaz-dsc07310",
+    "sport-dsc01751-2",
+    "reportaz-dsc03784",
+    "reportaz-dsc09157",
+    "sport-dsc06892"
+   ]
   },
   "sport": {
    "title": "Sport · SQphoto — Kacper Loch",
    "description": "Fotografia sportowa Kacpra Locha: reportaże meczowe i turnieje piłkarskie, dynamika i emocje uchwycone w kadrze.",
-   "heading": "Sport"
+   "heading": "Sport",
+   "hero": "sport-dsc05833",
+   "hero_focus": "50% 25%"
   },
   "reportaz": {
    "title": "Reportaż · SQphoto — Kacper Loch",
    "description": "Reportaż Kacpra Locha: imprezy okolicznościowe, od pikników rodzinnych po rocznice ślubów.",
-   "heading": "Reportaż"
+   "heading": "Reportaż",
+   "hero": "reportaz-dsc08431",
+   "hero_focus": "50% 28%"
   },
   "o-mnie": {
    "title": "O mnie · SQphoto — Kacper Loch",
@@ -37,6 +65,10 @@
     "W mojej dotychczasowej karierze miałem przyjemność tworzyć pełne reportaże meczowe dla klubów takich jak KS Turbacz (V liga) i MKS Limanovia (IV liga). Doświadczenie zbierałem również na sparingu drużyny z Ekstraklasy — Cracovii.",
     "Jednym z ciekawszych doświadczeń była obsługa fotograficzna charytatywnego meczu Ekipy Fantasy, w którym udział wzięły znane postacie ze świata internetu. Moje zdjęcia z tego wydarzenia można zobaczyć na profilach IG takich osób jak izak, Jakub Kiwior czy Tyszka, a także na oficjalnym koncie Ekipy Fantasy.",
     "Poza sportem uwieczniam także imprezy okolicznościowe — od pikników rodzinnych po rocznice ślubów, dbając o to, by każda fotografia opowiadała Waszą wyjątkową historię."
+   ],
+   "photos": [
+    "sport-dsc01937",
+    "reportaz-dsc03156"
    ]
   },
   "kontakt": {
