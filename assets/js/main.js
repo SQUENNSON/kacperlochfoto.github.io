@@ -48,3 +48,15 @@ if (btn) {
     if (e.persisted) setMenu(false);
   });
 }
+
+// Lightbox (Task 5): zwykły klik w zdjęcie otwiera podgląd zamiast pełnego pliku; moduł ładuje się
+// leniwie (wcześniej, gdy kursor najedzie na pierwsze zdjęcie). Ctrl/⌘/Shift/środkowy = zwykły link.
+const loadLightbox = () => import("./lightbox.js");
+document.addEventListener("click", (e) => {
+  const a = e.target instanceof Element && e.target.closest("a[data-lb]");
+  if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  const items = [...document.querySelectorAll("a[data-lb]")];
+  loadLightbox().then((m) => m.open(items.indexOf(a), items), () => { location.href = a.href; });
+});
+document.querySelector("a.ph")?.addEventListener("pointerenter", loadLightbox, { once: true });
