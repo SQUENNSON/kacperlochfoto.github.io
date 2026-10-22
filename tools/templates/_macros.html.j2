@@ -5,17 +5,18 @@
 
 {# Zdjecie = link do najwiekszego pliku (bez JS otwiera pelny plik). Lightbox (Task 5) czyta a.ph[data-lb]
    i data-*; kolejnosc [data-lb] w DOM = kolejnosc w lightboxie. Kolor --c widac, zanim obraz sie zaladuje. #}
-{% macro photo_link(photo, p, sizes, hero=False, focus="", eager=False) -%}
-<a class="ph{{ ' hero' if hero }}" href="{{ p }}{{ photo.variants[-1].file }}" data-lb data-srcset="{{ srcset(photo, p) }}" data-w="{{ photo.w }}" data-h="{{ photo.h }}" style="--c:{{ photo.color }}{% if not hero %};--r:{{ (photo.w / photo.h)|round(4) }}{% endif %}"><img src="{{ p }}{{ photo.variants[0].file }}" srcset="{{ srcset(photo, p) }}" sizes="{{ sizes }}" width="{{ photo.w }}" height="{{ photo.h }}" alt="{{ photo_alt[photo.category] }}"
+{% macro photo_link(photo, p, sizes, hero=False, focus="", eager=False, cls="") -%}
+<a class="ph{{ ' hero' if hero }}{{ ' ' ~ cls if cls }}" href="{{ p }}{{ photo.variants[-1].file }}" data-lb data-srcset="{{ srcset(photo, p) }}" data-w="{{ photo.w }}" data-h="{{ photo.h }}" style="--c:{{ photo.color }}{% if not hero %};--r:{{ (photo.w / photo.h)|round(4) }}{% endif %}"><img src="{{ p }}{{ photo.variants[0].file }}" srcset="{{ srcset(photo, p) }}" sizes="{{ sizes }}" width="{{ photo.w }}" height="{{ photo.h }}" alt="{{ photo_alt[photo.category] }}"
 {%- if hero %} loading="eager" fetchpriority="high" style="object-position:{{ focus }}"
 {%- elif eager %} decoding="async" fetchpriority="low"
 {%- else %} loading="lazy" decoding="async"
 {%- endif %}></a>
 {%- endmacro %}
 
-{# Hero: szeroki kadr u gory strony (jedyne miejsce, gdzie zdjecie jest przyciete: object-fit cover). #}
-{% macro hero(photo, p, focus) -%}
-{{ photo_link(photo, p, HERO_SIZES, hero=True, focus=focus) }}
+{# Hero: szeroki kadr u gory strony (jedyne miejsce, gdzie zdjecie jest przyciete: object-fit cover).
+   cls="strip" = niski pas jak na starej stronie glownej. #}
+{% macro hero(photo, p, focus, cls="") -%}
+{{ photo_link(photo, p, HERO_SIZES, hero=True, focus=focus, cls=cls) }}
 {%- endmacro %}
 
 {% macro hero_preload(photo, p) -%}

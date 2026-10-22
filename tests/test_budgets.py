@@ -19,10 +19,7 @@ def _pick(photo: dict, need: float) -> dict:
 def _home(repo_root):
     photos = {p["slug"]: p for p in json.loads((repo_root / "data/photos.json").read_text(encoding="utf-8"))["photos"]}
     home = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["home"]
-    from build_pages import pair_rows
-
-    first_row = pair_rows([photos[s] for s in home["picks"]])[0]
-    return photos[home["hero"]], first_row
+    return photos[home["hero"]], [photos[s] for s in home["rows"][0]]
 
 
 def test_photo_budget(repo_root):

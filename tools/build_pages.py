@@ -91,7 +91,12 @@ def _gallery_ctx(key: str, cfg: dict, photos: list[dict], p: str) -> dict:
         for k in ("sport", "reportaz"):
             n = sum(ph["category"] == k for ph in photos)
             more.append({"href": p + _dir_url(NAV_OUT[k]), "label": labels[k], "count": n, "word": _photos_word(n)})
-        return {"hero": get(cfg["hero"]), "rows": pair_rows([get(s) for s in cfg["picks"]]), "more": more}
+        # uklad starej strony 1:1: rzedy recznie w site.json (pion moze stac obok poziomego), bez pair_rows
+        rows = [[get(s) for s in row] for row in cfg["rows"]]
+        slugs = [ph["slug"] for row in rows for ph in row]
+        if any(not 1 <= len(row) <= 2 for row in rows) or len(set(slugs)) != len(slugs) or cfg["hero"] in slugs:
+            raise ValueError("site.json pages.home.rows: rzad ma 1-2 zdjecia, bez powtorek i bez hero")
+        return {"hero": get(cfg["hero"]), "rows": rows, "more": more}
     if key in ("sport", "reportaz"):
         hero = get(cfg["hero"])
         if hero["category"] != key:

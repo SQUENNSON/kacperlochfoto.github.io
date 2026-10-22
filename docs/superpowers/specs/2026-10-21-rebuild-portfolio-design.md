@@ -62,7 +62,7 @@ Punkt odniesienia, stare SQ photo (zrzuty: `C:\Users\lochk\Pictures\Screenshots\
 6. **Bez utraty jakości:** pełny podgląd w 3072 px, w siatce mniejsze wersje.
 7. **Optymalizacja szybkości jest obowiązkowa.**
 8. Zaakceptowane w podsumowaniu („wszystko jest”):
-   - **Strona główna:** hero + wybór najlepszych kadrów z obu kategorii.
+   - **Strona główna:** hero + wybór najlepszych kadrów z obu kategorii. **Zmiana 2026-10-22:** układ 1:1 jak stara strona główna (Adobe Portfolio): niski pas `sport-dsc05833` (4:1, na telefonie 5:4) i 20 rzędów po 2 zdjęcia w kolejności ze starej strony (`pages.home.rows` w `data/site.json`, pary ręcznie, bez `pair_rows`); wąsko w rzędzie, szeroko między rzędami.
    - **Sport / Reportaż:** pełne galerie.
    - **O mnie:** odświeżony tekst z obecnej strony.
    - **Kontakt:** telefon, mail, Instagram.
@@ -89,7 +89,7 @@ Punkt odniesienia, stare SQ photo (zrzuty: `C:\Users\lochk\Pictures\Screenshots\
   - Lighthouse (mobile) Performance ≥ 95, LCP < 2.0 s, CLS < 0.02.
   - JS ≤ 15 KB po gzip, CSS ≤ 20 KB po gzip.
   - Przy wejściu na stronę główną przed pierwszym przewinięciem ładuje się ≤ 1.5 MB.
-- **Wybór „najlepszych” na stronę główną:** około 12–16 kadrów wybiera builder. Lista ma być w jednym miejscu, żeby łatwo ją zmienić.
+- **Wybór na stronę główną:** od 2026-10-22 to 40 kadrów ze starej strony (rzędy w `pages.home.rows`). Dwóch zdjęć ze starej strony nie ma w eksporcie (rząd 1: Cracovia, gest serca; rząd 5: skrzypaczki przy choince). Do czasu ich eksportu stoją tam zastępcze `sport-dsc07708` i `reportaz-dsc03749`.
 - **Aktualizacja 2026-10-21 (decyzja użytkownika):** pełne zdjęcia kompresuje użytkownik. Eksport (JPEG sRGB, bez EXIF) leży w `B:\NA STRONE\sport compressed\bic-compressed` i `B:\NA STRONE\reportaz compressed\bic-compressed`: 189 plików, nazwy 1:1 z oryginałami, 7 plików ma 2918 px. Plik użytkownika trafia na pełny ekran **bez zmian**. AVIF (poniżej) dotyczy tylko mniejszych wersji do siatki (800/1600), robionych z tego eksportu.
 - **Format:** AVIF dla wszystkich wersji, bez zapasowego JPEG-a. Obsługują go wszystkie przeglądarki od 2023 roku (Safari 16.4+). Jakość dobiera builder, zaczynając od q≈72. Przed przetworzeniem całości trzeba porównać wycinki 1:1 z oryginałem (twarze, tłum, ciemne partie) i nie może być widocznej różnicy. Profil sRGB zostaje zachowany.
 - **Telefony w pełnym podglądzie:** wersja dopasowana do ekranu (`srcset`/`sizes`). 3072 px dostają duże ekrany i Retina, a każdy przy przybliżeniu (pkt 10).

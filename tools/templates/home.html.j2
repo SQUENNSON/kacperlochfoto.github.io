@@ -5,8 +5,8 @@
 {% endblock %}
 {% block main %}
 <h1 class="vh">{{ page.heading }}</h1>
-{{ m.hero(hero, p, page.hero_focus) }}
-<div class="rows">
+{{ m.hero(hero, p, page.hero_focus, cls="strip") }}
+<div class="rows spaced">
 {% for photos in rows %}
 {{ m.row(photos, p, GRID_SIZES, eager=loop.first) }}
 {% endfor %}

@@ -353,12 +353,19 @@ def test_galleries_complete(built):
         assert all("data-reveal" in r.attrs for r in rows)
 
     tree = parse(built / "index.html")
+    # strona główna = układ starej strony 1:1: pas u góry + rzędy z site.json w tej kolejności, bez pair_rows
     home = site["home"]
-    assert len(home["picks"]) == 16 and len(set(home["picks"])) == 16
-    assert home["hero"] in by_slug and all(s in by_slug for s in home["picks"])
+    picks = [s for row in home["rows"] for s in row]
+    assert len(home["rows"]) == 20 and all(1 <= len(row) <= 2 for row in home["rows"])
+    assert len(picks) == len(set(picks)) == 40
+    assert home["hero"] in by_slug and all(s in by_slug for s in picks)
     slugs = _lb_slugs(tree, "index.html", manifest)
-    assert slugs[0] == home["hero"] and home["hero"] not in home["picks"]
-    assert slugs[1:] == [p["slug"] for row in pair_rows([by_slug[s] for s in home["picks"]]) for p in row]
+    assert slugs[0] == home["hero"] and home["hero"] not in picks
+    assert slugs[1:] == picks
+    assert "strip" in tree.find("a", "hero").attrs["class"].split()
+    rows = tree.find("main").find("div", "rows")
+    assert "spaced" in rows.attrs["class"].split()
+    assert [len(r.find_all("a", "ph")) for r in rows.find_all("div", "row")] == [len(r) for r in home["rows"]]
     more = {a.attrs["href"]: norm(a.text()) for a in tree.find("main").find_all("a") if "data-lb" not in a.attrs}
     assert more["sport/"].startswith("Sport →") and "84" in more["sport/"]
     assert more["reportaz/"].startswith("Reportaż →") and "97" in more["reportaz/"]

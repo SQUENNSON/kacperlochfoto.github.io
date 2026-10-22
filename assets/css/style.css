@@ -288,6 +288,9 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 /* --r = w/h: szerokość rośnie z proporcją, więc zdjęcia w wierszu mają równą wysokość */
 .row { display: flex; gap: var(--gap); }
 .row > .ph { flex: var(--r) 1 0; aspect-ratio: var(--r); }
+/* strona główna jak stara: niski pas u góry, wąsko w rzędzie, szeroko między rzędami */
+.hero.strip { aspect-ratio: 4 / 1; }
+.rows.spaced { gap: clamp(20px, 2.4vw, 56px); }
 
 .about-photos { padding: 0 var(--pad) var(--pad); }
 
@@ -305,7 +308,8 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 .more-count { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
 
 @media (width <= 900px) {
-  .hero { aspect-ratio: 5 / 4; }
+  /* pas też 5/4: nie niższy niż zdjęcia pod nim, więc zostaje elementem LCP */
+  .hero, .hero.strip { aspect-ratio: 5 / 4; }
   .row { flex-direction: column; }
   .row > .ph { flex: none; width: 100%; }
 }

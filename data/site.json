@@ -20,25 +20,89 @@
    "title": "SQphoto — Kacper Loch · fotografia sportowa i reportaż",
    "description": "Portfolio Kacpra Locha (SQphoto): fotografia sportowa i reportaż. Mecze, turnieje i wydarzenia z Małopolski.",
    "heading": "SQphoto — Kacper Loch",
-   "hero": "sport-img-3723",
-   "hero_focus": "50% 30%",
-   "picks": [
-    "sport-dsc06898",
-    "sport-dsc07659",
-    "reportaz-dsc03639-2",
-    "sport-2b9ae30e",
-    "sport-dsc00109",
-    "reportaz-dsc01846",
-    "reportaz-dsc08315",
-    "sport-dsc00420",
-    "sport-dsc07751",
-    "reportaz-dsc02953",
-    "sport-dsc00488",
-    "reportaz-dsc07310",
-    "sport-dsc01751-2",
-    "reportaz-dsc03784",
-    "reportaz-dsc09157",
-    "sport-dsc06892"
+   "hero": "sport-dsc05833",
+   "hero_focus": "50% 17%",
+   "rows": [
+    [
+     "sport-dsc06898",
+     "sport-dsc07708"
+    ],
+    [
+     "reportaz-dsc02971",
+     "reportaz-dsc03143-2"
+    ],
+    [
+     "sport-dsc07659",
+     "reportaz-dsc03639-2"
+    ],
+    [
+     "reportaz-dsc03189",
+     "sport-img-3723"
+    ],
+    [
+     "reportaz-dsc03749",
+     "reportaz-dsc09608"
+    ],
+    [
+     "sport-bbcaa356",
+     "sport-img-3730"
+    ],
+    [
+     "sport-dsc01751-2",
+     "sport-dsc06900"
+    ],
+    [
+     "sport-dsc02049",
+     "sport-dsc02096"
+    ],
+    [
+     "sport-dsc03020",
+     "sport-dsc07121-2"
+    ],
+    [
+     "sport-2b9ae30e",
+     "sport-fb6d52b0"
+    ],
+    [
+     "reportaz-dsc03504-2",
+     "sport-dsc07678"
+    ],
+    [
+     "sport-3f80d493",
+     "sport-4ecfee0e"
+    ],
+    [
+     "sport-dsc00547",
+     "sport-dsc01228"
+    ],
+    [
+     "reportaz-dsc02294",
+     "sport-dsc00921"
+    ],
+    [
+     "sport-dsc02033",
+     "reportaz-dsc03135"
+    ],
+    [
+     "sport-dsc04110-2",
+     "sport-dsc01355-2"
+    ],
+    [
+     "reportaz-dsc03280",
+     "sport-dsc00109"
+    ],
+    [
+     "reportaz-dsc03193",
+     "reportaz-dsc03835-2"
+    ],
+    [
+     "reportaz-dsc03784",
+     "reportaz-dsc03212"
+    ],
+    [
+     "sport-dsc05004",
+     "sport-dsc01681"
+    ]
    ]
   },
   "sport": {
