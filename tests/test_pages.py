@@ -187,8 +187,10 @@ def test_meta_every_page(built, repo_root):
         links = tree.find_all("link")
         fonts = [l.attrs for l in links if l.attrs.get("rel") == "preload" and l.attrs.get("as") == "font"]
         assert sorted(f["href"].rsplit("/", 1)[-1] for f in fonts) == [
-            "instrument-serif-italic-latin.woff2", "schibsted-grotesk-latin.woff2"], page.key
+            "archivo-expanded-latin.woff2", "instrument-serif-italic-latin.woff2", "schibsted-grotesk-latin.woff2"], page.key
         assert all(f.get("type") == "font/woff2" and "crossorigin" in f for f in fonts), page.key
+        # czcionka menu tylko na desktopie (na telefonie menu jest schowane w nakładce)
+        assert {f["href"].rsplit("/", 1)[-1]: f.get("media") for f in fonts}["archivo-expanded-latin.woff2"] == "(width > 900px)"
         assert any(l.attrs.get("rel") == "stylesheet" and l.attrs["href"].endswith("assets/css/style.css") for l in links)
         scripts = [s for s in tree.find_all("script") if s.attrs.get("src", "").endswith("assets/js/main.js")]
         assert len(scripts) == 1 and scripts[0].attrs.get("type") == "module"

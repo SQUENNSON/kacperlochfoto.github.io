@@ -12,7 +12,8 @@ CSS_PATH = ROOT / "assets" / "css" / "style.css"
 SRC_DIR = Path(__file__).resolve().parent / "fonts-src"
 
 CSS_URL = ("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1"
-           "&family=Schibsted+Grotesk:wght@400..700&display=swap")
+           "&family=Schibsted+Grotesk:wght@400..700"
+           "&family=Archivo:wdth,wght@125,600&display=swap")  # menu: jedna statyczna instancja
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36")
 TTFS = {
@@ -21,7 +22,8 @@ TTFS = {
     "InterTight[wght].ttf":
         "https://github.com/google/fonts/raw/main/ofl/intertight/InterTight%5Bwght%5D.ttf",
 }
-SLUGS = {"Instrument Serif": "instrument-serif-italic", "Schibsted Grotesk": "schibsted-grotesk"}
+SLUGS = {"Instrument Serif": "instrument-serif-italic", "Schibsted Grotesk": "schibsted-grotesk",
+         "Archivo": "archivo-expanded"}
 MARK_START, MARK_END = "/* fonts:start */", "/* fonts:end */"
 
 
@@ -44,18 +46,18 @@ def build_font_face() -> str:
         rng = re.search(r"unicode-range:\s*([^;]+);", body).group(1).strip()
         name = f"{SLUGS[family]}-{subset}.woff2"
         (FONTS_DIR / name).write_bytes(get(url))
-        if family == "Instrument Serif":
-            style, weight = "italic", "400"
-        else:
-            style, weight = "normal", "400 700"
+        style = re.search(r"font-style:\s*([^;]+);", body).group(1).strip()
+        weight = re.search(r"font-weight:\s*([^;]+);", body).group(1).strip()
+        stretch = re.search(r"font-stretch:\s*([^;]+);", body)
         blocks.append(
             f"/* {family} {subset} */\n@font-face {{\n"
             f"  font-family: \"{family}\";\n  font-style: {style};\n  font-weight: {weight};\n"
-            f"  font-display: swap;\n"
+            + (f"  font-stretch: {stretch.group(1).strip()};\n" if stretch else "")
+            + f"  font-display: swap;\n"
             f"  src: url(\"../fonts/{name}\") format(\"woff2\");\n"
             f"  unicode-range: {rng};\n}}\n")
-    if len(blocks) != 4:
-        raise SystemExit(f"oczekiwano 4 blokow @font-face, jest {len(blocks)}")
+    if len(blocks) != 6:
+        raise SystemExit(f"oczekiwano 6 blokow @font-face, jest {len(blocks)}")
     return "\n".join(blocks)
 
 

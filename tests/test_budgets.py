@@ -39,7 +39,9 @@ def test_js_css_gzip(repo_root):
 def test_home_first_screen_weight(repo_root):
     sys.stdout.reconfigure(encoding="utf-8")
     hero, row = _home(repo_root)
-    fonts = ["schibsted-grotesk-latin.woff2", "instrument-serif-italic-latin.woff2"]
+    # Archivo (menu) też: schowana nakładka menu jest układana, więc przeglądarka pobiera ją od razu (z Ż = latin-ext)
+    fonts = ["schibsted-grotesk-latin.woff2", "instrument-serif-italic-latin.woff2",
+             "archivo-expanded-latin.woff2", "archivo-expanded-latin-ext.woff2"]
     base = sum((repo_root / f).stat().st_size for f in ("index.html", "assets/css/style.css", "assets/js/main.js"))
     base += sum((repo_root / "assets/fonts" / f).stat().st_size for f in fonts)
 
