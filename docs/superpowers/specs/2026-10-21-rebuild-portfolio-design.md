@@ -71,7 +71,7 @@ Punkt odniesienia, stare SQ photo (zrzuty: `C:\Users\lochk\Pictures\Screenshots\
    - **Telefon:** lewy pasek zamienia się w górny pasek z logo i przyciskiem menu, siatka ma jedną kolumnę.
 9. **Duplikaty:** z praktycznie identycznych kopii zostaje jedna. DSC01355 (drużyna w koszulkach „Awans”) jest tylko w Sporcie. Przy DSC03504 i DSC03639 bierzemy wersje `-2`. Zdjęcia, które naprawdę się różnią, zostają w całości: `SPORT/DSC00109` i `-2` (pion/poziom), `REPORTAŻ/DSC03170`, `-2` i `-3` oraz `REPORTAŻ/DSC03784` i `-2`.
    - Pomijamy te pliki: `SPORT/DSC01355.jpg`, `SPORT/DSC04110.jpg`, `SPORT/DSC07121.jpg`, `REPORTAŻ/DSC01355.jpg`, `REPORTAŻ/DSC03143.jpg`, `REPORTAŻ/DSC03835.jpg`, `REPORTAŻ/DSC03504.jpg`, `REPORTAŻ/DSC03639.jpg`.
-   - Wynik: **Sport 84, Reportaż 97, razem 181 zdjęć.**
+   - Wynik: **Sport 84, Reportaż 97, razem 181 zdjęć.** Od 2026-10-22 doszły 2 kadry ze starej strony głównej (`DSC07497` z meczu Cracovia–Motor, `DSC03703` z koncertu przy choince), skompresowane tak jak reszta eksportu (3072 px, JPEG q80 4:2:0, sRGB, bez EXIF): **Sport 85, Reportaż 98, razem 183.**
    - Przy identycznych kopiach zawsze zostaje wersja `-2`, żeby reguła była jedna (moja decyzja, kopie się nie różnią).
 10. **Zoom w pełnym podglądzie zostaje**, tak jak na obecnej stronie:
     - komputer: kółko myszy przybliża, przeciąganie przesuwa przybliżone zdjęcie,
@@ -89,7 +89,7 @@ Punkt odniesienia, stare SQ photo (zrzuty: `C:\Users\lochk\Pictures\Screenshots\
   - Lighthouse (mobile) Performance ≥ 95, LCP < 2.0 s, CLS < 0.02.
   - JS ≤ 15 KB po gzip, CSS ≤ 20 KB po gzip.
   - Przy wejściu na stronę główną przed pierwszym przewinięciem ładuje się ≤ 1.5 MB.
-- **Wybór na stronę główną:** od 2026-10-22 to 40 kadrów ze starej strony (rzędy w `pages.home.rows`). Dwóch zdjęć ze starej strony nie ma w eksporcie (rząd 1: Cracovia, gest serca; rząd 5: skrzypaczki przy choince). Do czasu ich eksportu stoją tam zastępcze `sport-dsc07708` i `reportaz-dsc03749`.
+- **Wybór na stronę główną:** od 2026-10-22 to 40 kadrów ze starej strony (rzędy w `pages.home.rows`). Rząd 1 prawe to `sport-dsc07497` (Cracovia, gest serca), rząd 5 lewe to `reportaz-dsc03703` (skrzypaczki przy choince).
 - **Aktualizacja 2026-10-21 (decyzja użytkownika):** pełne zdjęcia kompresuje użytkownik. Eksport (JPEG sRGB, bez EXIF) leży w `B:\NA STRONE\sport compressed\bic-compressed` i `B:\NA STRONE\reportaz compressed\bic-compressed`: 189 plików, nazwy 1:1 z oryginałami, 7 plików ma 2918 px. Plik użytkownika trafia na pełny ekran **bez zmian**. AVIF (poniżej) dotyczy tylko mniejszych wersji do siatki (800/1600), robionych z tego eksportu.
 - **Format:** AVIF dla wszystkich wersji, bez zapasowego JPEG-a. Obsługują go wszystkie przeglądarki od 2023 roku (Safari 16.4+). Jakość dobiera builder, zaczynając od q≈72. Przed przetworzeniem całości trzeba porównać wycinki 1:1 z oryginałem (twarze, tłum, ciemne partie) i nie może być widocznej różnicy. Profil sRGB zostaje zachowany.
 - **Telefony w pełnym podglądzie:** wersja dopasowana do ekranu (`srcset`/`sizes`). 3072 px dostają duże ekrany i Retina, a każdy przy przybliżeniu (pkt 10).

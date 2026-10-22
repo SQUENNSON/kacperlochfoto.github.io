@@ -338,7 +338,7 @@ def test_galleries_complete(built):
 
     manifest, site = _manifest(built), _site_pages(built)
     by_slug = {p["slug"]: p for p in manifest}
-    for key, count in (("sport", 84), ("reportaz", 97)):
+    for key, count in (("sport", 85), ("reportaz", 98)):
         out = PHOTO_PAGES[key]
         tree = parse(built / out)
         slugs = _lb_slugs(tree, out, manifest)
@@ -367,8 +367,8 @@ def test_galleries_complete(built):
     assert "spaced" in rows.attrs["class"].split()
     assert [len(r.find_all("a", "ph")) for r in rows.find_all("div", "row")] == [len(r) for r in home["rows"]]
     more = {a.attrs["href"]: norm(a.text()) for a in tree.find("main").find_all("a") if "data-lb" not in a.attrs}
-    assert more["sport/"].startswith("Sport →") and "84" in more["sport/"]
-    assert more["reportaz/"].startswith("Reportaż →") and "97" in more["reportaz/"]
+    assert more["sport/"].startswith("Sport →") and "85" in more["sport/"]
+    assert more["reportaz/"].startswith("Reportaż →") and "98" in more["reportaz/"]
 
     tree = parse(built / "o-mnie/index.html")
     assert _lb_slugs(tree, "o-mnie/index.html", manifest) == site["o-mnie"]["photos"]

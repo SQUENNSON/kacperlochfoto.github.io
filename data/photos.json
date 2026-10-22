@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-21T13:45:43",
+ "generated": "2026-10-22T16:28:20",
  "photos": [
   {
    "slug": "sport-2b9ae30e",
@@ -1910,6 +1910,34 @@
      "h": 2458,
      "file": "assets/photos/sport-dsc07481-3072.jpg",
      "bytes": 1321989
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07497",
+   "category": "sport",
+   "source": "DSC07497.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#686e50",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07497-800.avif",
+     "bytes": 71801
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07497-1600.avif",
+     "bytes": 238229
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07497-3072.jpg",
+     "bytes": 1065014
     }
    ]
   },
@@ -3948,6 +3976,34 @@
      "h": 2458,
      "file": "assets/photos/reportaz-dsc03669-3072.jpg",
      "bytes": 1449486
+    }
+   ]
+  },
+  {
+   "slug": "reportaz-dsc03703",
+   "category": "reportaz",
+   "source": "DSC03703.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#7c5744",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/reportaz-dsc03703-800.avif",
+     "bytes": 68335
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/reportaz-dsc03703-1600.avif",
+     "bytes": 336081
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/reportaz-dsc03703-3072.jpg",
+     "bytes": 1657980
     }
    ]
   },

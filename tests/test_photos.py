@@ -75,8 +75,8 @@ def test_encode_photo_synthetic(tmp_path, capsys):
 @needs_sources
 def test_collect_sources_counts():
     sources = collect_sources(SOURCES)
-    assert sum(s.category == "sport" for s in sources) == 84
-    assert sum(s.category == "reportaz" for s in sources) == 97
+    assert sum(s.category == "sport" for s in sources) == 85
+    assert sum(s.category == "reportaz" for s in sources) == 98
     assert len({s.slug for s in sources}) == len(sources)
     excluded = {(c, n.lower()) for c, n in EXCLUDE}
     for s in sources:
