@@ -51,8 +51,9 @@ Punkt odniesienia, stare SQ photo (zrzuty: `C:\Users\lochk\Pictures\Screenshots\
 2. **Wygląd: wersja A „Papier”** z makiet (wybrana spośród A „Papier”, B „Noc”, C „Linie”). Parametry z makiety:
    - Kolory: tło `#f4f2ee`, tekst `#141413`, przygaszony `#8b877e`, linia oddzielająca pasek `rgba(20,20,19,.08)`.
    - Fonty: **Instrument Serif** (kursywa) + **Schibsted Grotesk** (400–700). To echo logo: kursywa szeryfowa jak „SQ”, grotesk jak „photo”.
-   - Pasek (~27% szerokości na desktopie): logo, pod nim „KACPER LOCH” (grotesk 600, wersaliki, rozstrzelenie .24em), podtytuł *„fotografia sportowa i reportaż”* (kursywa szeryfowa, kolor przygaszony). Dalej menu, a na dole Instagram i lokalizacja.
-   - Menu: numer `01–04` (mały, przygaszony) + nazwa wersalikami (grotesk 600, ~12.5px, rozstrzelenie .17em). **Najechanie i aktywna strona:** nazwa „przewija się” w górę, a na jej miejsce wjeżdża ta sama nazwa kursywą Instrument Serif (~21px). Czas ~0.6 s, krzywa `cubic-bezier(.16,1,.3,1)`.
+   - Pasek (~27% szerokości na desktopie): logo, pod nim „KACPER LOCH” (grotesk 600, wersaliki, rozstrzelenie .24em). Dalej menu, a na dole Instagram. (2026-10-22, decyzja użytkownika: bez podtytułu „fotografia sportowa i reportaż” i bez lokalizacji na dole paska; lokalizacja zostaje na stronie Kontakt.)
+   - Menu: numer `01–04` (mały, przygaszony) + nazwa wersalikami (grotesk 500, 15px, rozstrzelenie .16em). **Najechanie i aktywna strona:** czcionka się nie zmienia (2026-10-22, decyzja użytkownika: bez zamiany na kursywę). Pod nazwą wysuwa się od lewej cienka linia, a numer ciemnieje. Czas ~0.6 s, krzywa `cubic-bezier(.16,1,.3,1)`. Na telefonie menu w nakładce zostaje kursywą Instrument Serif 34px.
+   - Tło: delikatny pionowy gradient papieru `#f7f5f1 → #f4f2ee → #ebe7df`, przypięty do okna (warstwa `body::before` z `position: fixed`).
    - Hero: szerokie zdjęcie u góry prawej kolumny (w makiecie proporcja 16:6.4).
    - Siatka: dwie kolumny, przerwa 6px.
    - Najechanie na zdjęcie: powolne powiększenie do ~1.035 w ~1.1 s, ta sama krzywa.

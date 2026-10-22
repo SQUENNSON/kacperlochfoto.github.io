@@ -21,7 +21,7 @@
 <meta property="og:image:width" content="{{ og_size[0] }}">
 <meta property="og:image:height" content="{{ og_size[1] }}">
 {% endif %}
-<meta name="theme-color" content="#f4f2ee">
+<meta name="theme-color" content="#f7f5f1">
 <link rel="preload" href="{{ p }}assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ p }}assets/fonts/instrument-serif-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ p }}assets/css/style.css">
@@ -41,18 +41,16 @@
   <div class="brand">
     <a class="logo" href="{{ p or './' }}" aria-label="SQphoto — strona główna">{{ m.logo_svg(150) }}</a>
     <p class="name">{{ site.name }}</p>
-    <p class="tag">{{ site.tagline }}</p>
   </div>
   <nav class="nav" id="nav" aria-label="Menu główne">
 {% for item in nav_items %}
-    <a href="{{ item.href }}"{% if item.key == page.nav %} aria-current="page"{% endif %}><span class="num" aria-hidden="true">{{ item.num }}</span><span class="roll"><b>{{ item.label }}</b><em aria-hidden="true">{{ item.label }}</em></span></a>
+    <a href="{{ item.href }}"{% if item.key == page.nav %} aria-current="page"{% endif %}><span class="num" aria-hidden="true">{{ item.num }}</span><span class="label">{{ item.label }}</span></a>
 {% endfor %}
   </nav>
   <div class="foot">
     <a class="m-only" href="{{ site.phone_href }}">{{ site.phone }}</a>
     <a class="m-only" href="mailto:{{ site.email }}">{{ site.email }}</a>
     <a class="ig" href="{{ site.instagram }}" target="_blank" rel="noopener">{{ m.ig_icon() }}{{ site.instagram_handle }}</a>
-    <span class="loc">{{ site.location }}</span>
   </div>
 </aside>
 <main id="main">

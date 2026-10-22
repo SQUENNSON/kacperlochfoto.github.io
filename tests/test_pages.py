@@ -143,8 +143,9 @@ def test_nav_active_and_numbers(built, key):
     assert nav.attrs.get("id") == "nav"
     links = nav.find_all("a")
     assert [norm(a.find("span", "num").text()) for a in links] == ["01", "02", "03", "04"]
-    assert [norm(a.find("b").text()) for a in links] == ["Sport", "Reportaż", "O mnie", "Kontakt"]
-    current = [norm(a.find("b").text()) for a in links if a.attrs.get("aria-current") == "page"]
+    assert [norm(a.find("span", "label").text()) for a in links] == ["Sport", "Reportaż", "O mnie", "Kontakt"]
+    assert [norm(a.text()) for a in links] == ["01Sport", "02Reportaż", "03O mnie", "04Kontakt"]  # bez drugiej kopii etykiety
+    current = [norm(a.find("span", "label").text()) for a in links if a.attrs.get("aria-current") == "page"]
     expected = {"sport": ["Sport"], "reportaz": ["Reportaż"], "o-mnie": ["O mnie"], "kontakt": ["Kontakt"]}
     assert current == expected.get(key, [])
     btn = tree.find("header", "topbar").find("button", "menu-btn")
