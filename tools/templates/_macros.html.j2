@@ -5,10 +5,10 @@
 
 {# Zdjecie = link do najwiekszego pliku (bez JS otwiera pelny plik). Lightbox (Task 5) czyta a.ph[data-lb]
    i data-*; kolejnosc [data-lb] w DOM = kolejnosc w lightboxie. Kolor --c widac, zanim obraz sie zaladuje. #}
-{% macro photo_link(photo, p, sizes, hero=False, focus="", eager=False, cls="") -%}
+{% macro photo_link(photo, p, sizes, hero=False, focus="", eager=False, priority="low", cls="") -%}
 <a class="ph{{ ' hero' if hero }}{{ ' ' ~ cls if cls }}" href="{{ p }}{{ photo.variants[-1].file }}" data-lb data-srcset="{{ srcset(photo, p) }}" data-w="{{ photo.w }}" data-h="{{ photo.h }}" style="--c:{{ photo.color }}{% if not hero %};--r:{{ (photo.w / photo.h)|round(4) }}{% endif %}"><img src="{{ p }}{{ photo.variants[0].file }}" srcset="{{ srcset(photo, p) }}" sizes="{{ sizes }}" width="{{ photo.w }}" height="{{ photo.h }}" alt="{{ photo_alt[photo.category] }}"
 {%- if hero %} loading="eager" fetchpriority="high" style="object-position:{{ focus }}"
-{%- elif eager %} decoding="async" fetchpriority="low"
+{%- elif eager %} decoding="async" fetchpriority="{{ priority }}"
 {%- else %} loading="lazy" decoding="async"
 {%- endif %}></a>
 {%- endmacro %}
@@ -24,11 +24,11 @@
 {%- endmacro %}
 
 {# Wiersz bez przycinania: elementy rosna proporcjonalnie do w/h (--r), wiec maja rowna wysokosc.
-   eager = wiersz na pierwszym ekranie (bez loading="lazy"). #}
-{% macro row(photos, p, sizes, eager=False) -%}
+   eager = wiersz na pierwszym ekranie (bez loading="lazy"); priority "low" pod hero, "high" gdy wiersz jest na samej gorze. #}
+{% macro row(photos, p, sizes, eager=False, priority="low") -%}
 <div class="row" data-reveal>
 {% for photo in photos %}
-  {{ photo_link(photo, p, sizes, eager=eager) }}
+  {{ photo_link(photo, p, sizes, eager=eager, priority=priority) }}
 {% endfor %}
 </div>
 {%- endmacro %}

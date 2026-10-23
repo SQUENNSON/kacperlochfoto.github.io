@@ -341,19 +341,35 @@ def test_galleries_complete(built):
 
     manifest, site = _manifest(built), _site_pages(built)
     by_slug = {p["slug"]: p for p in manifest}
-    for key, count in (("sport", 85), ("reportaz", 98)):
+    for key, count in (("sport", 88), ("reportaz", 99)):
         out = PHOTO_PAGES[key]
         tree = parse(built / out)
         slugs = _lb_slugs(tree, out, manifest)
         category = [p for p in manifest if p["category"] == key]
-        hero = site[key]["hero"]
-        assert len(slugs) == count == len(category)
-        assert slugs[0] == hero and "hero" in tree.find("a", "ph").attrs["class"].split()
-        grid = [p for p in category if p["slug"] != hero]
-        assert slugs[1:] == [p["slug"] for row in pair_rows(grid) for p in row]  # hero nie powtarza się
+        # bez dużego kadru u góry: najpierw rzędy z site.json (układ starej strony), dalej reszta przez pair_rows
+        assert "hero" not in site[key] and tree.find_all("a", "hero") == []
+        manual = site[key].get("rows", [])
+        picks = [s for row in manual for s in row]
+        grid = [p for p in category if p["slug"] not in picks]
+        expected = manual + _slugs(pair_rows(grid))
+        assert len(slugs) == count == len(set(slugs))
+        assert {p["slug"] for p in category} <= set(slugs)  # cała kategoria na stronie
+        assert slugs == [s for row in expected for s in row]
         rows = tree.find("main").find_all("div", "row")
-        assert [len(r.find_all("a", "ph")) for r in rows] == [len(r) for r in pair_rows(grid)]
+        assert [len(r.find_all("a", "ph")) for r in rows] == [len(r) for r in expected]
         assert all("data-reveal" in r.attrs for r in rows)
+
+    # reportaż = kolejność starej strony 1:1 (zrzuty 2026-10-23): 17 rzędów, w tym „AWANS” ze sportu
+    old = site["reportaz"]["rows"]
+    assert len(old) == 17 and all(len(row) == 2 for row in old)
+    assert old[0] == ["reportaz-dsc02971", "reportaz-dsc03639-2"] and old[-1] == ["reportaz-dsc09795", "reportaz-dsc08468"]
+    assert [s for row in old for s in row if by_slug[s]["category"] != "reportaz"] == ["sport-dsc01355-2"]
+    # sport = kolejność starej strony 1:1 (zrzuty 2026-10-23 1310–1311): 19 rzędów, 3 zdjęcia dołożone z dysku
+    old = site["sport"]["rows"]
+    assert len(old) == 19 and all(len(row) == 2 for row in old)
+    assert old[0] == ["sport-dsc07627", "sport-dsc00109"] and old[-1] == ["sport-dsc05943", "sport-dsc04413"]
+    assert ["sport-dsc05050", "sport-dsc04790"] in old and ["sport-dsc07751", "sport-dsc07774"] in old
+    assert all(by_slug[s]["category"] == "sport" for row in old for s in row)
 
     tree = parse(built / "index.html")
     # strona główna = układ starej strony 1:1: pas u góry + rzędy z site.json w tej kolejności, bez pair_rows
@@ -370,8 +386,8 @@ def test_galleries_complete(built):
     assert "spaced" in rows.attrs["class"].split()
     assert [len(r.find_all("a", "ph")) for r in rows.find_all("div", "row")] == [len(r) for r in home["rows"]]
     more = {a.attrs["href"]: norm(a.text()) for a in tree.find("main").find_all("a") if "data-lb" not in a.attrs}
-    assert more["sport/"].startswith("Sport →") and "85" in more["sport/"]
-    assert more["reportaz/"].startswith("Reportaż →") and "98" in more["reportaz/"]
+    assert more["sport/"].startswith("Sport →") and "88" in more["sport/"]
+    assert more["reportaz/"].startswith("Reportaż →") and "99" in more["reportaz/"]  # tyle, ile na stronie
 
     tree = parse(built / "o-mnie/index.html")
     assert _lb_slugs(tree, "o-mnie/index.html", manifest) == site["o-mnie"]["photos"]
@@ -398,26 +414,26 @@ def test_images_have_dimensions_and_lazy(built):
             assert [(files[url][0]["slug"], f"{files[url][1]['w']}w") for url, _ in candidates] == [
                 (photo["slug"], w) for _, w in candidates]
         heroes = tree.find_all("a", "hero")
-        if key == "o-mnie":
-            assert heroes == []
+        preload = [l.attrs for l in tree.find("head").find_all("link") if l.attrs.get("as") == "image"]
+        if key != "home":  # duży kadr u góry tylko na stronie głównej (pas)
+            assert heroes == [] and preload == []
         else:
             assert len(heroes) == 1
             hero = heroes[0].find("img")
             assert hero.attrs.get("fetchpriority") == "high" and hero.attrs.get("loading") != "lazy"
             assert hero.attrs["sizes"] == HERO_SIZES
-            preload = [l.attrs for l in tree.find("head").find_all("link") if l.attrs.get("as") == "image"]
             assert len(preload) == 1 and preload[0]["rel"] == "preload"
             assert preload[0]["imagesrcset"] == hero.attrs["srcset"] and preload[0]["imagesizes"] == HERO_SIZES
             assert preload[0].get("fetchpriority") == "high" and preload[0].get("type") == "image/avif"
         grid = [img for img in imgs if not heroes or img is not heroes[0].find("img")]
         assert grid, out
-        # spec: loading="lazy" poza pierwszym ekranem; pierwszy wiersz pod hero jest na nim (1440×900 i 390×844)
-        first_screen = tree.find("main").find("div", "row").find_all("img") if heroes else []
+        # spec: loading="lazy" poza pierwszym ekranem; pierwszy wiersz jest na nim (1440×900 i 390×844)
+        first_screen = tree.find("main").find("div", "row").find_all("img") if key != "o-mnie" else []
         for img in grid:
             eager = any(img is f for f in first_screen)
             assert img.attrs.get("loading") == (None if eager else "lazy"), out
-            # pierwszy wiersz nie konkuruje z hero o pasmo (Lighthouse LCP)
-            assert img.attrs.get("fetchpriority") == ("low" if eager else None), out
+            # pod hero pierwszy wiersz nie konkuruje z nim o pasmo; w galerii bez hero to on jest LCP
+            assert img.attrs.get("fetchpriority") == (("low" if heroes else "high") if eager else None), out
             assert img.attrs.get("decoding") == "async" and img.attrs["sizes"] == GRID_SIZES
 
 

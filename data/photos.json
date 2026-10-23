@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T16:28:20",
+ "generated": "2026-10-23T13:20:59",
  "photos": [
   {
    "slug": "sport-2b9ae30e",
@@ -1326,6 +1326,34 @@
    ]
   },
   {
+   "slug": "sport-dsc04790",
+   "category": "sport",
+   "source": "DSC04790.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#617882",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc04790-800.avif",
+     "bytes": 56664
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc04790-1600.avif",
+     "bytes": 227032
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc04790-3072.jpg",
+     "bytes": 1262796
+    }
+   ]
+  },
+  {
    "slug": "sport-dsc04819",
    "category": "sport",
    "source": "DSC04819.jpg",
@@ -1378,6 +1406,34 @@
      "h": 2335,
      "file": "assets/photos/sport-dsc05004-2918.jpg",
      "bytes": 1136737
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc05050",
+   "category": "sport",
+   "source": "DSC05050.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#678371",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc05050-800.avif",
+     "bytes": 90304
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc05050-1600.avif",
+     "bytes": 293276
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc05050-3072.jpg",
+     "bytes": 1357477
     }
    ]
   },
@@ -2190,6 +2246,34 @@
      "h": 2458,
      "file": "assets/photos/sport-dsc07751-3072.jpg",
      "bytes": 1418437
+    }
+   ]
+  },
+  {
+   "slug": "sport-dsc07774",
+   "category": "sport",
+   "source": "DSC07774.jpg",
+   "w": 3072,
+   "h": 2458,
+   "color": "#595742",
+   "variants": [
+    {
+     "w": 800,
+     "h": 640,
+     "file": "assets/photos/sport-dsc07774-800.avif",
+     "bytes": 65048
+    },
+    {
+     "w": 1600,
+     "h": 1280,
+     "file": "assets/photos/sport-dsc07774-1600.avif",
+     "bytes": 262234
+    },
+    {
+     "w": 3072,
+     "h": 2458,
+     "file": "assets/photos/sport-dsc07774-3072.jpg",
+     "bytes": 1100932
     }
    ]
   },

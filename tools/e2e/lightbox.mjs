@@ -30,10 +30,10 @@ try {
     const href = page.url();
     await page.locator("a[data-lb]").nth(2).click();
     await page.waitForSelector("dialog.lb[open] .lb-img.cur");
-    assert.equal(await count(page), "3 / 85");
+    assert.equal(await count(page), "3 / 88");
 
     await page.keyboard.press("ArrowRight");
-    assert.equal(await count(page), "4 / 85");
+    assert.equal(await count(page), "4 / 88");
 
     const largest = await page.locator("a[data-lb]").nth(3).evaluate((a) =>
       a.dataset.srcset.split(",").pop().trim().split(" ")[0].split("/").pop());

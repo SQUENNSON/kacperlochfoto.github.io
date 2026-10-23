@@ -76,8 +76,9 @@ def _photos_word(n: int) -> str:
     return "zdjęcia" if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14) else "zdjęć"
 
 
-def _gallery_ctx(key: str, cfg: dict, photos: list[dict], p: str) -> dict:
+def _gallery_ctx(key: str, pages: dict, photos: list[dict], p: str) -> dict:
     """Hero, wiersze i linki do galerii dla stron ze zdjeciami (wybor z data/site.json)."""
+    cfg = pages[key]
     by_slug = {ph["slug"]: ph for ph in photos}
 
     def get(slug: str) -> dict:
@@ -85,23 +86,23 @@ def _gallery_ctx(key: str, cfg: dict, photos: list[dict], p: str) -> dict:
             raise KeyError(f"site.json pages.{key}: nie ma zdjecia {slug!r} w data/photos.json")
         return by_slug[slug]
 
+    # uklad starej strony 1:1: rzedy recznie w site.json (pion moze stac obok poziomego, kategoria dowolna)
+    rows = [[get(s) for s in row] for row in cfg.get("rows", [])]
+    slugs = [ph["slug"] for row in rows for ph in row]
+    if any(not 1 <= len(row) <= 2 for row in rows) or len(set(slugs)) != len(slugs) or cfg.get("hero") in slugs:
+        raise ValueError(f"site.json pages.{key}.rows: rzad ma 1-2 zdjecia, bez powtorek i bez hero")
+
     if key == "home":
         labels = dict(NAV)
         more = []
         for k in ("sport", "reportaz"):
-            n = sum(ph["category"] == k for ph in photos)
+            n = sum(map(len, _gallery_ctx(k, pages, photos, p)["rows"]))  # tyle, ile na stronie galerii
             more.append({"href": p + _dir_url(NAV_OUT[k]), "label": labels[k], "count": n, "word": _photos_word(n)})
-        # uklad starej strony 1:1: rzedy recznie w site.json (pion moze stac obok poziomego), bez pair_rows
-        rows = [[get(s) for s in row] for row in cfg["rows"]]
-        slugs = [ph["slug"] for row in rows for ph in row]
-        if any(not 1 <= len(row) <= 2 for row in rows) or len(set(slugs)) != len(slugs) or cfg["hero"] in slugs:
-            raise ValueError("site.json pages.home.rows: rzad ma 1-2 zdjecia, bez powtorek i bez hero")
         return {"hero": get(cfg["hero"]), "rows": rows, "more": more}
     if key in ("sport", "reportaz"):
-        hero = get(cfg["hero"])
-        if hero["category"] != key:
-            raise ValueError(f"site.json pages.{key}.hero {hero['slug']!r} jest z kategorii {hero['category']!r}")
-        return {"hero": hero, "rows": pair_rows([ph for ph in photos if ph["category"] == key and ph is not hero])}
+        # bez duzego kadru u gory: najpierw rzedy z site.json, dalej reszta kategorii w kolejnosci plikow
+        rest = [ph for ph in photos if ph["category"] == key and ph["slug"] not in slugs]
+        return {"rows": rows + pair_rows(rest)}
     if key == "o-mnie":
         return {"rows": [[get(s) for s in cfg["photos"]]]}
     return {}
@@ -189,7 +190,7 @@ def render_all(repo_root: Path) -> list[Path]:
             "url": site["base_url"] + _dir_url(page.out),
             **data["pages"][page.key],
         }
-        gallery = _gallery_ctx(page.key, data["pages"][page.key], photos, p)
+        gallery = _gallery_ctx(page.key, data["pages"], photos, p)
         html = env.get_template(page.template).render(site=site, page=page_ctx, p=p, nav_items=nav_items, **gallery)
         target = repo_root / page.out
         target.parent.mkdir(parents=True, exist_ok=True)
