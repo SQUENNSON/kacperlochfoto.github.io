@@ -117,8 +117,9 @@ def _dir_url(out: str) -> str:
 
 
 def nbsp(text: str) -> str:
-    """Polska typografia: jednoliterowe slowa i pauza nie zostaja same na koncu wiersza."""
+    """Polska typografia: jednoliterowe slowa, liczba przed slowem i pauza nie zostaja same na koncu wiersza."""
     text = re.sub(r"(?<!\w)([aiouwzAIOUWZ]) ", "\\1\u00a0", text)
+    text = re.sub(r"(\d) (?=\w)", "\\1\u00a0", text)
     return text.replace(" — ", "\u00a0— ")
 
 

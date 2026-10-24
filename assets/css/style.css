@@ -305,14 +305,16 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   text-wrap: balance;
 }
 
-.about { box-sizing: content-box; max-width: 62ch; font-size: 17px; line-height: 1.65; }
+/* jeden krój: wstęp tym samym groteskiem, tylko większy i grubszy */
+.about { box-sizing: content-box; max-width: 62ch; font-size: 17px; line-height: 1.75; }
 .about .lead {
-  margin: 22px 0 40px;
-  font: italic 400 clamp(28px, 3.2vw, 44px)/1.12 var(--serif);
-  letter-spacing: -.005em;
+  margin: 22px 0 32px;
+  font: 500 clamp(21px, 1.9vw, 26px)/1.45 var(--sans);
+  letter-spacing: -.012em;
+  color: var(--ink);
   text-wrap: balance;
 }
-.about p { text-wrap: pretty; }
+.about p { color: #3b3a37; text-wrap: pretty; }
 .about p + p { margin-top: 1.1em; }
 
 .big-link {
