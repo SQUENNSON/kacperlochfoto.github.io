@@ -49,6 +49,41 @@ if (btn) {
   });
 }
 
+// Pasek postępu (CSS: .progress): miękko dogania przewijanie (wykładniczo, τ = 0.12 s); pętla rAF
+// działa tylko, dopóki go nie dogoni. Ograniczony ruch = 1:1. Ukryty, gdy nie ma czego przewijać.
+const progress = document.createElement("div");
+progress.className = "progress";
+progress.setAttribute("aria-hidden", "true");
+progress.innerHTML = "<i></i>";
+document.body.append(progress);
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+let maxScroll = 1, target = 0, shown = 0, last = 0, raf = 0;
+
+function draw(now) {
+  const dt = Math.min(0.05, Math.max(0, (now - last) / 1000));
+  last = now;
+  shown = reduceMotion.matches ? target : shown + (target - shown) * (1 - Math.exp(-dt / 0.12));
+  if (Math.abs(target - shown) < 1e-4) shown = target;
+  progress.style.setProperty("--p", shown.toFixed(4));
+  raf = shown === target ? 0 : requestAnimationFrame(draw);
+}
+function onScroll() {
+  target = Math.min(1, Math.max(0, scrollY / maxScroll));
+  if (!raf) { last = performance.now() - 16; raf = requestAnimationFrame(draw); }
+}
+// Bez skoku przy zmianie rozmiaru (na telefonie pasek adresu zmienia wysokość okna w trakcie przewijania).
+function measure() {
+  const m = root.scrollHeight - innerHeight;
+  progress.hidden = m < 40;
+  maxScroll = Math.max(1, m);
+  onScroll();
+}
+measure();
+shown = target;
+addEventListener("scroll", onScroll, { passive: true });
+addEventListener("resize", measure);
+if (main && "ResizeObserver" in window) new ResizeObserver(measure).observe(main);
+
 // Lightbox (Task 5): zwykły klik w zdjęcie otwiera podgląd zamiast pełnego pliku; moduł ładuje się
 // leniwie (wcześniej, gdy kursor najedzie na pierwsze zdjęcie). Ctrl/⌘/Shift/środkowy = zwykły link.
 const loadLightbox = () => import("./lightbox.js");

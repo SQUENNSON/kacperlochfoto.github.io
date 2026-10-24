@@ -64,10 +64,10 @@
 
 /* ============ tokeny ============ */
 :root {
-  --bg: #f4f2ee;
-  --bg-top: #f7f5f1;
-  --bg-end: #ebe7df;
-  /* papier: delikatnie jaśniej u góry, ciemniej u dołu; przypięty do okna */
+  --bg: #f6f6f5;
+  --bg-top: #ffffff;
+  --bg-end: #e7e7e5;
+  /* biel u góry przechodzi w jasną szarość u dołu; przypięty do okna */
   --paper: linear-gradient(180deg, var(--bg-top), var(--bg) 45%, var(--bg-end));
   --ink: #141413;
   --muted: #8b877e;
@@ -150,14 +150,14 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 /* menu: numer + szerokie wersaliki (Archivo Expanded); po najechaniu wysuwa się linia */
 .nav { margin-top: 54px; display: flex; flex-direction: column; gap: 6px; }
 .nav a { display: flex; align-items: baseline; gap: 14px; width: fit-content; padding: 7px 12px 7px 0; }
-.num { width: 18px; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; transition: color .4s var(--ease); }
+.num { width: 20px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; transition: color .4s var(--ease); }
 .label {
   position: relative;
   font-family: var(--wide);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   font-stretch: 125%;
-  line-height: 22px;
+  line-height: 24px;
   letter-spacing: .12em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -193,9 +193,29 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   color: var(--muted);
 }
 .foot a { width: fit-content; color: var(--ink); font-weight: 500; }
-.foot .ig { display: flex; align-items: center; gap: 8px; }
-.ig-icon { width: 15px; height: 15px; }
+.foot .ig { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+.ig-icon { width: 19px; height: 19px; }
 .m-only { display: none; }
+
+/* ============ pasek postępu (main.js) ============ */
+/* tor w pasku bocznym, 17 px od krawędzi (na samej krawędzi zlewałby się z brzegiem zdjęć) */
+.progress {
+  position: fixed;
+  z-index: 30;
+  top: 36px;
+  bottom: 28px;
+  left: calc(var(--side) - 20px);
+  width: 2px;
+  background: var(--line);
+  pointer-events: none;
+}
+.progress i { position: absolute; inset: 0; background: var(--ink); transform-origin: 50% 0; transform: scaleY(var(--p, 0)); will-change: transform; }
+@media (width <= 900px) {
+  /* telefon: linia na dolnej krawędzi topbaru */
+  .progress { z-index: 51; top: calc(var(--bar) - 2px); bottom: auto; left: 0; width: 100%; height: 2px; background: none; transition: opacity .45s var(--ease); }
+  .progress i { transform-origin: 0 50%; transform: scaleX(var(--p, 0)); }
+  html.menu-open .progress { opacity: 0; }
+}
 
 /* ============ telefon i tablet (<= 900 px) ============ */
 @media (width <= 900px) {
@@ -394,7 +414,7 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 
 /* ============ ograniczony ruch ============ */
 @media (prefers-reduced-motion: reduce) {
-  .label::after, .num, .side, html.menu-open .side, .side > *, .menu-btn span, .big-link::after, .more-label i { transition: none; }
+  .label::after, .num, .side, html.menu-open .side, .side > *, .menu-btn span, .big-link::after, .more-label i, .progress { transition: none; }
   .side > * { transform: none; }
   ::view-transition-group(*),
   ::view-transition-old(*),
@@ -414,7 +434,7 @@ dialog.lb {
   border: 0;
   overflow: hidden;
   overscroll-behavior: contain;
-  background: rgba(244, 242, 238, .97);
+  background: rgba(246, 246, 245, .97); /* = --bg */
   color: var(--ink);
 }
 dialog.lb::backdrop { background: transparent; }
