@@ -15,7 +15,7 @@ BASE_SCRIPT = (
     "?'/kacperlochfoto.github.io/':'/')+'\">')</script>"
 )
 ABOUT_PARAGRAPHS = [
-    "Cześć, mam na imię Kacper, mam 19 lat, pochodzę z okolic Mszany Dolnej. Fotografia to moja pasja "
+    "Cześć, mam na imię Kacper, mam 20 lat, pochodzę z okolic Mszany Dolnej. Fotografia to moja pasja "
     "od najmłodszych lat, a od ponad roku profesjonalne zajęcie.",
     "Specjalizuję się w fotografii sportowej, gdzie dynamika i emocje są kluczem do uchwycenia "
     "niezapomnianych chwil. W mojej dotychczasowej karierze miałem przyjemność tworzyć pełne reportaże "
