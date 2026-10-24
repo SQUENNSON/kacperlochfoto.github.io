@@ -3,7 +3,7 @@
   "title": "SQphoto — Kacper Loch",
   "base_url": "https://squennson.github.io/kacperlochfoto.github.io/",
   "name": "Kacper Loch",
-  "location": "Nowy Sącz · Małopolska",
+  "location": "Małopolska",
   "phone": "538 392 636",
   "phone_href": "tel:+48538392636",
   "email": "loch.kacper@gmail.com",
@@ -264,23 +264,17 @@
   },
   "o-mnie": {
    "title": "O mnie · SQphoto — Kacper Loch",
-   "description": "Kacper Loch, fotograf z Mszany Dolnej. Reportaże meczowe dla KS Turbacz i MKS Limanovia, sparing Cracovii, mecz Ekipy Fantasy.",
+   "description": "Kacper Loch, 19-letni fotograf z okolic Mszany Dolnej: reportaże meczowe od Ekstraklasy po niższe ligi, eventy klubowe i imprezy okolicznościowe.",
    "heading": "O mnie",
-   "lead": "Fotograf z Mszany Dolnej. 19 lat, aparat w ręce od najmłodszych lat — i to nigdy nie przeszło.",
+   "lead": "Cześć, mam na imię Kacper, mam 19 lat, pochodzę z okolic Mszany Dolnej. Fotografia to moja pasja od najmłodszych lat, a od ponad roku profesjonalne zajęcie.",
    "paragraphs": [
-    "Fotografia to moja pasja od najmłodszych lat, a od niedawna również profesjonalne zajęcie. Specjalizuję się w fotografii sportowej, gdzie dynamika i emocje są kluczem do uchwycenia niezapomnianych chwil.",
-    "W mojej dotychczasowej karierze miałem przyjemność tworzyć pełne reportaże meczowe dla klubów takich jak KS Turbacz (V liga) i MKS Limanovia (IV liga). Doświadczenie zbierałem również na sparingu drużyny z Ekstraklasy — Cracovii.",
-    "Jednym z ciekawszych doświadczeń była obsługa fotograficzna charytatywnego meczu Ekipy Fantasy, w którym udział wzięły znane postacie ze świata internetu. Moje zdjęcia z tego wydarzenia można zobaczyć na profilach IG takich osób jak izak, Jakub Kiwior czy Tyszka, a także na oficjalnym koncie Ekipy Fantasy.",
-    "Poza sportem uwieczniam także imprezy okolicznościowe — od pikników rodzinnych po rocznice ślubów, dbając o to, by każda fotografia opowiadała Waszą wyjątkową historię."
-   ],
-   "photos": [
-    "sport-dsc01937",
-    "reportaz-dsc03156"
+    "Specjalizuję się w fotografii sportowej, gdzie dynamika i emocje są kluczem do uchwycenia niezapomnianych chwil. W mojej dotychczasowej karierze miałem przyjemność tworzyć pełne reportaże meczowe zarówno z boisk Ekstraklasy, jak i niższych lig (II, IV, V), miałem także okazję uczestniczyć w konferencjach prasowych oraz różnego rodzaju eventach klubowych.",
+    "Poza profesjonalnymi rozgrywkami sportowymi fotografuję także imprezy okolicznościowe (koncerty, rocznice, przyjęcia), a także imprezy masowe, takie jak np. „Mecz Charytatywny Ekipy Fantasy”, z którego zdjęcia mojego autorstwa wygenerowały setki tysięcy wyświetleń."
    ]
   },
   "kontakt": {
    "title": "Kontakt · SQphoto — Kacper Loch",
-   "description": "Kontakt z fotografem Kacprem Lochem: tel. 538 392 636, loch.kacper@gmail.com, Instagram @sq_photo__. Nowy Sącz · Małopolska.",
+   "description": "Kontakt z fotografem Kacprem Lochem: tel. 538 392 636, loch.kacper@gmail.com, Instagram @sq_photo__. Małopolska.",
    "heading": "Porozmawiajmy"
   },
   "404": {

@@ -103,8 +103,6 @@ def _gallery_ctx(key: str, pages: dict, photos: list[dict], p: str) -> dict:
         # bez duzego kadru u gory: najpierw rzedy z site.json, dalej reszta kategorii w kolejnosci plikow
         rest = [ph for ph in photos if ph["category"] == key and ph["slug"] not in slugs]
         return {"rows": rows + pair_rows(rest)}
-    if key == "o-mnie":
-        return {"rows": [[get(s) for s in cfg["photos"]]]}
     return {}
 
 

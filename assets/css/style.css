@@ -348,7 +348,7 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   padding: 22px 0;
   border-bottom: 1px solid var(--line);
 }
-.where { margin-top: 28px; font: italic 400 20px/1.3 var(--serif); color: var(--muted); }
+.where { margin-top: 32px; font: italic 400 clamp(26px, 2.6vw, 34px)/1.2 var(--serif); color: var(--muted); }
 .notfound .big-link { margin-top: clamp(32px, 5vw, 56px); }
 @media (width <= 600px) {
   .channels li { grid-template-columns: minmax(0, 1fr); padding: 20px 0; }
@@ -366,8 +366,6 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 /* strona główna jak stara: niski pas u góry, wąsko w rzędzie, szeroko między rzędami */
 .hero.strip { aspect-ratio: 4 / 1; }
 .rows.spaced { gap: clamp(20px, 2.4vw, 56px); }
-
-.about-photos { padding: 0 var(--pad) var(--pad); }
 
 /* strona główna: linki do galerii pod wyborem kadrów */
 .more {

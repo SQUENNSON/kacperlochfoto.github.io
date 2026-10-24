@@ -15,19 +15,15 @@ BASE_SCRIPT = (
     "?'/kacperlochfoto.github.io/':'/')+'\">')</script>"
 )
 ABOUT_PARAGRAPHS = [
-    "Fotograf z Mszany Dolnej. 19 lat, aparat w ręce od najmłodszych lat — i to nigdy nie przeszło.",
-    "Fotografia to moja pasja od najmłodszych lat, a od niedawna również profesjonalne zajęcie. "
+    "Cześć, mam na imię Kacper, mam 19 lat, pochodzę z okolic Mszany Dolnej. Fotografia to moja pasja "
+    "od najmłodszych lat, a od ponad roku profesjonalne zajęcie.",
     "Specjalizuję się w fotografii sportowej, gdzie dynamika i emocje są kluczem do uchwycenia "
-    "niezapomnianych chwil.",
-    "W mojej dotychczasowej karierze miałem przyjemność tworzyć pełne reportaże meczowe dla klubów "
-    "takich jak KS Turbacz (V liga) i MKS Limanovia (IV liga). Doświadczenie zbierałem również na "
-    "sparingu drużyny z Ekstraklasy — Cracovii.",
-    "Jednym z ciekawszych doświadczeń była obsługa fotograficzna charytatywnego meczu Ekipy Fantasy, "
-    "w którym udział wzięły znane postacie ze świata internetu. Moje zdjęcia z tego wydarzenia można "
-    "zobaczyć na profilach IG takich osób jak izak, Jakub Kiwior czy Tyszka, a także na oficjalnym "
-    "koncie Ekipy Fantasy.",
-    "Poza sportem uwieczniam także imprezy okolicznościowe — od pikników rodzinnych po rocznice ślubów, "
-    "dbając o to, by każda fotografia opowiadała Waszą wyjątkową historię.",
+    "niezapomnianych chwil. W mojej dotychczasowej karierze miałem przyjemność tworzyć pełne reportaże "
+    "meczowe zarówno z boisk Ekstraklasy, jak i niższych lig (II, IV, V), miałem także okazję "
+    "uczestniczyć w konferencjach prasowych oraz różnego rodzaju eventach klubowych.",
+    "Poza profesjonalnymi rozgrywkami sportowymi fotografuję także imprezy okolicznościowe (koncerty, "
+    "rocznice, przyjęcia), a także imprezy masowe, takie jak np. „Mecz Charytatywny Ekipy Fantasy”, "
+    "z którego zdjęcia mojego autorstwa wygenerowały setki tysięcy wyświetleń.",
 ]
 
 
@@ -159,8 +155,9 @@ def test_contact_copy(built):
     hrefs = {a.attrs.get("href") for a in main.find_all("a")}
     assert {"tel:+48538392636", "mailto:loch.kacper@gmail.com", "https://www.instagram.com/sq_photo__/"} <= hrefs
     text = norm(main.text())
-    for copy in ("Porozmawiajmy", "538 392 636", "loch.kacper@gmail.com", "@sq_photo__", "Nowy Sącz · Małopolska"):
+    for copy in ("Porozmawiajmy", "538 392 636", "loch.kacper@gmail.com", "@sq_photo__", "Małopolska"):
         assert copy in text
+    assert "Nowy Sącz" not in text
     assert norm(main.find("h1").text()) == "Porozmawiajmy"
 
 
@@ -170,8 +167,9 @@ def test_about_copy_has_only_existing_facts(built):
     paragraphs = [norm(p.text()) for p in main.find_all("p")]
     assert paragraphs == ABOUT_PARAGRAPHS
     text = norm(main.text())
-    for fact in ("KS Turbacz", "MKS Limanovia", "Cracovii", "Ekipy Fantasy"):
+    for fact in ("Mszany Dolnej", "Ekstraklasy", "Ekipy Fantasy"):
         assert fact in text
+    assert main.find_all("img") == []  # sam tekst ze starej strony, bez zdjęć
     assert norm(tree.find("title").text())
     assert meta(tree, "description")
 
@@ -253,8 +251,7 @@ def test_old_site_removed(repo_root):
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha"}
-PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html",
-               "o-mnie": "o-mnie/index.html"}
+PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html"}
 
 
 def _ph(slug):
@@ -389,9 +386,7 @@ def test_galleries_complete(built):
     assert more["sport/"].startswith("Sport →") and "88" in more["sport/"]
     assert more["reportaz/"].startswith("Reportaż →") and "99" in more["reportaz/"]  # tyle, ile na stronie
 
-    tree = parse(built / "o-mnie/index.html")
-    assert _lb_slugs(tree, "o-mnie/index.html", manifest) == site["o-mnie"]["photos"]
-    assert len(tree.find("main").find_all("div", "row")) == 1
+    assert "photos" not in site["o-mnie"]
 
 
 def test_images_have_dimensions_and_lazy(built):
@@ -428,7 +423,7 @@ def test_images_have_dimensions_and_lazy(built):
         grid = [img for img in imgs if not heroes or img is not heroes[0].find("img")]
         assert grid, out
         # spec: loading="lazy" poza pierwszym ekranem; pierwszy wiersz jest na nim (1440×900 i 390×844)
-        first_screen = tree.find("main").find("div", "row").find_all("img") if key != "o-mnie" else []
+        first_screen = tree.find("main").find("div", "row").find_all("img")
         for img in grid:
             eager = any(img is f for f in first_screen)
             assert img.attrs.get("loading") == (None if eager else "lazy"), out
