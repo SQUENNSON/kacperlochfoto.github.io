@@ -374,10 +374,10 @@ def test_galleries_complete(built):
     # strona główna = układ starej strony 1:1: pas u góry + rzędy z site.json w tej kolejności, bez pair_rows
     home = site["home"]
     picks = [s for row in home["rows"] for s in row]
-    assert len(home["rows"]) == 21 and [len(row) for row in home["rows"]] == [2] * 8 + [4] + [2] * 12
+    assert len(home["rows"]) == 21 and [len(row) for row in home["rows"]] == [2] * 6 + [4] + [2] * 14
     assert len(picks) == len(set(picks)) == 44
-    # 2026-10-25: rząd Audi (zdjęcia 1, 4, 9, 13 ze stykówki) za 8. rzędem, tylko na stronie głównej
-    assert home["rows"][8] == ["motoryzacja-dsc09512", "motoryzacja-dsc09550",
+    # 2026-10-25: rząd Audi (zdjęcia 1, 4, 9, 13 ze stykówki) za 6. rzędem, tylko na stronie głównej
+    assert home["rows"][6] ==["motoryzacja-dsc09512", "motoryzacja-dsc09550",
                                "motoryzacja-dsc09673", "motoryzacja-dsc09694"]
     assert home["hero"] in by_slug and all(s in by_slug for s in picks)
     slugs = _lb_slugs(tree, "index.html", manifest)
