@@ -1,6 +1,7 @@
 """Generuje statyczne strony HTML z szablonow Jinja2 (tools/templates) i data/site.json."""
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -32,6 +33,12 @@ PAGES: list[Page] = [
 
 NAV = [("sport", "Sport"), ("reportaz", "Reportaż"), ("o-mnie", "O mnie"), ("kontakt", "Kontakt")]
 NAV_OUT = {page.key: page.out for page in PAGES}
+
+# ?v= w adresach CSS/JS: GitHub Pages wysyła max-age=600, więc bez tego nowy HTML potrafi przez 10 min
+# złożyć się ze starym CSS z cache (2026-10-25: rozjechana strona O mnie). JS = skrót całego grafu modułów;
+# main.js podaje ?v= dalej do lightbox.js, tylko zoom-math.js (import statyczny) idzie bez wersji.
+CSS_FILES = ("assets/css/style.css",)
+JS_FILES = ("assets/js/main.js", "assets/js/lightbox.js", "assets/js/zoom-math.js")
 
 OG = "assets/img/og.jpg"
 OG_SIZE = (1200, 630)
@@ -127,6 +134,14 @@ def nbsp(text: str) -> str:
     return text.replace(" — ", "\u00a0— ")
 
 
+def asset_version(repo_root: Path, *files: str) -> str:
+    """Krótki skrót zawartości plików (parametr ?v=); zmienia się przy każdej zmianie któregokolwiek z nich."""
+    h = hashlib.sha256()
+    for f in files:
+        h.update((repo_root / f).read_bytes())
+    return h.hexdigest()[:10]
+
+
 def _logo(repo_root: Path) -> dict:
     svg = (repo_root / "assets/img/logo.svg").read_text(encoding="utf-8")
     viewbox = re.search(r'viewBox="([^"]+)"', svg).group(1)
@@ -179,6 +194,8 @@ def render_all(repo_root: Path) -> list[Path]:
         QUAD_SIZES=QUAD_SIZES,
         WORK_SIZES=WORK_SIZES,
         HERO_SIZES=HERO_SIZES,
+        css_v=asset_version(repo_root, *CSS_FILES),
+        js_v=asset_version(repo_root, *JS_FILES),
     )
 
     written = []

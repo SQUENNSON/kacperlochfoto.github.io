@@ -208,6 +208,8 @@ def test_about_works_collage(built, repo_root):
 
 
 def test_meta_every_page(built, repo_root):
+    from build_pages import CSS_FILES, JS_FILES, asset_version, prefix_for
+
     site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))
     assert site["site"]["base_url"] == BASE_URL
     for page in pages():
@@ -222,9 +224,13 @@ def test_meta_every_page(built, repo_root):
         assert all(f.get("type") == "font/woff2" and "crossorigin" in f for f in fonts), page.key
         # czcionka menu tylko na desktopie (na telefonie menu jest schowane w nakładce)
         assert {f["href"].rsplit("/", 1)[-1]: f.get("media") for f in fonts}["archivo-expanded-latin.woff2"] == "(width > 900px)"
-        assert any(l.attrs.get("rel") == "stylesheet" and l.attrs["href"].endswith("assets/css/style.css") for l in links)
-        scripts = [s for s in tree.find_all("script") if s.attrs.get("src", "").endswith("assets/js/main.js")]
+        # ?v= = skrót zawartości: po zmianie CSS/JS nowy HTML nie łączy się ze starą kopią z cache (Pages: max-age=600)
+        p = prefix_for(page.out)
+        css = [l.attrs["href"] for l in links if l.attrs.get("rel") == "stylesheet"]
+        assert css == [f"{p}assets/css/style.css?v={asset_version(repo_root, *CSS_FILES)}"], page.key
+        scripts = [s for s in tree.find_all("script") if "assets/js/main.js" in s.attrs.get("src", "")]
         assert len(scripts) == 1 and scripts[0].attrs.get("type") == "module"
+        assert scripts[0].attrs["src"] == f"{p}assets/js/main.js?v={asset_version(repo_root, *JS_FILES)}", page.key
         if page.key == "404":
             continue
         url = BASE_URL + page.out.removesuffix("index.html")

@@ -86,7 +86,8 @@ if (main && "ResizeObserver" in window) new ResizeObserver(measure).observe(main
 
 // Lightbox (Task 5): zwykły klik w zdjęcie otwiera podgląd zamiast pełnego pliku; moduł ładuje się
 // leniwie (wcześniej, gdy kursor najedzie na pierwsze zdjęcie). Ctrl/⌘/Shift/środkowy = zwykły link.
-const loadLightbox = () => import("./lightbox.js");
+// ?v= z adresu main.js (build_pages) idzie dalej, żeby po wdrożeniu nie wziąć starego lightbox.js z cache.
+const loadLightbox = () => import("./lightbox.js" + new URL(import.meta.url).search);
 document.addEventListener("click", (e) => {
   const a = e.target instanceof Element && e.target.closest("a[data-lb]");
   if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
