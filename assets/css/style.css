@@ -317,25 +317,30 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 .about p { color: #3b3a37; text-wrap: pretty; }
 .about p + p { margin-top: 1.1em; }
 
-/* O mnie, „Materiały z wykorzystaniem moich zdjęć”: ramki postów z IG jako luźny kolaż — nierówne odstępy
-   i wysokości (--w/--x/--y w % szerokości listy, więc układ skaluje się z ekranem); pod każdą ramką poświata
-   z jej kolorów (rozmyta kopia, .glow). Po trzy w rzędzie, telefon po dwie. */
-.works { padding-top: 0; }
+/* O mnie, „Materiały z wykorzystaniem moich zdjęć”: ramki postów z IG na równej siatce (ta sama szerokość,
+   równe odstępy) z łagodną falą — co druga kolumna niżej o --wave; pod każdą ramką poświata z jej kolorów
+   (rozmyta kopia, .glow). Szeroki kolaż 4 + 2 (dwie pod środkowymi kolumnami), węziej 3 + 3, telefon po dwie. */
+.works { padding-top: 0; container-type: inline-size; }
 .works-title { font: 500 clamp(21px, 1.9vw, 26px)/1.3 var(--sans); letter-spacing: -.012em; }
 .works-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  max-width: 1040px; /* wysokie ramki: na dużym ekranie dwa rzędy nie wyższe niż ~1100 px */
+  --wave: clamp(28px, 4vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(36px, 4vw, 72px) clamp(24px, 3vw, 56px);
+  align-items: start;
+  max-width: 1040px; /* wysokie ramki: dwa rzędy nie wyższe niż ~1100 px */
   margin-top: clamp(28px, 4vw, 56px);
 }
-.work { flex: none; width: var(--w); margin: var(--y) 0 0 var(--x); }
-.works-list > .work:nth-child(1) { --w: 29%; --x: 0%; --y: 3%; }
-.works-list > .work:nth-child(2) { --w: 27%; --x: 7%; --y: 0%; }
-.works-list > .work:nth-child(3) { --w: 30%; --x: 7%; --y: 6%; }
-.works-list > .work:nth-child(4) { --w: 30%; --x: 3%; --y: 5%; }
-.works-list > .work:nth-child(5) { --w: 28%; --x: 6%; --y: 10%; }
-.works-list > .work:nth-child(6) { --w: 27%; --x: 6%; --y: 2%; }
+.works-list > .work:nth-child(3n + 2) { margin-top: var(--wave); }
+/* od 1300 px kolażu 4 + 2 bez limitu szerokości: ramki większe niż w 3 + 3 (węziej byłyby mniejsze, więc tam 3 + 3) */
+@container (width >= 1300px) {
+  .works-list { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: none; }
+  .works-list > .work:nth-child(n) { margin-top: 0; }
+  .works-list > .work:nth-child(5) { grid-column: 2; }
+  .works-list > .work:nth-child(6) { grid-column: 3; }
+  /* fala po kolumnach: 2. i 4. niżej (w drugim rzędzie ramka z kolumny 2) */
+  .works-list > .work:nth-child(2), .works-list > .work:nth-child(4), .works-list > .work:nth-child(5) { margin-top: var(--wave); }
+}
 .work-link { position: relative; display: block; isolation: isolate; }
 .work-link img {
   width: 100%;
@@ -358,13 +363,10 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   .work-link:hover .glow { opacity: .95; transform: scale(1.05); }
 }
 @media (width <= 900px) {
-  /* telefon: po dwie w rzędzie, dalej nieregularnie */
-  .works-list > .work:nth-child(1) { --w: 47%; --x: 0%; --y: 0%; }
-  .works-list > .work:nth-child(2) { --w: 44%; --x: 9%; --y: 12%; }
-  .works-list > .work:nth-child(3) { --w: 44%; --x: 4%; --y: 6%; }
-  .works-list > .work:nth-child(4) { --w: 46%; --x: 6%; --y: 14%; }
-  .works-list > .work:nth-child(5) { --w: 48%; --x: 0%; --y: 5%; }
-  .works-list > .work:nth-child(6) { --w: 43%; --x: 8%; --y: 13%; }
+  /* telefon: po dwie, prawa kolumna niżej */
+  .works-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .works-list > .work:nth-child(n) { margin-top: 0; }
+  .works-list > .work:nth-child(even) { margin-top: var(--wave); }
 }
 
 .big-link {
