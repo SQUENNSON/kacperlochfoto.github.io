@@ -317,16 +317,41 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 .about p { color: #3b3a37; text-wrap: pretty; }
 .about p + p { margin-top: 1.1em; }
 
-/* O mnie, „Materiały z wykorzystaniem moich zdjęć”: luźny kolaż — obok siebie, nierówne odstępy i wysokości (marginesy w % szerokości
-   listy, więc układ skaluje się z ekranem); pod każdą grafiką poświata z jej kolorów (rozmyta kopia, .glow) */
+/* O mnie: grafiki z moimi zdjęciami jako luźny kolaż — nierówne odstępy i wysokości (--w/--x/--y w % szerokości
+   listy, więc układ skaluje się z ekranem); pod każdą grafiką poświata z jej kolorów (rozmyta kopia, .glow).
+   .about-side = obok tekstu (≥ 1280 px) albo pod nim; .works = „Materiały…”, rząd pod tekstem. */
+.about-side { container-type: inline-size; margin-top: clamp(40px, 6vw, 72px); }
+.side-works { display: flex; flex-wrap: wrap; align-items: flex-start; max-width: 440px; }
+@media (width >= 1280px) {
+  .about-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 62ch) minmax(240px, 1fr);
+    column-gap: clamp(40px, 4vw, 72px);
+    align-items: start;
+    font-size: 17px; /* ch w kolumnie = ch tekstu */
+  }
+  .about { max-width: none; }
+  .about-side { margin-top: 44px; }
+  .side-works { margin-inline: auto; }
+}
+/* wąska kolumna obok tekstu: jedna pod drugą, zygzakiem */
+.side-works > .work:nth-child(1) { --w: 96%; --x: 4%; --y: 0%; }
+.side-works > .work:nth-child(2) { --w: 72%; --x: 0%; --y: 8%; }
+.side-works > .work:nth-child(3) { --w: 66%; --x: 30%; --y: 6%; }
+/* szersza (duży ekran albo pod tekstem): szeroka u góry, dwie pionowe pod nią */
+@container (width >= 300px) {
+  .side-works > .work:nth-child(1) { --w: 74%; --x: 14%; --y: 0%; }
+  .side-works > .work:nth-child(2) { --w: 46%; --x: 0%; --y: 6%; }
+  .side-works > .work:nth-child(3) { --w: 42%; --x: 9%; --y: 13%; }
+}
 .works { padding-top: 0; }
 .works-title { font: 500 clamp(21px, 1.9vw, 26px)/1.3 var(--sans); letter-spacing: -.012em; }
 .works-list { display: flex; align-items: flex-start; margin-top: clamp(28px, 4vw, 56px); }
 .work { flex: none; width: var(--w); margin: var(--y) 0 0 var(--x); }
-.work:nth-child(1) { --w: 24%; --x: 0%; --y: 4%; }
-.work:nth-child(2) { --w: 20%; --x: 3.5%; --y: 0%; }
-.work:nth-child(3) { --w: 25%; --x: 6%; --y: 9%; }
-.work:nth-child(4) { --w: 19%; --x: 2.5%; --y: 2%; }
+.works-list > .work:nth-child(1) { --w: 24%; --x: 0%; --y: 4%; }
+.works-list > .work:nth-child(2) { --w: 20%; --x: 3.5%; --y: 0%; }
+.works-list > .work:nth-child(3) { --w: 25%; --x: 6%; --y: 9%; }
+.works-list > .work:nth-child(4) { --w: 19%; --x: 2.5%; --y: 2%; }
 .work-link { position: relative; display: block; isolation: isolate; }
 .work-link img {
   width: 100%;
@@ -351,10 +376,10 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 @media (width <= 900px) {
   /* telefon: dwa rzędy po dwie, dalej nieregularnie */
   .works-list { flex-wrap: wrap; }
-  .work:nth-child(1) { --w: 52%; --x: 0%; --y: 0%; }
-  .work:nth-child(2) { --w: 40%; --x: 8%; --y: 16%; }
-  .work:nth-child(3) { --w: 43%; --x: 4%; --y: 7%; }
-  .work:nth-child(4) { --w: 47%; --x: 6%; --y: 18%; }
+  .works-list > .work:nth-child(1) { --w: 52%; --x: 0%; --y: 0%; }
+  .works-list > .work:nth-child(2) { --w: 40%; --x: 8%; --y: 16%; }
+  .works-list > .work:nth-child(3) { --w: 43%; --x: 4%; --y: 7%; }
+  .works-list > .work:nth-child(4) { --w: 47%; --x: 6%; --y: 18%; }
 }
 
 .big-link {

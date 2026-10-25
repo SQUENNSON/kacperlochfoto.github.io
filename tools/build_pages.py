@@ -106,7 +106,7 @@ def _gallery_ctx(key: str, pages: dict, photos: list[dict], p: str) -> dict:
         rest = [ph for ph in photos if ph["category"] == key and ph["slug"] not in slugs]
         return {"rows": rows + pair_rows(rest)}
     if key == "o-mnie":
-        return {"works": [get(s) for s in cfg.get("works", [])]}
+        return {"works": [get(s) for s in cfg.get("works", [])], "side_works": [get(s) for s in cfg.get("side_works", [])]}
     return {}
 
 

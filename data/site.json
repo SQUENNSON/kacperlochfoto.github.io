@@ -13,7 +13,7 @@
    "sport": "Sport — fotografia Kacpra Locha",
    "reportaz": "Reportaż — fotografia Kacpra Locha",
    "motoryzacja": "Motoryzacja — fotografia Kacpra Locha",
-   "prace": "Mecz Charytatywny Ekipy Fantasy — grafika ze zdjęciem Kacpra Locha"
+   "prace": "Materiał z wykorzystaniem zdjęcia Kacpra Locha"
   }
  },
  "pages": {
@@ -285,6 +285,11 @@
     "prace-siepomaga",
     "prace-dziekujemy",
     "prace-medale"
+   ],
+   "side_works": [
+    "prace-tychy",
+    "prace-turbacz",
+    "prace-limanovia"
    ]
   },
   "kontakt": {

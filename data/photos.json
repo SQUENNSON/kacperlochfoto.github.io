@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T15:22:06",
+ "generated": "2026-10-25T15:46:39",
  "photos": [
   {
    "slug": "sport-2b9ae30e",
@@ -5290,6 +5290,28 @@
    ]
   },
   {
+   "slug": "prace-limanovia",
+   "category": "prace",
+   "source": "limanovia.jpg",
+   "w": 1005,
+   "h": 1250,
+   "color": "#b9864b",
+   "variants": [
+    {
+     "w": 800,
+     "h": 995,
+     "file": "assets/photos/prace-limanovia-800.avif",
+     "bytes": 38633
+    },
+    {
+     "w": 1005,
+     "h": 1250,
+     "file": "assets/photos/prace-limanovia-1005.jpg",
+     "bytes": 157575
+    }
+   ]
+  },
+  {
    "slug": "prace-medale",
    "category": "prace",
    "source": "medale.jpg",
@@ -5324,6 +5346,50 @@
      "h": 811,
      "file": "assets/photos/prace-siepomaga-645.jpg",
      "bytes": 150872
+    }
+   ]
+  },
+  {
+   "slug": "prace-turbacz",
+   "category": "prace",
+   "source": "turbacz.jpg",
+   "w": 1049,
+   "h": 1304,
+   "color": "#726e57",
+   "variants": [
+    {
+     "w": 800,
+     "h": 994,
+     "file": "assets/photos/prace-turbacz-800.avif",
+     "bytes": 79935
+    },
+    {
+     "w": 1049,
+     "h": 1304,
+     "file": "assets/photos/prace-turbacz-1049.jpg",
+     "bytes": 303149
+    }
+   ]
+  },
+  {
+   "slug": "prace-tychy",
+   "category": "prace",
+   "source": "tychy.jpg",
+   "w": 1219,
+   "h": 973,
+   "color": "#332e2a",
+   "variants": [
+    {
+     "w": 800,
+     "h": 639,
+     "file": "assets/photos/prace-tychy-800.avif",
+     "bytes": 41082
+    },
+    {
+     "w": 1219,
+     "h": 973,
+     "file": "assets/photos/prace-tychy-1219.jpg",
+     "bytes": 216735
     }
    ]
   },
