@@ -177,13 +177,14 @@ def test_about_copy_has_only_existing_facts(built):
 
 
 def test_about_works_collage(built, repo_root):
-    """O mnie: grafiki z moimi zdjęciami — 3 obok tekstu (aside) i 4 pod nim („Materiały z wykorzystaniem moich zdjęć”);
+    """O mnie: grafiki z moimi zdjęciami — 6 ramek postów z IG obok tekstu (aside) i 4 pod nim („Materiały z wykorzystaniem moich zdjęć”);
     każda = link do lightboxa + poświata."""
     from build_pages import WORK_SIZES, srcset
 
     site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["o-mnie"]
     manifest = {p["slug"]: p for p in _manifest(built)}
-    assert site["side_works"] == ["prace-tychy", "prace-turbacz", "prace-limanovia"]
+    assert site["side_works"] == ["prace-ig-zbiorka-zakonczona", "prace-ig-dziekujemy", "prace-ig-kaluch",
+                                  "prace-ig-kiwior", "prace-ig-izak", "prace-ig-kapitan"]
     assert site["works"] == ["prace-zbiorka", "prace-siepomaga", "prace-dziekujemy", "prace-medale"]
     tree = parse(built / "o-mnie/index.html")
     wrap = tree.find("main").find("div", "about-wrap")
@@ -192,7 +193,7 @@ def test_about_works_collage(built, repo_root):
     assert norm(section.find("h2", "works-title").text()) == "Materiały z wykorzystaniem moich zdjęć"
     side = wrap.find("aside", "about-side").find("ul", "side-works").find_all("li", "work")
     items = section.find("ul", "works-list").find_all("li", "work")
-    assert len(side) == 3 and len(items) == 4 and all("data-reveal" in li.attrs for li in side + items)
+    assert len(side) == 6 and len(items) == 4 and all("data-reveal" in li.attrs for li in side + items)
     for li, slug in zip(side + items, site["side_works"] + site["works"]):
         photo = manifest[slug]
         a = li.find("a", "work-link")

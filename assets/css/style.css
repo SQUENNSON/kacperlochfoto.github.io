@@ -321,11 +321,11 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
    listy, więc układ skaluje się z ekranem); pod każdą grafiką poświata z jej kolorów (rozmyta kopia, .glow).
    .about-side = obok tekstu (≥ 1280 px) albo pod nim; .works = „Materiały…”, rząd pod tekstem. */
 .about-side { container-type: inline-size; margin-top: clamp(40px, 6vw, 72px); }
-.side-works { display: flex; flex-wrap: wrap; align-items: flex-start; max-width: 440px; }
+.side-works { display: flex; flex-wrap: wrap; align-items: flex-start; max-width: 640px; }
 @media (width >= 1280px) {
   .about-wrap {
     display: grid;
-    grid-template-columns: minmax(0, 62ch) minmax(240px, 1fr);
+    grid-template-columns: minmax(0, 58ch) minmax(280px, 1fr);
     column-gap: clamp(40px, 4vw, 72px);
     align-items: start;
     font-size: 17px; /* ch w kolumnie = ch tekstu */
@@ -334,15 +334,21 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   .about-side { margin-top: 44px; }
   .side-works { margin-inline: auto; }
 }
-/* wąska kolumna obok tekstu: jedna pod drugą, zygzakiem */
-.side-works > .work:nth-child(1) { --w: 96%; --x: 4%; --y: 0%; }
-.side-works > .work:nth-child(2) { --w: 72%; --x: 0%; --y: 8%; }
-.side-works > .work:nth-child(3) { --w: 66%; --x: 30%; --y: 6%; }
-/* szersza (duży ekran albo pod tekstem): szeroka u góry, dwie pionowe pod nią */
-@container (width >= 300px) {
-  .side-works > .work:nth-child(1) { --w: 74%; --x: 14%; --y: 0%; }
-  .side-works > .work:nth-child(2) { --w: 46%; --x: 0%; --y: 6%; }
-  .side-works > .work:nth-child(3) { --w: 42%; --x: 9%; --y: 13%; }
+/* ramki postów z IG: po dwie w rzędzie (kolumna obok tekstu, telefon) … */
+.side-works > .work:nth-child(1) { --w: 47%; --x: 0%; --y: 0%; }
+.side-works > .work:nth-child(2) { --w: 44%; --x: 9%; --y: 12%; }
+.side-works > .work:nth-child(3) { --w: 44%; --x: 4%; --y: 6%; }
+.side-works > .work:nth-child(4) { --w: 46%; --x: 6%; --y: 14%; }
+.side-works > .work:nth-child(5) { --w: 48%; --x: 0%; --y: 5%; }
+.side-works > .work:nth-child(6) { --w: 43%; --x: 8%; --y: 13%; }
+/* … a w szerokiej kolumnie (duży ekran) po trzy */
+@container (width >= 520px) {
+  .side-works > .work:nth-child(1) { --w: 30%; --x: 0%; --y: 3%; }
+  .side-works > .work:nth-child(2) { --w: 29%; --x: 5%; --y: 0%; }
+  .side-works > .work:nth-child(3) { --w: 31%; --x: 5%; --y: 8%; }
+  .side-works > .work:nth-child(4) { --w: 31%; --x: 3%; --y: 4%; }
+  .side-works > .work:nth-child(5) { --w: 29%; --x: 6%; --y: 9%; }
+  .side-works > .work:nth-child(6) { --w: 28%; --x: 3%; --y: 2%; }
 }
 .works { padding-top: 0; }
 .works-title { font: 500 clamp(21px, 1.9vw, 26px)/1.3 var(--sans); letter-spacing: -.012em; }

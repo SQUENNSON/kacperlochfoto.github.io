@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T15:46:39",
+ "generated": "2026-10-25T16:17:36",
  "photos": [
   {
    "slug": "sport-2b9ae30e",
@@ -5290,24 +5290,134 @@
    ]
   },
   {
-   "slug": "prace-limanovia",
+   "slug": "prace-ig-dziekujemy",
    "category": "prace",
-   "source": "limanovia.jpg",
-   "w": 1005,
-   "h": 1250,
-   "color": "#b9864b",
+   "source": "ig-dziekujemy.jpg",
+   "w": 1179,
+   "h": 1890,
+   "color": "#3d3b34",
    "variants": [
     {
      "w": 800,
-     "h": 995,
-     "file": "assets/photos/prace-limanovia-800.avif",
-     "bytes": 38633
+     "h": 1282,
+     "file": "assets/photos/prace-ig-dziekujemy-800.avif",
+     "bytes": 65055
     },
     {
-     "w": 1005,
-     "h": 1250,
-     "file": "assets/photos/prace-limanovia-1005.jpg",
-     "bytes": 157575
+     "w": 1179,
+     "h": 1890,
+     "file": "assets/photos/prace-ig-dziekujemy-1179.jpg",
+     "bytes": 317924
+    }
+   ]
+  },
+  {
+   "slug": "prace-ig-izak",
+   "category": "prace",
+   "source": "ig-izak.jpg",
+   "w": 1179,
+   "h": 1595,
+   "color": "#897075",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1082,
+     "file": "assets/photos/prace-ig-izak-800.avif",
+     "bytes": 64377
+    },
+    {
+     "w": 1179,
+     "h": 1595,
+     "file": "assets/photos/prace-ig-izak-1179.jpg",
+     "bytes": 293161
+    }
+   ]
+  },
+  {
+   "slug": "prace-ig-kaluch",
+   "category": "prace",
+   "source": "ig-kaluch.jpg",
+   "w": 1179,
+   "h": 1888,
+   "color": "#795f63",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1281,
+     "file": "assets/photos/prace-ig-kaluch-800.avif",
+     "bytes": 93639
+    },
+    {
+     "w": 1179,
+     "h": 1888,
+     "file": "assets/photos/prace-ig-kaluch-1179.jpg",
+     "bytes": 446906
+    }
+   ]
+  },
+  {
+   "slug": "prace-ig-kapitan",
+   "category": "prace",
+   "source": "ig-kapitan.jpg",
+   "w": 1179,
+   "h": 1934,
+   "color": "#7f5042",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1312,
+     "file": "assets/photos/prace-ig-kapitan-800.avif",
+     "bytes": 83702
+    },
+    {
+     "w": 1179,
+     "h": 1934,
+     "file": "assets/photos/prace-ig-kapitan-1179.jpg",
+     "bytes": 385374
+    }
+   ]
+  },
+  {
+   "slug": "prace-ig-kiwior",
+   "category": "prace",
+   "source": "ig-kiwior.jpg",
+   "w": 1179,
+   "h": 1596,
+   "color": "#3f3e48",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1083,
+     "file": "assets/photos/prace-ig-kiwior-800.avif",
+     "bytes": 79726
+    },
+    {
+     "w": 1179,
+     "h": 1596,
+     "file": "assets/photos/prace-ig-kiwior-1179.jpg",
+     "bytes": 345864
+    }
+   ]
+  },
+  {
+   "slug": "prace-ig-zbiorka-zakonczona",
+   "category": "prace",
+   "source": "ig-zbiorka-zakonczona.jpg",
+   "w": 1179,
+   "h": 1935,
+   "color": "#605a58",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1313,
+     "file": "assets/photos/prace-ig-zbiorka-zakonczona-800.avif",
+     "bytes": 97016
+    },
+    {
+     "w": 1179,
+     "h": 1935,
+     "file": "assets/photos/prace-ig-zbiorka-zakonczona-1179.jpg",
+     "bytes": 426122
     }
    ]
   },
@@ -5346,50 +5456,6 @@
      "h": 811,
      "file": "assets/photos/prace-siepomaga-645.jpg",
      "bytes": 150872
-    }
-   ]
-  },
-  {
-   "slug": "prace-turbacz",
-   "category": "prace",
-   "source": "turbacz.jpg",
-   "w": 1049,
-   "h": 1304,
-   "color": "#726e57",
-   "variants": [
-    {
-     "w": 800,
-     "h": 994,
-     "file": "assets/photos/prace-turbacz-800.avif",
-     "bytes": 79935
-    },
-    {
-     "w": 1049,
-     "h": 1304,
-     "file": "assets/photos/prace-turbacz-1049.jpg",
-     "bytes": 303149
-    }
-   ]
-  },
-  {
-   "slug": "prace-tychy",
-   "category": "prace",
-   "source": "tychy.jpg",
-   "w": 1219,
-   "h": 973,
-   "color": "#332e2a",
-   "variants": [
-    {
-     "w": 800,
-     "h": 639,
-     "file": "assets/photos/prace-tychy-800.avif",
-     "bytes": 41082
-    },
-    {
-     "w": 1219,
-     "h": 973,
-     "file": "assets/photos/prace-tychy-1219.jpg",
-     "bytes": 216735
     }
    ]
   },
