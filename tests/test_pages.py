@@ -177,7 +177,7 @@ def test_about_copy_has_only_existing_facts(built):
 
 
 def test_about_works_collage(built, repo_root):
-    """O mnie, „Materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG pod tekstem (obok tekstu nic);
+    """O mnie, „Przykładowe materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG pod tekstem (obok tekstu nic);
     każda = link do lightboxa + poświata."""
     from build_pages import WORK_SIZES, srcset
 
@@ -189,7 +189,7 @@ def test_about_works_collage(built, repo_root):
     tree = parse(built / "o-mnie/index.html")
     assert tree.find("main").find_all("aside") == []
     section = tree.find("main").find("section", "works")
-    assert norm(section.find("h2", "works-title").text()) == "Materiały z wykorzystaniem moich zdjęć"
+    assert norm(section.find("h2", "works-title").text()) == "Przykładowe materiały z wykorzystaniem moich zdjęć"
     items = section.find("ul", "works-list").find_all("li", "work")
     assert len(items) == 6 and all("data-reveal" in li.attrs for li in items)
     for li, slug in zip(items, site["works"]):
