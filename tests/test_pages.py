@@ -177,16 +177,17 @@ def test_about_copy_has_only_existing_facts(built):
 
 
 def test_about_works_collage(built, repo_root):
-    """O mnie, „Przykładowe materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG, potem 4 grafiki (CSS: 4–2–4)
+    """O mnie, „Przykładowe materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG i 4 grafiki (CSS: kolumny)
     pod tekstem (obok tekstu nic); każda = link do lightboxa + poświata."""
     from build_pages import WORK_SIZES, srcset
 
     site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["o-mnie"]
     manifest = {p["slug"]: p for p in _manifest(built)}
     assert "side_works" not in site
-    assert site["works"] == ["prace-ig-zbiorka-zakonczona", "prace-ig-dziekujemy", "prace-ig-kaluch",
-                             "prace-ig-kiwior", "prace-ig-izak", "prace-ig-kapitan",
-                             "prace-turbacz", "prace-dziekujemy", "prace-siepomaga", "prace-limanovia"]
+    # kolejność pod układ „murowany” (kolumny CSS): symetryczne kolumny, grafika nigdy pod grafiką
+    assert site["works"] == ["prace-ig-zbiorka-zakonczona", "prace-ig-dziekujemy", "prace-siepomaga",
+                             "prace-ig-kiwior", "prace-dziekujemy", "prace-turbacz", "prace-ig-izak",
+                             "prace-limanovia", "prace-ig-kapitan", "prace-ig-kaluch"]
     tree = parse(built / "o-mnie/index.html")
     assert tree.find("main").find_all("aside") == []
     section = tree.find("main").find("section", "works")
