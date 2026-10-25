@@ -77,6 +77,7 @@ def test_collect_sources_counts():
     sources = collect_sources(SOURCES)
     assert sum(s.category == "sport" for s in sources) == 88
     assert sum(s.category == "reportaz" for s in sources) == 98
+    assert sum(s.category == "motoryzacja" for s in sources) == 4
     assert len({s.slug for s in sources}) == len(sources)
     excluded = {(c, n.lower()) for c, n in EXCLUDE}
     for s in sources:

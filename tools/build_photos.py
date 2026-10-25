@@ -15,6 +15,8 @@ from PIL import Image, ImageOps
 SOURCES = {
     "sport": Path(r"B:\NA STRONE\sport compressed\bic-compressed"),
     "reportaz": Path(r"B:\NA STRONE\reportaz compressed\bic-compressed"),
+    # tylko strona główna (rząd z 4 zdjęć Audi), bez własnej galerii
+    "motoryzacja": Path(r"B:\NA STRONE\motoryzacja compressed\bic-compressed"),
 }
 EXCLUDE = {
     ("sport", "DSC01355.jpg"), ("sport", "DSC04110.jpg"), ("sport", "DSC07121.jpg"),

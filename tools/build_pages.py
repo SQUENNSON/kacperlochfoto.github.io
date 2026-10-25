@@ -36,6 +36,7 @@ NAV_OUT = {page.key: page.out for page in PAGES}
 OG = "assets/img/og.jpg"
 OG_SIZE = (1200, 630)
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
+QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"  # rząd z 4 zdjęć (telefon: 2 × 2)
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 
 
@@ -89,8 +90,8 @@ def _gallery_ctx(key: str, pages: dict, photos: list[dict], p: str) -> dict:
     # uklad starej strony 1:1: rzedy recznie w site.json (pion moze stac obok poziomego, kategoria dowolna)
     rows = [[get(s) for s in row] for row in cfg.get("rows", [])]
     slugs = [ph["slug"] for row in rows for ph in row]
-    if any(not 1 <= len(row) <= 2 for row in rows) or len(set(slugs)) != len(slugs) or cfg.get("hero") in slugs:
-        raise ValueError(f"site.json pages.{key}.rows: rzad ma 1-2 zdjecia, bez powtorek i bez hero")
+    if any(len(row) not in (1, 2, 4) for row in rows) or len(set(slugs)) != len(slugs) or cfg.get("hero") in slugs:
+        raise ValueError(f"site.json pages.{key}.rows: rzad ma 1, 2 albo 4 zdjecia, bez powtorek i bez hero")
 
     if key == "home":
         labels = dict(NAV)
@@ -172,6 +173,7 @@ def render_all(repo_root: Path) -> list[Path]:
         srcset=srcset,
         photo_alt=site["photo_alt"],
         GRID_SIZES=GRID_SIZES,
+        QUAD_SIZES=QUAD_SIZES,
         HERO_SIZES=HERO_SIZES,
     )
 

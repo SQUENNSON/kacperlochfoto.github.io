@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-23T13:20:59",
+ "generated": "2026-10-25T14:02:00",
  "photos": [
   {
    "slug": "sport-2b9ae30e",
@@ -5152,6 +5152,118 @@
      "h": 2458,
      "file": "assets/photos/reportaz-dsc09815-3072.jpg",
      "bytes": 862277
+    }
+   ]
+  },
+  {
+   "slug": "motoryzacja-dsc09512",
+   "category": "motoryzacja",
+   "source": "DSC09512.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#907b70",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/motoryzacja-dsc09512-800.avif",
+     "bytes": 83965
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/motoryzacja-dsc09512-1600.avif",
+     "bytes": 246179
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/motoryzacja-dsc09512-2458.jpg",
+     "bytes": 721713
+    }
+   ]
+  },
+  {
+   "slug": "motoryzacja-dsc09550",
+   "category": "motoryzacja",
+   "source": "DSC09550.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#8e6954",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/motoryzacja-dsc09550-800.avif",
+     "bytes": 73253
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/motoryzacja-dsc09550-1600.avif",
+     "bytes": 240939
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/motoryzacja-dsc09550-2458.jpg",
+     "bytes": 735666
+    }
+   ]
+  },
+  {
+   "slug": "motoryzacja-dsc09673",
+   "category": "motoryzacja",
+   "source": "DSC09673.jpg",
+   "w": 2458,
+   "h": 3072,
+   "color": "#7a7366",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1000,
+     "file": "assets/photos/motoryzacja-dsc09673-800.avif",
+     "bytes": 112586
+    },
+    {
+     "w": 1600,
+     "h": 2000,
+     "file": "assets/photos/motoryzacja-dsc09673-1600.avif",
+     "bytes": 313792
+    },
+    {
+     "w": 2458,
+     "h": 3072,
+     "file": "assets/photos/motoryzacja-dsc09673-2458.jpg",
+     "bytes": 872630
+    }
+   ]
+  },
+  {
+   "slug": "motoryzacja-dsc09694",
+   "category": "motoryzacja",
+   "source": "DSC09694.jpg",
+   "w": 2304,
+   "h": 3072,
+   "color": "#8f8681",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1067,
+     "file": "assets/photos/motoryzacja-dsc09694-800.avif",
+     "bytes": 145431
+    },
+    {
+     "w": 1600,
+     "h": 2133,
+     "file": "assets/photos/motoryzacja-dsc09694-1600.avif",
+     "bytes": 414531
+    },
+    {
+     "w": 2304,
+     "h": 3072,
+     "file": "assets/photos/motoryzacja-dsc09694-2304.jpg",
+     "bytes": 975806
     }
    ]
   }

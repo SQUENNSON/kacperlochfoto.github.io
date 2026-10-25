@@ -249,8 +249,10 @@ def test_old_site_removed(repo_root):
 # ---------- galerie, hero, strona główna, reveal ----------
 
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
+QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
-ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha"}
+ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha",
+       "motoryzacja": "Motoryzacja — fotografia Kacpra Locha"}
 PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html"}
 
 
@@ -372,8 +374,11 @@ def test_galleries_complete(built):
     # strona główna = układ starej strony 1:1: pas u góry + rzędy z site.json w tej kolejności, bez pair_rows
     home = site["home"]
     picks = [s for row in home["rows"] for s in row]
-    assert len(home["rows"]) == 20 and all(1 <= len(row) <= 2 for row in home["rows"])
-    assert len(picks) == len(set(picks)) == 40
+    assert len(home["rows"]) == 21 and [len(row) for row in home["rows"]] == [2] * 8 + [4] + [2] * 12
+    assert len(picks) == len(set(picks)) == 44
+    # 2026-10-25: rząd Audi (zdjęcia 1, 4, 9, 13 ze stykówki) za 8. rzędem, tylko na stronie głównej
+    assert home["rows"][8] == ["motoryzacja-dsc09512", "motoryzacja-dsc09550",
+                               "motoryzacja-dsc09673", "motoryzacja-dsc09694"]
     assert home["hero"] in by_slug and all(s in by_slug for s in picks)
     slugs = _lb_slugs(tree, "index.html", manifest)
     assert slugs[0] == home["hero"] and home["hero"] not in picks
@@ -382,6 +387,8 @@ def test_galleries_complete(built):
     rows = tree.find("main").find("div", "rows")
     assert "spaced" in rows.attrs["class"].split()
     assert [len(r.find_all("a", "ph")) for r in rows.find_all("div", "row")] == [len(r) for r in home["rows"]]
+    assert ["quad" in r.attrs["class"].split() for r in rows.find_all("div", "row")] == [
+        len(r) == 4 for r in home["rows"]]
     more = {a.attrs["href"]: norm(a.text()) for a in tree.find("main").find_all("a") if "data-lb" not in a.attrs}
     assert more["sport/"].startswith("Sport →") and "88" in more["sport/"]
     assert more["reportaz/"].startswith("Reportaż →") and "99" in more["reportaz/"]  # tyle, ile na stronie
@@ -424,12 +431,14 @@ def test_images_have_dimensions_and_lazy(built):
         assert grid, out
         # spec: loading="lazy" poza pierwszym ekranem; pierwszy wiersz jest na nim (1440×900 i 390×844)
         first_screen = tree.find("main").find("div", "row").find_all("img")
+        quad_imgs = [img for r in tree.find("main").find_all("div", "quad") for img in r.find_all("img")]
         for img in grid:
             eager = any(img is f for f in first_screen)
             assert img.attrs.get("loading") == (None if eager else "lazy"), out
             # pod hero pierwszy wiersz nie konkuruje z nim o pasmo; w galerii bez hero to on jest LCP
             assert img.attrs.get("fetchpriority") == (("low" if heroes else "high") if eager else None), out
-            assert img.attrs.get("decoding") == "async" and img.attrs["sizes"] == GRID_SIZES
+            quad = any(img is q for q in quad_imgs)
+            assert img.attrs.get("decoding") == "async" and img.attrs["sizes"] == (QUAD_SIZES if quad else GRID_SIZES)
 
 
 def test_no_js_shows_content(repo_root):

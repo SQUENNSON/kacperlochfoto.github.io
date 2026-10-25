@@ -8,7 +8,7 @@
 {{ m.hero(hero, p, page.hero_focus, cls="strip") }}
 <div class="rows spaced">
 {% for photos in rows %}
-{{ m.row(photos, p, GRID_SIZES, eager=loop.first) }}
+{{ m.row(photos, p, QUAD_SIZES if photos|length == 4 else GRID_SIZES, eager=loop.first) }}
 {% endfor %}
 </div>
 <div class="more" data-reveal>

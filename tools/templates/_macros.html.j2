@@ -24,9 +24,10 @@
 {%- endmacro %}
 
 {# Wiersz bez przycinania: elementy rosna proporcjonalnie do w/h (--r), wiec maja rowna wysokosc.
-   eager = wiersz na pierwszym ekranie (bez loading="lazy"); priority "low" pod hero, "high" gdy wiersz jest na samej gorze. #}
+   eager = wiersz na pierwszym ekranie (bez loading="lazy"); priority "low" pod hero, "high" gdy wiersz jest na samej gorze.
+   4 zdjecia = .quad (na telefonie 2 × 2 zamiast jednego pod drugim). #}
 {% macro row(photos, p, sizes, eager=False, priority="low") -%}
-<div class="row" data-reveal>
+<div class="row{{ ' quad' if photos|length == 4 }}" data-reveal>
 {% for photo in photos %}
   {{ photo_link(photo, p, sizes, eager=eager, priority=priority) }}
 {% endfor %}

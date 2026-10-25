@@ -387,6 +387,10 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   .hero, .hero.strip { aspect-ratio: 5 / 4; }
   .row { flex-direction: column; }
   .row > .ph { flex: none; width: 100%; }
+  /* rząd z 4 zdjęć: 2 × 2 w równych kafelkach 4:5 (pion 3:4 traci kilka % wysokości) */
+  .row.quad { display: grid; grid-template-columns: 1fr 1fr; }
+  .row.quad > .ph { aspect-ratio: 4 / 5; }
+  .row.quad img { object-fit: cover; }
 }
 
 /* powolne powiększenie po najechaniu, bez cieni i poświaty */
