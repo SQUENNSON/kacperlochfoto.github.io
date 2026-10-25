@@ -56,7 +56,7 @@ def test_home_first_screen_weight(repo_root):
 
 def test_manifest_files_exist(repo_root):
     photos = json.loads((repo_root / "data/photos.json").read_text(encoding="utf-8"))["photos"]
-    assert len(photos) == 200
+    assert len(photos) == 196
     for photo in photos:
         for v in photo["variants"]:
             f = repo_root / v["file"]

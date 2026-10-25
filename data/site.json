@@ -13,7 +13,7 @@
    "sport": "Sport — fotografia Kacpra Locha",
    "reportaz": "Reportaż — fotografia Kacpra Locha",
    "motoryzacja": "Motoryzacja — fotografia Kacpra Locha",
-   "prace": "Materiał z wykorzystaniem zdjęcia Kacpra Locha"
+   "prace": "Post na Instagramie ze zdjęciem Kacpra Locha"
   }
  },
  "pages": {
@@ -281,12 +281,6 @@
    ],
    "works_heading": "Materiały z wykorzystaniem moich zdjęć",
    "works": [
-    "prace-zbiorka",
-    "prace-siepomaga",
-    "prace-dziekujemy",
-    "prace-medale"
-   ],
-   "side_works": [
     "prace-ig-zbiorka-zakonczona",
     "prace-ig-dziekujemy",
     "prace-ig-kaluch",

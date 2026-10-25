@@ -37,7 +37,7 @@ OG = "assets/img/og.jpg"
 OG_SIZE = (1200, 630)
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
 QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"  # rząd z 4 zdjęć (telefon: 2 × 2)
-WORK_SIZES = "(max-width: 900px) 52vw, 20vw"  # O mnie, luźny kolaż „Moje prace”
+WORK_SIZES = "(max-width: 900px) 48vw, 22vw"  # O mnie, luźny kolaż ramek postów (po 3 w rzędzie, telefon po 2)
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 
 
@@ -106,7 +106,7 @@ def _gallery_ctx(key: str, pages: dict, photos: list[dict], p: str) -> dict:
         rest = [ph for ph in photos if ph["category"] == key and ph["slug"] not in slugs]
         return {"rows": rows + pair_rows(rest)}
     if key == "o-mnie":
-        return {"works": [get(s) for s in cfg.get("works", [])], "side_works": [get(s) for s in cfg.get("side_works", [])]}
+        return {"works": [get(s) for s in cfg.get("works", [])]}
     return {}
 
 

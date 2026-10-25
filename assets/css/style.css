@@ -317,47 +317,25 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 .about p { color: #3b3a37; text-wrap: pretty; }
 .about p + p { margin-top: 1.1em; }
 
-/* O mnie: grafiki z moimi zdjęciami jako luźny kolaż — nierówne odstępy i wysokości (--w/--x/--y w % szerokości
-   listy, więc układ skaluje się z ekranem); pod każdą grafiką poświata z jej kolorów (rozmyta kopia, .glow).
-   .about-side = obok tekstu (≥ 1280 px) albo pod nim; .works = „Materiały…”, rząd pod tekstem. */
-.about-side { container-type: inline-size; margin-top: clamp(40px, 6vw, 72px); }
-.side-works { display: flex; flex-wrap: wrap; align-items: flex-start; max-width: 640px; }
-@media (width >= 1280px) {
-  .about-wrap {
-    display: grid;
-    grid-template-columns: minmax(0, 58ch) minmax(280px, 1fr);
-    column-gap: clamp(40px, 4vw, 72px);
-    align-items: start;
-    font-size: 17px; /* ch w kolumnie = ch tekstu */
-  }
-  .about { max-width: none; }
-  .about-side { margin-top: 44px; }
-  .side-works { margin-inline: auto; }
-}
-/* ramki postów z IG: po dwie w rzędzie (kolumna obok tekstu, telefon) … */
-.side-works > .work:nth-child(1) { --w: 47%; --x: 0%; --y: 0%; }
-.side-works > .work:nth-child(2) { --w: 44%; --x: 9%; --y: 12%; }
-.side-works > .work:nth-child(3) { --w: 44%; --x: 4%; --y: 6%; }
-.side-works > .work:nth-child(4) { --w: 46%; --x: 6%; --y: 14%; }
-.side-works > .work:nth-child(5) { --w: 48%; --x: 0%; --y: 5%; }
-.side-works > .work:nth-child(6) { --w: 43%; --x: 8%; --y: 13%; }
-/* … a w szerokiej kolumnie (duży ekran) po trzy */
-@container (width >= 520px) {
-  .side-works > .work:nth-child(1) { --w: 30%; --x: 0%; --y: 3%; }
-  .side-works > .work:nth-child(2) { --w: 29%; --x: 5%; --y: 0%; }
-  .side-works > .work:nth-child(3) { --w: 31%; --x: 5%; --y: 8%; }
-  .side-works > .work:nth-child(4) { --w: 31%; --x: 3%; --y: 4%; }
-  .side-works > .work:nth-child(5) { --w: 29%; --x: 6%; --y: 9%; }
-  .side-works > .work:nth-child(6) { --w: 28%; --x: 3%; --y: 2%; }
-}
+/* O mnie, „Materiały z wykorzystaniem moich zdjęć”: ramki postów z IG jako luźny kolaż — nierówne odstępy
+   i wysokości (--w/--x/--y w % szerokości listy, więc układ skaluje się z ekranem); pod każdą ramką poświata
+   z jej kolorów (rozmyta kopia, .glow). Po trzy w rzędzie, telefon po dwie. */
 .works { padding-top: 0; }
 .works-title { font: 500 clamp(21px, 1.9vw, 26px)/1.3 var(--sans); letter-spacing: -.012em; }
-.works-list { display: flex; align-items: flex-start; margin-top: clamp(28px, 4vw, 56px); }
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 1040px; /* wysokie ramki: na dużym ekranie dwa rzędy nie wyższe niż ~1100 px */
+  margin-top: clamp(28px, 4vw, 56px);
+}
 .work { flex: none; width: var(--w); margin: var(--y) 0 0 var(--x); }
-.works-list > .work:nth-child(1) { --w: 24%; --x: 0%; --y: 4%; }
-.works-list > .work:nth-child(2) { --w: 20%; --x: 3.5%; --y: 0%; }
-.works-list > .work:nth-child(3) { --w: 25%; --x: 6%; --y: 9%; }
-.works-list > .work:nth-child(4) { --w: 19%; --x: 2.5%; --y: 2%; }
+.works-list > .work:nth-child(1) { --w: 29%; --x: 0%; --y: 3%; }
+.works-list > .work:nth-child(2) { --w: 27%; --x: 7%; --y: 0%; }
+.works-list > .work:nth-child(3) { --w: 30%; --x: 7%; --y: 6%; }
+.works-list > .work:nth-child(4) { --w: 30%; --x: 3%; --y: 5%; }
+.works-list > .work:nth-child(5) { --w: 28%; --x: 6%; --y: 10%; }
+.works-list > .work:nth-child(6) { --w: 27%; --x: 6%; --y: 2%; }
 .work-link { position: relative; display: block; isolation: isolate; }
 .work-link img {
   width: 100%;
@@ -380,12 +358,13 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
   .work-link:hover .glow { opacity: .95; transform: scale(1.05); }
 }
 @media (width <= 900px) {
-  /* telefon: dwa rzędy po dwie, dalej nieregularnie */
-  .works-list { flex-wrap: wrap; }
-  .works-list > .work:nth-child(1) { --w: 52%; --x: 0%; --y: 0%; }
-  .works-list > .work:nth-child(2) { --w: 40%; --x: 8%; --y: 16%; }
-  .works-list > .work:nth-child(3) { --w: 43%; --x: 4%; --y: 7%; }
-  .works-list > .work:nth-child(4) { --w: 47%; --x: 6%; --y: 18%; }
+  /* telefon: po dwie w rzędzie, dalej nieregularnie */
+  .works-list > .work:nth-child(1) { --w: 47%; --x: 0%; --y: 0%; }
+  .works-list > .work:nth-child(2) { --w: 44%; --x: 9%; --y: 12%; }
+  .works-list > .work:nth-child(3) { --w: 44%; --x: 4%; --y: 6%; }
+  .works-list > .work:nth-child(4) { --w: 46%; --x: 6%; --y: 14%; }
+  .works-list > .work:nth-child(5) { --w: 48%; --x: 0%; --y: 5%; }
+  .works-list > .work:nth-child(6) { --w: 43%; --x: 8%; --y: 13%; }
 }
 
 .big-link {

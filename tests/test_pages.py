@@ -171,30 +171,28 @@ def test_about_copy_has_only_existing_facts(built):
         assert fact in text
     # tekst ze starej strony bez zdjęć; obrazy tylko w kolażu „Moje prace” pod tekstem
     assert main.find("article", "about").find_all("img") == []
-    assert len(main.find_all("img")) == sum(len(main.find("ul", ul).find_all("img")) for ul in ("side-works", "works-list"))
+    assert len(main.find_all("img")) == len(main.find("ul", "works-list").find_all("img"))
     assert norm(tree.find("title").text())
     assert meta(tree, "description")
 
 
 def test_about_works_collage(built, repo_root):
-    """O mnie: grafiki z moimi zdjęciami — 6 ramek postów z IG obok tekstu (aside) i 4 pod nim („Materiały z wykorzystaniem moich zdjęć”);
+    """O mnie, „Materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG pod tekstem (obok tekstu nic);
     każda = link do lightboxa + poświata."""
     from build_pages import WORK_SIZES, srcset
 
     site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["o-mnie"]
     manifest = {p["slug"]: p for p in _manifest(built)}
-    assert site["side_works"] == ["prace-ig-zbiorka-zakonczona", "prace-ig-dziekujemy", "prace-ig-kaluch",
-                                  "prace-ig-kiwior", "prace-ig-izak", "prace-ig-kapitan"]
-    assert site["works"] == ["prace-zbiorka", "prace-siepomaga", "prace-dziekujemy", "prace-medale"]
+    assert "side_works" not in site
+    assert site["works"] == ["prace-ig-zbiorka-zakonczona", "prace-ig-dziekujemy", "prace-ig-kaluch",
+                             "prace-ig-kiwior", "prace-ig-izak", "prace-ig-kapitan"]
     tree = parse(built / "o-mnie/index.html")
-    wrap = tree.find("main").find("div", "about-wrap")
-    assert wrap.find("article", "about") and wrap.find("aside", "about-side")
+    assert tree.find("main").find_all("aside") == []
     section = tree.find("main").find("section", "works")
     assert norm(section.find("h2", "works-title").text()) == "Materiały z wykorzystaniem moich zdjęć"
-    side = wrap.find("aside", "about-side").find("ul", "side-works").find_all("li", "work")
     items = section.find("ul", "works-list").find_all("li", "work")
-    assert len(side) == 6 and len(items) == 4 and all("data-reveal" in li.attrs for li in side + items)
-    for li, slug in zip(side + items, site["side_works"] + site["works"]):
+    assert len(items) == 6 and all("data-reveal" in li.attrs for li in items)
+    for li, slug in zip(items, site["works"]):
         photo = manifest[slug]
         a = li.find("a", "work-link")
         assert "data-lb" in a.attrs and a.attrs["href"] == "../" + photo["variants"][-1]["file"]
@@ -288,7 +286,7 @@ QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha",
        "motoryzacja": "Motoryzacja — fotografia Kacpra Locha",
-       "prace": "Materiał z wykorzystaniem zdjęcia Kacpra Locha"}
+       "prace": "Post na Instagramie ze zdjęciem Kacpra Locha"}
 PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html"}
 
 
