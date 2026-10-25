@@ -317,6 +317,46 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 .about p { color: #3b3a37; text-wrap: pretty; }
 .about p + p { margin-top: 1.1em; }
 
+/* O mnie, „Moje prace”: luźny kolaż — obok siebie, nierówne odstępy i wysokości (marginesy w % szerokości
+   listy, więc układ skaluje się z ekranem); pod każdą grafiką poświata z jej kolorów (rozmyta kopia, .glow) */
+.works { padding-top: 0; }
+.works-title { font: 500 clamp(21px, 1.9vw, 26px)/1.3 var(--sans); letter-spacing: -.012em; }
+.works-list { display: flex; align-items: flex-start; margin-top: clamp(28px, 4vw, 56px); }
+.work { flex: none; width: var(--w); margin: var(--y) 0 0 var(--x); }
+.work:nth-child(1) { --w: 24%; --x: 0%; --y: 4%; }
+.work:nth-child(2) { --w: 20%; --x: 3.5%; --y: 0%; }
+.work:nth-child(3) { --w: 25%; --x: 6%; --y: 9%; }
+.work:nth-child(4) { --w: 19%; --x: 2.5%; --y: 2%; }
+.work-link { position: relative; display: block; isolation: isolate; }
+.work-link img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(20, 20, 19, .05), 0 2px 6px rgba(20, 20, 19, .08);
+}
+.glow {
+  position: absolute;
+  inset: 6% -7% -9%;
+  z-index: -1;
+  background: center / cover no-repeat;
+  filter: blur(36px) saturate(1.7);
+  opacity: .72;
+  pointer-events: none;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .work-link img, .glow { transition: transform .9s var(--ease), opacity .9s var(--ease); }
+  .work-link:hover img { transform: translateY(-6px); }
+  .work-link:hover .glow { opacity: .95; transform: scale(1.05); }
+}
+@media (width <= 900px) {
+  /* telefon: dwa rzędy po dwie, dalej nieregularnie */
+  .works-list { flex-wrap: wrap; }
+  .work:nth-child(1) { --w: 52%; --x: 0%; --y: 0%; }
+  .work:nth-child(2) { --w: 40%; --x: 8%; --y: 16%; }
+  .work:nth-child(3) { --w: 43%; --x: 4%; --y: 7%; }
+  .work:nth-child(4) { --w: 47%; --x: 6%; --y: 18%; }
+}
+
 .big-link {
   position: relative;
   display: inline-block;

@@ -37,6 +37,7 @@ OG = "assets/img/og.jpg"
 OG_SIZE = (1200, 630)
 GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
 QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"  # rząd z 4 zdjęć (telefon: 2 × 2)
+WORK_SIZES = "(max-width: 900px) 52vw, 20vw"  # O mnie, luźny kolaż „Moje prace”
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 
 
@@ -104,6 +105,8 @@ def _gallery_ctx(key: str, pages: dict, photos: list[dict], p: str) -> dict:
         # bez duzego kadru u gory: najpierw rzedy z site.json, dalej reszta kategorii w kolejnosci plikow
         rest = [ph for ph in photos if ph["category"] == key and ph["slug"] not in slugs]
         return {"rows": rows + pair_rows(rest)}
+    if key == "o-mnie":
+        return {"works": [get(s) for s in cfg.get("works", [])]}
     return {}
 
 
@@ -174,6 +177,7 @@ def render_all(repo_root: Path) -> list[Path]:
         photo_alt=site["photo_alt"],
         GRID_SIZES=GRID_SIZES,
         QUAD_SIZES=QUAD_SIZES,
+        WORK_SIZES=WORK_SIZES,
         HERO_SIZES=HERO_SIZES,
     )
 

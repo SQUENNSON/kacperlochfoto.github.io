@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-25T14:02:00",
+ "generated": "2026-10-25T15:22:06",
  "photos": [
   {
    "slug": "sport-2b9ae30e",
@@ -5264,6 +5264,88 @@
      "h": 3072,
      "file": "assets/photos/motoryzacja-dsc09694-2304.jpg",
      "bytes": 975806
+    }
+   ]
+  },
+  {
+   "slug": "prace-dziekujemy",
+   "category": "prace",
+   "source": "dziekujemy.jpg",
+   "w": 1002,
+   "h": 1198,
+   "color": "#917784",
+   "variants": [
+    {
+     "w": 800,
+     "h": 956,
+     "file": "assets/photos/prace-dziekujemy-800.avif",
+     "bytes": 98496
+    },
+    {
+     "w": 1002,
+     "h": 1198,
+     "file": "assets/photos/prace-dziekujemy-1002.jpg",
+     "bytes": 347865
+    }
+   ]
+  },
+  {
+   "slug": "prace-medale",
+   "category": "prace",
+   "source": "medale.jpg",
+   "w": 902,
+   "h": 1177,
+   "color": "#845759",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1044,
+     "file": "assets/photos/prace-medale-800.avif",
+     "bytes": 99715
+    },
+    {
+     "w": 902,
+     "h": 1177,
+     "file": "assets/photos/prace-medale-902.jpg",
+     "bytes": 315071
+    }
+   ]
+  },
+  {
+   "slug": "prace-siepomaga",
+   "category": "prace",
+   "source": "siepomaga.jpg",
+   "w": 645,
+   "h": 811,
+   "color": "#97958d",
+   "variants": [
+    {
+     "w": 645,
+     "h": 811,
+     "file": "assets/photos/prace-siepomaga-645.jpg",
+     "bytes": 150872
+    }
+   ]
+  },
+  {
+   "slug": "prace-zbiorka",
+   "category": "prace",
+   "source": "zbiorka.jpg",
+   "w": 886,
+   "h": 1212,
+   "color": "#895850",
+   "variants": [
+    {
+     "w": 800,
+     "h": 1094,
+     "file": "assets/photos/prace-zbiorka-800.avif",
+     "bytes": 99827
+    },
+    {
+     "w": 886,
+     "h": 1212,
+     "file": "assets/photos/prace-zbiorka-886.jpg",
+     "bytes": 300177
     }
    ]
   }

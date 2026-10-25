@@ -17,6 +17,8 @@ SOURCES = {
     "reportaz": Path(r"B:\NA STRONE\reportaz compressed\bic-compressed"),
     # tylko strona główna (rząd z 4 zdjęć Audi), bez własnej galerii
     "motoryzacja": Path(r"B:\NA STRONE\motoryzacja compressed\bic-compressed"),
+    # O mnie, „Moje prace”: grafiki z meczu charytatywnego (zrzuty bez UI Instagrama, JPEG q90 4:4:4)
+    "prace": Path(r"B:\NA STRONE\prace"),
 }
 EXCLUDE = {
     ("sport", "DSC01355.jpg"), ("sport", "DSC04110.jpg"), ("sport", "DSC07121.jpg"),

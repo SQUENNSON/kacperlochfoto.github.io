@@ -169,9 +169,38 @@ def test_about_copy_has_only_existing_facts(built):
     text = norm(main.text())
     for fact in ("Mszany Dolnej", "Ekstraklasy", "Ekipy Fantasy"):
         assert fact in text
-    assert main.find_all("img") == []  # sam tekst ze starej strony, bez zdjęć
+    # tekst ze starej strony bez zdjęć; obrazy tylko w kolażu „Moje prace” pod tekstem
+    assert main.find("article", "about").find_all("img") == []
+    assert len(main.find_all("img")) == len(main.find("ul", "works-list").find_all("img"))
     assert norm(tree.find("title").text())
     assert meta(tree, "description")
+
+
+def test_about_works_collage(built, repo_root):
+    """O mnie, „Moje prace”: 4 grafiki z meczu charytatywnego, każda = link do lightboxa + poświata."""
+    from build_pages import WORK_SIZES, srcset
+
+    site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["o-mnie"]
+    manifest = {p["slug"]: p for p in _manifest(built)}
+    assert site["works"] == ["prace-zbiorka", "prace-siepomaga", "prace-dziekujemy", "prace-medale"]
+    tree = parse(built / "o-mnie/index.html")
+    section = tree.find("main").find("section", "works")
+    assert norm(section.find("h2", "works-title").text()) == "Moje prace"
+    items = section.find("ul", "works-list").find_all("li", "work")
+    assert len(items) == 4 and all("data-reveal" in li.attrs for li in items)
+    for li, slug in zip(items, site["works"]):
+        photo = manifest[slug]
+        a = li.find("a", "work-link")
+        assert "data-lb" in a.attrs and a.attrs["href"] == "../" + photo["variants"][-1]["file"]
+        assert a.attrs["data-srcset"] == srcset(photo, "../")
+        assert (a.attrs["data-w"], a.attrs["data-h"]) == (str(photo["w"]), str(photo["h"]))
+        assert f"--c:{photo['color']}" in a.attrs["style"].replace(" ", "")
+        glow = a.find("span", "glow")
+        assert glow.attrs["aria-hidden"] == "true"
+        assert glow.attrs["style"] == f"background-image:url('../{photo['variants'][0]['file']}')"
+        [img] = a.find_all("img")  # lightbox bierze alt z pierwszego <img>
+        assert img.attrs["alt"] == ALT["prace"] and img.attrs["sizes"] == WORK_SIZES
+        assert img.attrs["loading"] == "lazy" and (img.attrs["width"], img.attrs["height"]) == (str(photo["w"]), str(photo["h"]))
 
 
 def test_meta_every_page(built, repo_root):
@@ -252,7 +281,8 @@ GRID_SIZES = "(max-width: 900px) 100vw, 37vw"
 QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha",
-       "motoryzacja": "Motoryzacja — fotografia Kacpra Locha"}
+       "motoryzacja": "Motoryzacja — fotografia Kacpra Locha",
+       "prace": "Mecz Charytatywny Ekipy Fantasy — grafika ze zdjęciem Kacpra Locha"}
 PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html"}
 
 
