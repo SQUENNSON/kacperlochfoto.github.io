@@ -177,21 +177,22 @@ def test_about_copy_has_only_existing_facts(built):
 
 
 def test_about_works_collage(built, repo_root):
-    """O mnie, „Przykładowe materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG pod tekstem (obok tekstu nic);
-    każda = link do lightboxa + poświata."""
+    """O mnie, „Przykładowe materiały z wykorzystaniem moich zdjęć”: 6 ramek postów z IG, potem 4 grafiki (CSS: 4–2–4)
+    pod tekstem (obok tekstu nic); każda = link do lightboxa + poświata."""
     from build_pages import WORK_SIZES, srcset
 
     site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["o-mnie"]
     manifest = {p["slug"]: p for p in _manifest(built)}
     assert "side_works" not in site
     assert site["works"] == ["prace-ig-zbiorka-zakonczona", "prace-ig-dziekujemy", "prace-ig-kaluch",
-                             "prace-ig-kiwior", "prace-ig-izak", "prace-ig-kapitan"]
+                             "prace-ig-kiwior", "prace-ig-izak", "prace-ig-kapitan",
+                             "prace-turbacz", "prace-dziekujemy", "prace-siepomaga", "prace-limanovia"]
     tree = parse(built / "o-mnie/index.html")
     assert tree.find("main").find_all("aside") == []
     section = tree.find("main").find("section", "works")
     assert norm(section.find("h2", "works-title").text()) == "Przykładowe materiały z wykorzystaniem moich zdjęć"
     items = section.find("ul", "works-list").find_all("li", "work")
-    assert len(items) == 6 and all("data-reveal" in li.attrs for li in items)
+    assert len(items) == 10 and all("data-reveal" in li.attrs for li in items)
     for li, slug in zip(items, site["works"]):
         photo = manifest[slug]
         a = li.find("a", "work-link")
@@ -292,7 +293,7 @@ QUAD_SIZES = "(max-width: 900px) 50vw, 19vw"
 HERO_SIZES = "(max-width: 900px) 100vw, 73vw"
 ALT = {"sport": "Sport — fotografia Kacpra Locha", "reportaz": "Reportaż — fotografia Kacpra Locha",
        "motoryzacja": "Motoryzacja — fotografia Kacpra Locha",
-       "prace": "Post na Instagramie ze zdjęciem Kacpra Locha"}
+       "prace": "Materiał z wykorzystaniem zdjęcia Kacpra Locha"}
 PHOTO_PAGES = {"home": "index.html", "sport": "sport/index.html", "reportaz": "reportaz/index.html"}
 
 
