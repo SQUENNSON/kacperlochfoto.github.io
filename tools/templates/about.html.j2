@@ -10,7 +10,7 @@
 </article>
 {% if works %}
 <section class="page works" aria-labelledby="works-title">
-  <h2 class="works-title" id="works-title" data-reveal>{{ page.works_heading }}</h2>
+  <h2 class="works-title" id="works-title" data-reveal>{{ page.works_heading|nbsp }}</h2>
   <ul class="works-list">
 {% for photo in works %}
     <li class="work" data-reveal>{{ m.work(photo, p) }}</li>

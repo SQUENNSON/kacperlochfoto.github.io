@@ -177,7 +177,7 @@ def test_about_copy_has_only_existing_facts(built):
 
 
 def test_about_works_collage(built, repo_root):
-    """O mnie, „Moje prace”: 4 grafiki z meczu charytatywnego, każda = link do lightboxa + poświata."""
+    """O mnie, „Materiały z wykorzystaniem moich zdjęć”: 4 grafiki z meczu charytatywnego, każda = link do lightboxa + poświata."""
     from build_pages import WORK_SIZES, srcset
 
     site = json.loads((repo_root / "data/site.json").read_text(encoding="utf-8"))["pages"]["o-mnie"]
@@ -185,7 +185,7 @@ def test_about_works_collage(built, repo_root):
     assert site["works"] == ["prace-zbiorka", "prace-siepomaga", "prace-dziekujemy", "prace-medale"]
     tree = parse(built / "o-mnie/index.html")
     section = tree.find("main").find("section", "works")
-    assert norm(section.find("h2", "works-title").text()) == "Moje prace"
+    assert norm(section.find("h2", "works-title").text()) == "Materiały z wykorzystaniem moich zdjęć"
     items = section.find("ul", "works-list").find_all("li", "work")
     assert len(items) == 4 and all("data-reveal" in li.attrs for li in items)
     for li, slug in zip(items, site["works"]):

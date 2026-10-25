@@ -317,7 +317,7 @@ main { grid-column: 2; grid-row: 1; min-width: 0; }
 .about p { color: #3b3a37; text-wrap: pretty; }
 .about p + p { margin-top: 1.1em; }
 
-/* O mnie, „Moje prace”: luźny kolaż — obok siebie, nierówne odstępy i wysokości (marginesy w % szerokości
+/* O mnie, „Materiały z wykorzystaniem moich zdjęć”: luźny kolaż — obok siebie, nierówne odstępy i wysokości (marginesy w % szerokości
    listy, więc układ skaluje się z ekranem); pod każdą grafiką poświata z jej kolorów (rozmyta kopia, .glow) */
 .works { padding-top: 0; }
 .works-title { font: 500 clamp(21px, 1.9vw, 26px)/1.3 var(--sans); letter-spacing: -.012em; }
