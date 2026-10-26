@@ -8,7 +8,7 @@ from urllib.parse import unquote
 import pytest
 
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
-BASE_URL = "https://squennson.github.io/kacperlochfoto.github.io/"
+BASE_URL = "https://sqphoto.pl/"
 EXTERNAL = re.compile(r"^(https?://|mailto:|tel:)")
 BASE_SCRIPT = (
     "<script>document.write('<base href=\"'+(location.pathname.indexOf('/kacperlochfoto.github.io/')===0"
